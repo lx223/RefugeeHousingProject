@@ -1,0 +1,47 @@
+﻿@model RefugeeHousing.Models.Listing
+
+@{
+    ViewBag.Title = "Add new listing";
+}
+
+<h2>Add new listing</h2>
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Listing</legend>
+
+        <label>Number of bedrooms:</label>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.NumberOfBedrooms)
+        </div>
+
+        <label>Price per month (€):</label>
+        <div class="editor-label">
+            @Html.TextBoxFor(model => model.Price)
+        </div>
+
+        <label>Languages spoken:</label>
+        <div class="editor-label">
+            @Html.TextBoxFor(model => model.LanguagesSpoken)
+        </div>
+
+        <label>Appliances included:</label>
+        <div class="editor-label">
+            @Html.TextBoxFor(model => model.Appliances)
+        </div>
+
+        <label>Furnished:</label>
+        <div class="editor-label">
+            @Html.CheckBoxFor(model => model.Furnished)
+        </div>
+
+        <label>Working elevator:</label>
+        <div class="editor-label">
+            @Html.CheckBoxFor(model => model.Elevator)
+        </div>
+
+        <input type="submit" value="Register new listing" />
+
+    </fieldset>
+}
