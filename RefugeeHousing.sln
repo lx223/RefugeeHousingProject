@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefugeeHousing", "RefugeeHousing\RefugeeHousing.csproj", "{522249D0-5AD5-4422-91AF-565D19736F44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefugeeHousing.Tests", "RefugeeHousing.Tests\RefugeeHousing.Tests.csproj", "{259840AF-F11B-4F5A-8013-19AB5E8EE741}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{522249D0-5AD5-4422-91AF-565D19736F44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{522249D0-5AD5-4422-91AF-565D19736F44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{522249D0-5AD5-4422-91AF-565D19736F44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{522249D0-5AD5-4422-91AF-565D19736F44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{259840AF-F11B-4F5A-8013-19AB5E8EE741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{259840AF-F11B-4F5A-8013-19AB5E8EE741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{259840AF-F11B-4F5A-8013-19AB5E8EE741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{259840AF-F11B-4F5A-8013-19AB5E8EE741}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
