@@ -26,20 +26,23 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
-                <ul class="nav navbar-nav navbar-right">
-                    @foreach (Language language in Enum.GetValues(typeof(Language)))
-                    {
-                        <li>
-                            @Html.ActionLink(
-                                     language.GetName(),
-                                     ViewContext.RouteData.Values["action"].ToString(),
-                                     ViewContext.RouteData.Values["controller"].ToString(),
-                                     new {language = language.GetCode()},
-                                     null)
-                        </li>
-                    }
-                </ul>
+                <div class="navbar-right">
+                    @Html.Partial("_LoginPartial")
+                    <div class="nav navbar-nav" style="width: 2px; height: 50px; background-color: gray;"></div>
+                    <ul class="nav navbar-nav">
+                        @foreach (Language language in Enum.GetValues(typeof(Language)))
+                        {
+                            <li>
+                                @Html.ActionLink(
+                                    language.GetName(),
+                                    ViewContext.RouteData.Values["action"].ToString(),
+                                    ViewContext.RouteData.Values["controller"].ToString(),
+                                    new { language = language.GetCode() },
+                                    null)
+                            </li>
+                        }
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
