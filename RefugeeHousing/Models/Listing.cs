@@ -8,8 +8,11 @@ namespace RefugeeHousing.Models
     public class Listing
     {
         public int Id { get; set; }
-
-        public string Description { get; set; }
-        
+        public IEnumerable<string> LanguagesSpoken { get; set; } 
+        public Decimal Price { get; set; }
+        public int NumberOfBedrooms { get; set; }
+        public bool Furnished { get; set; }
+        public IEnumerable<string> Appliances { get; set; }
+        public bool Elevator { get; set; } 
     }
 }
