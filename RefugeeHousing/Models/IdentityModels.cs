@@ -29,5 +29,7 @@ namespace RefugeeHousing.Models
         {
             return new ApplicationDbContext();
         }
+
+        public virtual DbSet<Listing> Listings { get; set; }
     }
 }
