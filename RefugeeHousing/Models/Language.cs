@@ -38,5 +38,10 @@ namespace RefugeeHousing.Models
                     throw new InvalidOperationException();
             }
         }
+
+        public static Language GetDefault()
+        {
+            return Language.English;
+        }
     }
 }
