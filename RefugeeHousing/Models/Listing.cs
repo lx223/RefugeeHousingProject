@@ -1,4 +1,6 @@
-﻿namespace RefugeeHousing.Models
+﻿using System;
+
+namespace RefugeeHousing.Models
 {
     public class Listing
     {
