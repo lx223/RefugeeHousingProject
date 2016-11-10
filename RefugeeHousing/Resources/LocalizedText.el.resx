@@ -117,7 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddNewListing" xml:space="preserve">
+    <value>Προσθέστε νέα καταχώρηση</value>
+  </data>
+  <data name="AppliancesIncluded" xml:space="preserve">
+    <value>Συσκευές περιλαμβάνονται:</value>
+  </data>
+  <data name="AppliancesIncludedPlaceholder" xml:space="preserve">
+    <value>π.χ. Ψυγείο, Πλυντήριο πιάτων, κ.λπ.</value>
+  </data>
+  <data name="Elevator" xml:space="preserve">
+    <value>Ανελκυστήρας</value>
+  </data>
+  <data name="Furnished" xml:space="preserve">
+    <value>Επιπλωμένο</value>
+  </data>
+  <data name="LanguagesSpoken" xml:space="preserve">
+    <value>Γλώσσες που μιλάς:</value>
+  </data>
+  <data name="LanguagesSpokenPlaceholder" xml:space="preserve">
+    <value>π.χ. Ελληνικά, Αγγλικά, κλπ</value>
+  </data>
   <data name="NumberOfBedrooms" xml:space="preserve">
     <value>Αριθμός υπνοδωματίων:</value>
+  </data>
+  <data name="PricePerMonth" xml:space="preserve">
+    <value>Τιμή ανά μήνα:</value>
+  </data>
+  <data name="RegisterNewListing" xml:space="preserve">
+    <value>Καταχωρήστε νέα λίστα</value>
   </data>
 </root>

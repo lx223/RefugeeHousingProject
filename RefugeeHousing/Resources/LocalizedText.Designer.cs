@@ -61,11 +61,92 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new listing.
+        /// </summary>
+        public static string AddNewListing {
+            get {
+                return ResourceManager.GetString("AddNewListing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Appliances included:.
+        /// </summary>
+        public static string AppliancesIncluded {
+            get {
+                return ResourceManager.GetString("AppliancesIncluded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to e.g. Fridge, Dishwasher, etc..
+        /// </summary>
+        public static string AppliancesIncludedPlaceholder {
+            get {
+                return ResourceManager.GetString("AppliancesIncludedPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Elevator.
+        /// </summary>
+        public static string Elevator {
+            get {
+                return ResourceManager.GetString("Elevator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Furnished.
+        /// </summary>
+        public static string Furnished {
+            get {
+                return ResourceManager.GetString("Furnished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages spoken:.
+        /// </summary>
+        public static string LanguagesSpoken {
+            get {
+                return ResourceManager.GetString("LanguagesSpoken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to e.g. Greek, English, etc..
+        /// </summary>
+        public static string LanguagesSpokenPlaceholder {
+            get {
+                return ResourceManager.GetString("LanguagesSpokenPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number of bedrooms:.
         /// </summary>
         public static string NumberOfBedrooms {
             get {
                 return ResourceManager.GetString("NumberOfBedrooms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price per month:.
+        /// </summary>
+        public static string PricePerMonth {
+            get {
+                return ResourceManager.GetString("PricePerMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register new listing.
+        /// </summary>
+        public static string RegisterNewListing {
+            get {
+                return ResourceManager.GetString("RegisterNewListing", resourceCulture);
             }
         }
     }

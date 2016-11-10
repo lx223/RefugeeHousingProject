@@ -1,44 +1,44 @@
 ﻿@model RefugeeHousing.Models.Listing
 
 @{
-    ViewBag.Title = "Add new listing";
+    ViewBag.Title = Resources.LocalizedText.AddNewListing;
 }
 
-<h2>Add new listing</h2>
+<h2>@Resources.LocalizedText.AddNewListing</h2>
 
 @using (Html.BeginForm())
 {
     <div class="form-group">
-        <label>Number of bedrooms:</label>
-        @Html.TextBoxFor(model => model.NumberOfBedrooms, new { @class = "form-control", type = "number", placeholder = Resources.LocalizedText.NumberOfBedrooms })
+        <label>@Resources.LocalizedText.NumberOfBedrooms</label>
+        @Html.TextBoxFor(model => model.NumberOfBedrooms, new { @class = "form-control", type = "number" })
     </div>
 
     <div class="form-group">
-        <label>Price per month (€):</label>
-        @Html.TextBoxFor(model => model.Price, new {@class = "form-control", type = "number", min = "1", step = "1", placeholder = "Enter price per month"})
+        <label>@Resources.LocalizedText.PricePerMonth</label>
+        @Html.TextBoxFor(model => model.Price, new {@class = "form-control", type = "number", min = "1", step = "1" })
     </div>
 
     <div class="form-group">
-        <label>Languages spoken:</label>
-        @Html.TextBoxFor(model => model.LanguagesSpoken, new {@class = "form-control", placeholder = "e.g. Greek, English, etc."})
+        <label>@Resources.LocalizedText.LanguagesSpoken</label>
+        @Html.TextBoxFor(model => model.LanguagesSpoken, new {@class = "form-control", placeholder = Resources.LocalizedText.LanguagesSpokenPlaceholder })
     </div>
 
     <div class="form-group">
-        <label>Appliances included:</label>
-        @Html.TextBoxFor(model => model.Appliances, new {@class = "form-control", placeholder = "e.g. Fridge, Dishwasher, etc."})
+        <label>@Resources.LocalizedText.AppliancesIncluded</label>
+        @Html.TextBoxFor(model => model.Appliances, new {@class = "form-control", placeholder = Resources.LocalizedText.AppliancesIncludedPlaceholder })
     </div>
 
     <div class="form-check">
         <label>
             @Html.CheckBoxFor(model => model.Furnished)
-            Furnished
+            @Resources.LocalizedText.Furnished
         </label>
     </div>
 
     <div class="form-check">
         <label>
             @Html.CheckBoxFor(model => model.Elevator)
-            Elevator
+            @Resources.LocalizedText.Elevator
         </label>
     </div>
     
