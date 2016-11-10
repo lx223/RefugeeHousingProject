@@ -337,6 +337,7 @@ namespace RefugeeHousing.Controllers
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = false });
+                // ReSharper disable once RedundantCaseLabel
                 case SignInStatus.Failure:
                 default:
                     // If the user does not have an account, then prompt the user to create an account
