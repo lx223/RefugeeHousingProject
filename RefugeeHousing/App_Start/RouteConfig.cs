@@ -12,8 +12,8 @@ namespace RefugeeHousing
 
             routes.MapRoute(
                 name: "Default",
-                url: "{language}/{controller}/{action}/{id}",
-                defaults: new { language = LanguageExtensions.GetDefault().GetCode(), controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{languageCode}/{controller}/{action}/{id}",
+                defaults: new { languageCode = LanguageExtensions.GetDefault().GetCode(), controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
