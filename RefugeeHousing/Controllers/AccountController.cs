@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using RefugeeHousing.Models;
+using RefugeeHousing.Services;
 using RefugeeHousing.Translations;
 
 namespace RefugeeHousing.Controllers
