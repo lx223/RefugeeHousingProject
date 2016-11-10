@@ -2,8 +2,6 @@
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
-using System.Web.WebSockets;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -14,6 +12,7 @@ using RefugeeHousing.Translations;
 namespace RefugeeHousing.Controllers
 {
     [Authorize]
+    [Localization]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;

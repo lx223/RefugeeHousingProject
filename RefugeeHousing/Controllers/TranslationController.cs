@@ -6,13 +6,17 @@ using RefugeeHousing.Translations;
 
 namespace RefugeeHousing.Controllers
 {
+    [Localization]
     public class TranslationController : Controller
     {
         // GET: Translation
         public ActionResult SetLanguage(Language language)
         {
             var service = new TranslationService();
-            SavePreferenceToDatabase(language);
+            if (User.Identity.IsAuthenticated)
+            {
+                SavePreferenceToDatabase(language);
+            }
             service.SetTranslationCookie(language);
             service.SetTranslationFromCookieIfExists();
 
@@ -21,7 +25,7 @@ namespace RefugeeHousing.Controllers
             {
                 return Redirect(urlReferrer.PathAndQuery);
             }
-            return RedirectToAction("Index", "Home"); ;
+            return RedirectToAction("Index", "Home");
         }
 
         private void SavePreferenceToDatabase(Language language)

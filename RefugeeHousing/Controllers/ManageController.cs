@@ -6,10 +6,12 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using RefugeeHousing.Models;
+using RefugeeHousing.Translations;
 
 namespace RefugeeHousing.Controllers
 {
     [Authorize]
+    [Localization]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;
