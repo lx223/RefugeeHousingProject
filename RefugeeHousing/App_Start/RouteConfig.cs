@@ -1,6 +1,5 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
-using RefugeeHousing.Models;
 
 namespace RefugeeHousing
 {
@@ -12,8 +11,8 @@ namespace RefugeeHousing
 
             routes.MapRoute(
                 name: "Default",
-                url: "{languageCode}/{controller}/{action}/{id}",
-                defaults: new { languageCode = LanguageExtensions.GetDefault().GetCode(), controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{controller}/{action}/{id}",
+                defaults: new {controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

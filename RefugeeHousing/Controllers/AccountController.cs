@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using System.Web.WebSockets;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -82,6 +83,11 @@ namespace RefugeeHousing.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+                    var user = manager.FindByEmail(model.Email);
+                    var service = new TranslationService();
+                    service.SetTranslationCookie(user.PreferredLanguage);
+                    service.SetTranslationFromCookieIfExists();
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -154,7 +160,8 @@ namespace RefugeeHousing.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var preferredLanguage = new TranslationService().GetLanguageFromCookieOrDefault();
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, PreferredLanguage = preferredLanguage};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

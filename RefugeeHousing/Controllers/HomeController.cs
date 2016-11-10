@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
-using RefugeeHousing.ActionFilterAttributes;
+using RefugeeHousing.Translations;
 
 namespace RefugeeHousing.Controllers
 {
@@ -12,6 +14,7 @@ namespace RefugeeHousing.Controllers
     {
         public ActionResult Index()
         {
+            var x = Thread.CurrentThread.CurrentCulture;
             return View();
         }
 
