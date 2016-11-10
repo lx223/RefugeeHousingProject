@@ -8,40 +8,39 @@
 
 @using (Html.BeginForm())
 {
-    <fieldset>
-        <legend>Listing</legend>
-
+    <div class="form-group">
         <label>Number of bedrooms:</label>
-        <div class="editor-field">
-            @Html.TextBoxFor(model => model.NumberOfBedrooms)
-        </div>
+        @Html.TextBoxFor(model => model.NumberOfBedrooms, new { @class = "form-control", type = "number", placeholder = "Enter number of bedrooms" })
+    </div>
 
+    <div class="form-group">
         <label>Price per month (€):</label>
-        <div class="editor-label">
-            @Html.TextBoxFor(model => model.Price)
-        </div>
+        @Html.TextBoxFor(model => model.Price, new {@class = "form-control", type = "number", min = "1", step = "1", placeholder = "Enter price per month"})
+    </div>
 
+    <div class="form-group">
         <label>Languages spoken:</label>
-        <div class="editor-label">
-            @Html.TextBoxFor(model => model.LanguagesSpoken)
-        </div>
+        @Html.TextBoxFor(model => model.LanguagesSpoken, new {@class = "form-control", placeholder = "e.g. Greek, English, etc."})
+    </div>
 
+    <div class="form-group">
         <label>Appliances included:</label>
-        <div class="editor-label">
-            @Html.TextBoxFor(model => model.Appliances)
-        </div>
+        @Html.TextBoxFor(model => model.Appliances, new {@class = "form-control", placeholder = "e.g. Fridge, Dishwasher, etc."})
+    </div>
 
-        <label>Furnished:</label>
-        <div class="editor-label">
+    <div class="form-check">
+        <label>
             @Html.CheckBoxFor(model => model.Furnished)
-        </div>
+            Furnished
+        </label>
+    </div>
 
-        <label>Working elevator:</label>
-        <div class="editor-label">
+    <div class="form-check">
+        <label>
             @Html.CheckBoxFor(model => model.Elevator)
-        </div>
-
-        <input type="submit" value="Register new listing" />
-
-    </fieldset>
+            Elevator
+        </label>
+    </div>
+    
+    <input type="submit" class="btn btn-primary" value="Register new listing" />
 }
