@@ -199,6 +199,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ListingsController.cs" />
+    <Compile Include="Models\ListingsList.cs" />
     <Compile Include="Translations\LocalizationAttribute.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -317,6 +319,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\AddListing\Index.cshtml" />
+    <Content Include="Views\Listings\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -344,7 +347,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611091629374_ConvertListsToStrings.resx">
       <DependentUpon>201611091629374_ConvertListsToStrings.cs</DependentUpon>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\LocalizedText.el.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LocalizedText.el.Designer.cs</LastGenOutput>
