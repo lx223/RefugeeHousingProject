@@ -10,7 +10,7 @@ namespace RefugeeHousing.Migrations
             ContextKey = "RefugeeHousing.Models.ApplicationDbContext";
         }
 
-        protected override void Seed(RefugeeHousing.Models.ApplicationDbContext context)
+        protected override void Seed(Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
