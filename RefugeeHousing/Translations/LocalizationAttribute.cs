@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-
 namespace RefugeeHousing.Translations
 {
     public class LocalizationAttribute : ActionFilterAttribute 
