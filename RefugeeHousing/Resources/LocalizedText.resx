@@ -138,6 +138,9 @@
   <data name="LanguagesSpokenPlaceholder" xml:space="preserve">
     <value>e.g. Greek, English, etc.</value>
   </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
   <data name="NumberOfBedrooms" xml:space="preserve">
     <value>Number of bedrooms:</value>
   </data>
@@ -146,5 +149,8 @@
   </data>
   <data name="RegisterNewListing" xml:space="preserve">
     <value>Register new listing</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
   </data>
 </root>
