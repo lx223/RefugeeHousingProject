@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using RefugeeHousing.Models
+@using RefugeeHousing.Translations
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -25,7 +27,22 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                <div class="navbar-right">
+                    @Html.Partial("_LoginPartial")
+                    <ul class="nav navbar-nav language-options">
+                        @foreach (Language language in Enum.GetValues(typeof (Language)))
+                        {
+                            <li>
+                                @Html.ActionLink(
+                                    language.GetName(),
+                                    ViewContext.RouteData.Values["action"].ToString(),
+                                    ViewContext.RouteData.Values["controller"].ToString(),
+                                    new {language = language.GetCode()},
+                                    null)
+                            </li>
+                        }
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
