@@ -79,11 +79,7 @@ namespace RefugeeHousing.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
-                    var user = manager.FindByEmail(model.Email);
-                    var service = new TranslationService();
-                    service.SetTranslationCookie(user.PreferredLanguage);
-                    service.SetTranslationFromCookieIfExists();
+                    new AccountService().SetCookieToUserPreferredLanguage(model.Email);
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");

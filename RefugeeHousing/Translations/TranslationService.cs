@@ -30,19 +30,29 @@ namespace RefugeeHousing.Translations
 
         public void SetTranslationFromCookieIfExists()
         {
-            var myCookie = HttpContext.Current.Request.Cookies.Get("refugee_language");
-            if (myCookie == null) return;
-
-            var language = (Language) Convert.ToInt32(myCookie.Value);
-            SetLanguage(language);
+            var language = GetLanguageFromCookie();
+            if (language != null)
+            {
+                SetLanguage((Language) language);
+            }
         }
 
         public Language GetLanguageFromCookieOrDefault()
         {
-            var myCookie = HttpContext.Current.Request.Cookies.Get("refugee_language");
-            if (myCookie == null) return LanguageExtensions.GetDefault();
+            return GetLanguageFromCookie() ?? LanguageExtensions.GetDefault();
+        }
 
-            return (Language)Convert.ToInt32(myCookie.Value);
+        private Language? GetLanguageFromCookie()
+        {
+            var myCookie = HttpContext.Current.Request.Cookies.Get("refugee_language");
+            if (myCookie == null) return null;
+            try
+            {
+                var cookieInt = Convert.ToInt32(myCookie.Value);
+                return Enum.IsDefined(typeof (Language), cookieInt) ? (Language) cookieInt : (Language?) null;
+            }
+            catch (FormatException) { return null; }
+            catch (OverflowException) { return null; }
         }
     }
 }

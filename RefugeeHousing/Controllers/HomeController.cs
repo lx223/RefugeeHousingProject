@@ -9,7 +9,6 @@ namespace RefugeeHousing.Controllers
     {
         public ActionResult Index()
         {
-            var x = Thread.CurrentThread.CurrentCulture;
             return View();
         }
 
