@@ -33,12 +33,7 @@
                         @foreach (Language language in Enum.GetValues(typeof(Language)))
                         {
                             <li>
-                                @Html.ActionLink(
-                                    language.GetName(),
-                                    ViewContext.RouteData.Values["action"].ToString(),
-                                    ViewContext.RouteData.Values["controller"].ToString(),
-                                    new { },
-                                    null)
+                                @Html.ActionLink(language.GetName(),"SetLanguage", "Translation", new {language}, null)
                             </li>
                         }
                     </ul>
