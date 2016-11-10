@@ -7,8 +7,8 @@ namespace RefugeeHousing.Models
 {
     public enum Language
     {
-        English,
-        Greek 
+        English = 0,
+        Greek = 1 
     }
 
     public static class LanguageExtensions

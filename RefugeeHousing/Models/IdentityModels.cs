@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -16,6 +17,8 @@ namespace RefugeeHousing.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public Language PreferredLanguage { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
