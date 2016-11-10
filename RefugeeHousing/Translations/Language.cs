@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel;
 
-namespace RefugeeHousing.Models
+namespace RefugeeHousing.Translations
 {
     public enum Language
     {
@@ -22,7 +19,7 @@ namespace RefugeeHousing.Models
                 case Language.Greek:
                     return "ελληνικά";
                 default:
-                    throw new InvalidOperationException();
+                    throw new InvalidEnumArgumentException("Language not recognised. Language provided was: " + language);
             }
         }
 
@@ -35,7 +32,7 @@ namespace RefugeeHousing.Models
                 case Language.Greek:
                     return "el";
                 default:
-                    throw new InvalidOperationException();
+                    throw new InvalidEnumArgumentException("Language not recognised. Language provided was: " + language);
             }
         }
 

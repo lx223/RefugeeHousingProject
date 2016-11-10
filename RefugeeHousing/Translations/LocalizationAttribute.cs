@@ -1,9 +1,8 @@
 ﻿using System.Globalization;
 using System.Threading;
 using System.Web.Mvc;
-using RefugeeHousing.Models;
 
-namespace RefugeeHousing.ActionFilterAttributes
+namespace RefugeeHousing.Translations
 {
     public class LocalizationAttribute : ActionFilterAttribute 
     {

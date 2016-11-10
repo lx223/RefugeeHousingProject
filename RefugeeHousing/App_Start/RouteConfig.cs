@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
-using RefugeeHousing.Models;
+using RefugeeHousing.Translations;
 
 namespace RefugeeHousing
 {
