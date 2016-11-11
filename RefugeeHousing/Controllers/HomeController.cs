@@ -1,9 +1,9 @@
+using System.Threading;
 ﻿using System.Web.Mvc;
 using RefugeeHousing.Translations;
 
 namespace RefugeeHousing.Controllers
 {
-    [Localization]
     public class HomeController : Controller
     {
         public ActionResult Index()

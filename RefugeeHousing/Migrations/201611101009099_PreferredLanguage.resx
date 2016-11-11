@@ -117,58 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddNewListing" xml:space="preserve">
-    <value>Add new listing</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="AppliancesIncluded" xml:space="preserve">
-    <value>Appliances included:</value>
-  </data>
-  <data name="AppliancesIncludedPlaceholder" xml:space="preserve">
-    <value>e.g. Fridge, Dishwasher, etc.</value>
-  </data>
-  <data name="Elevator" xml:space="preserve">
-    <value>Elevator</value>
-  </data>
-  <data name="Furnished" xml:space="preserve">
-    <value>Furnished</value>
-  </data>
-  <data name="LanguagesSpoken" xml:space="preserve">
-    <value>Languages spoken:</value>
-  </data>
-  <data name="LanguagesSpokenPlaceholder" xml:space="preserve">
-    <value>e.g. Greek, English, etc.</value>
-  </data>
-  <data name="NumberOfBedrooms" xml:space="preserve">
-    <value>Number of bedrooms:</value>
-  </data>
-  <data name="PricePerMonth" xml:space="preserve">
-    <value>Price per month:</value>
-  </data>
-  <data name="RegisterNewListing" xml:space="preserve">
-    <value>Register new listing</value>
-	</data>
-  <data name="About" xml:space="preserve">
-    <value>About</value>
-  </data>
-  <data name="ApplicationName" xml:space="preserve">
-    <value>Application Name</value>
-  </data>
-  <data name="Contact" xml:space="preserve">
-    <value>Contact</value>
-  </data>
-  <data name="Hello" xml:space="preserve">
-    <value>Hello</value>
-  </data>
-  <data name="Home" xml:space="preserve">
-    <value>Home</value>
-  </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>Log in</value>
-  </data>
-  <data name="LogOff" xml:space="preserve">
-    <value>Log off</value>
-  </data>
-  <data name="Register" xml:space="preserve">
-    <value>Register</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

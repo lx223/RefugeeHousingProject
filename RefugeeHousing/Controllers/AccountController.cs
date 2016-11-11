@@ -3,9 +3,12 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using RefugeeHousing.Models;
+using RefugeeHousing.Services;
+using RefugeeHousing.Translations;
 
 namespace RefugeeHousing.Controllers
 {
@@ -14,15 +17,18 @@ namespace RefugeeHousing.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
-        public AccountController()
+        private readonly IAccountService accountService;
+        
+        public AccountController(IAccountService accountService)
         {
+            this.accountService = accountService;
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, IAccountService accountService)
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            this.accountService = accountService;
         }
 
         public ApplicationSignInManager SignInManager
@@ -76,6 +82,7 @@ namespace RefugeeHousing.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    accountService.SetCookieToUserPreferredLanguage(model.Email);
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -150,7 +157,8 @@ namespace RefugeeHousing.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var preferredLanguage = new TranslationService().GetLanguageFromCookieOrDefault();
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, PreferredLanguage = preferredLanguage};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

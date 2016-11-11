@@ -147,4 +147,28 @@
   <data name="RegisterNewListing" xml:space="preserve">
     <value>Καταχωρήστε νέα λίστα</value>
   </data>
+  <data name="About" xml:space="preserve">
+    <value>Για</value>
+  </data>
+  <data name="ApplicationName" xml:space="preserve">
+    <value>Όνομα εφαρμογής</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Επαφή</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Χαίρετε</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Σπίτι</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Σύνδεση</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Αποσύνδεση</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Κανω ΕΓΓΡΑΦΗ</value>
+  </data>
 </root>

@@ -66,6 +66,14 @@ namespace Resources {
         public static string AddNewListing {
             get {
                 return ResourceManager.GetString("AddNewListing", resourceCulture);
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+            }
+        }
+
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
             }
         }
         
@@ -75,6 +83,13 @@ namespace Resources {
         public static string AppliancesIncluded {
             get {
                 return ResourceManager.GetString("AppliancesIncluded", resourceCulture);
+                ///   Looks up a localized string similar to Application Name.
+                /// </summary>
+            }
+        }
+        public static string ApplicationName {
+            get {
+                return ResourceManager.GetString("ApplicationName", resourceCulture);
             }
         }
         
@@ -84,6 +99,14 @@ namespace Resources {
         public static string AppliancesIncludedPlaceholder {
             get {
                 return ResourceManager.GetString("AppliancesIncludedPlaceholder", resourceCulture);
+                ///   Looks up a localized string similar to Contact.
+                /// </summary>
+
+            }
+        }
+        public static string Contact {
+            get {
+                return ResourceManager.GetString("Contact", resourceCulture);
             }
         }
         
@@ -93,6 +116,14 @@ namespace Resources {
         public static string Elevator {
             get {
                 return ResourceManager.GetString("Elevator", resourceCulture);
+                ///   Looks up a localized string similar to Hello.
+                /// </summary>
+
+            }
+        }
+        public static string Hello {
+            get {
+                return ResourceManager.GetString("Hello", resourceCulture);
             }
         }
         
@@ -102,6 +133,14 @@ namespace Resources {
         public static string Furnished {
             get {
                 return ResourceManager.GetString("Furnished", resourceCulture);
+                ///   Looks up a localized string similar to Home.
+                /// </summary>
+
+            }
+        }
+        public static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
             }
         }
         
@@ -111,6 +150,14 @@ namespace Resources {
         public static string LanguagesSpoken {
             get {
                 return ResourceManager.GetString("LanguagesSpoken", resourceCulture);
+                ///   Looks up a localized string similar to Log in.
+                /// </summary>
+
+            }
+        }
+        public static string LogIn {
+            get {
+                return ResourceManager.GetString("LogIn", resourceCulture);
             }
         }
         
@@ -120,6 +167,14 @@ namespace Resources {
         public static string LanguagesSpokenPlaceholder {
             get {
                 return ResourceManager.GetString("LanguagesSpokenPlaceholder", resourceCulture);
+                ///   Looks up a localized string similar to Log off.
+                /// </summary>
+
+            }
+        }
+        public static string LogOff {
+            get {
+                return ResourceManager.GetString("LogOff", resourceCulture);
             }
         }
         
@@ -147,6 +202,14 @@ namespace Resources {
         public static string RegisterNewListing {
             get {
                 return ResourceManager.GetString("RegisterNewListing", resourceCulture);
+                ///   Looks up a localized string similar to Register.
+                /// </summary>
+
+            }
+        }
+        public static string Register {
+            get {
+                return ResourceManager.GetString("Register", resourceCulture);
             }
         }
     }

@@ -1,3 +1,6 @@
+using RefugeeHousing.Services;
+using RefugeeHousing.Translations;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(RefugeeHousing.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(RefugeeHousing.App_Start.NinjectWebCommon), "Stop")]
 
@@ -61,6 +64,8 @@ namespace RefugeeHousing.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<ITranslationService>().To<TranslationService>();
+            kernel.Bind<IAccountService>().To<AccountService>();
         }        
     }
 }
