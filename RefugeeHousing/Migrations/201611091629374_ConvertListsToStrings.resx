@@ -117,34 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddNewListing" xml:space="preserve">
-    <value>Προσθέστε νέα καταχώρηση</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="AppliancesIncluded" xml:space="preserve">
-    <value>Συσκευές περιλαμβάνονται:</value>
-  </data>
-  <data name="AppliancesIncludedPlaceholder" xml:space="preserve">
-    <value>π.χ. Ψυγείο, Πλυντήριο πιάτων, κ.λπ.</value>
-  </data>
-  <data name="Elevator" xml:space="preserve">
-    <value>Ανελκυστήρας</value>
-  </data>
-  <data name="Furnished" xml:space="preserve">
-    <value>Επιπλωμένο</value>
-  </data>
-  <data name="LanguagesSpoken" xml:space="preserve">
-    <value>Γλώσσες που μιλάς:</value>
-  </data>
-  <data name="LanguagesSpokenPlaceholder" xml:space="preserve">
-    <value>π.χ. Ελληνικά, Αγγλικά, κλπ</value>
-  </data>
-  <data name="NumberOfBedrooms" xml:space="preserve">
-    <value>Αριθμός υπνοδωματίων:</value>
-  </data>
-  <data name="PricePerMonth" xml:space="preserve">
-    <value>Τιμή ανά μήνα:</value>
-  </data>
-  <data name="RegisterNewListing" xml:space="preserve">
-    <value>Καταχωρήστε νέα λίστα</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

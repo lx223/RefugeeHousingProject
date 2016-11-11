@@ -117,4 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddNewListing" xml:space="preserve">
+    <value>Add new listing</value>
+  </data>
+  <data name="AppliancesIncluded" xml:space="preserve">
+    <value>Appliances included:</value>
+  </data>
+  <data name="AppliancesIncludedPlaceholder" xml:space="preserve">
+    <value>e.g. Fridge, Dishwasher, etc.</value>
+  </data>
+  <data name="Elevator" xml:space="preserve">
+    <value>Elevator</value>
+  </data>
+  <data name="Furnished" xml:space="preserve">
+    <value>Furnished</value>
+  </data>
+  <data name="LanguagesSpoken" xml:space="preserve">
+    <value>Languages spoken:</value>
+  </data>
+  <data name="LanguagesSpokenPlaceholder" xml:space="preserve">
+    <value>e.g. Greek, English, etc.</value>
+  </data>
+  <data name="NumberOfBedrooms" xml:space="preserve">
+    <value>Number of bedrooms:</value>
+  </data>
+  <data name="PricePerMonth" xml:space="preserve">
+    <value>Price per month:</value>
+  </data>
+  <data name="RegisterNewListing" xml:space="preserve">
+    <value>Register new listing</value>
+  </data>
 </root>

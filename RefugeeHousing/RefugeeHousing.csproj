@@ -224,6 +224,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AddListingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -236,6 +237,22 @@
     <Compile Include="Migrations\201611091158249_AddListings.cs" />
     <Compile Include="Migrations\201611091158249_AddListings.Designer.cs">
       <DependentUpon>201611091158249_AddListings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611091455357_ListingDetails.cs" />
+    <Compile Include="Migrations\201611091455357_ListingDetails.Designer.cs">
+      <DependentUpon>201611091455357_ListingDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611091624458_LanguagesAsCsv.cs" />
+    <Compile Include="Migrations\201611091624458_LanguagesAsCsv.Designer.cs">
+      <DependentUpon>201611091624458_LanguagesAsCsv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611091629374_ConvertListsToStrings.cs" />
+    <Compile Include="Migrations\201611091629374_ConvertListsToStrings.Designer.cs">
+      <DependentUpon>201611091629374_ConvertListsToStrings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611110933176_ListingRequiredFields.cs" />
+    <Compile Include="Migrations\201611110933176_ListingRequiredFields.Designer.cs">
+      <DependentUpon>201611110933176_ListingRequiredFields.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -320,6 +337,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\AddListing\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -338,6 +356,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611091158249_AddListings.resx">
       <DependentUpon>201611091158249_AddListings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611091455357_ListingDetails.resx">
+      <DependentUpon>201611091455357_ListingDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611091624458_LanguagesAsCsv.resx">
+      <DependentUpon>201611091624458_LanguagesAsCsv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611091629374_ConvertListsToStrings.resx">
+      <DependentUpon>201611091629374_ConvertListsToStrings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611110933176_ListingRequiredFields.resx">
+      <DependentUpon>201611110933176_ListingRequiredFields.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\LocalizedText.el.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

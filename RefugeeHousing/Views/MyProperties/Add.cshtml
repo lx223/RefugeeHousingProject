@@ -1,0 +1,46 @@
+﻿@model RefugeeHousing.Models.Listing
+
+@{
+    ViewBag.Title = Resources.LocalizedText.AddNewListing;
+}
+
+<h2>@Resources.LocalizedText.AddNewListing</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <label>@Resources.LocalizedText.NumberOfBedrooms</label>
+        @Html.TextBoxFor(model => model.NumberOfBedrooms, new { @class = "form-control", type = "number" })
+    </div>
+
+    <div class="form-group">
+        <label>@Resources.LocalizedText.PricePerMonth</label>
+        @Html.TextBoxFor(model => model.Price, new {@class = "form-control", type = "number", min = "1", step = "1" })
+    </div>
+
+    <div class="form-group">
+        <label>@Resources.LocalizedText.LanguagesSpoken</label>
+        @Html.TextBoxFor(model => model.LanguagesSpoken, new {@class = "form-control", placeholder = Resources.LocalizedText.LanguagesSpokenPlaceholder })
+    </div>
+
+    <div class="form-group">
+        <label>@Resources.LocalizedText.AppliancesIncluded</label>
+        @Html.TextBoxFor(model => model.Appliances, new {@class = "form-control", placeholder = Resources.LocalizedText.AppliancesIncludedPlaceholder })
+    </div>
+
+    <div class="form-check">
+        <label>
+            @Html.CheckBoxFor(model => model.Furnished)
+            @Resources.LocalizedText.Furnished
+        </label>
+    </div>
+
+    <div class="form-check">
+        <label>
+            @Html.CheckBoxFor(model => model.Elevator)
+            @Resources.LocalizedText.Elevator
+        </label>
+    </div>
+    
+    <input type="submit" class="btn btn-primary" value="Register new listing" />
+}
