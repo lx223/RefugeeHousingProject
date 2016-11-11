@@ -319,6 +319,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\AddListing\Index.cshtml" />
     <Content Include="Views\Properties\Index.cshtml" />
+    <Content Include="Views\Properties\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
