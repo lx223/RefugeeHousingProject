@@ -6,7 +6,6 @@ using RefugeeHousing.Translations;
 
 namespace RefugeeHousing.Controllers
 {
-    [Localization]
     public class TranslationController : Controller
     {
         // GET: Translation

@@ -8,6 +8,8 @@ namespace RefugeeHousing.Translations
 {
     public class TranslationService
     {
+        private const string TranslationCookieName = "refugee_language";
+
         public void SetLanguage(string languageCode)
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo(languageCode);
@@ -21,7 +23,7 @@ namespace RefugeeHousing.Translations
 
         public void SetTranslationCookie(Language language)
         {
-            var cookie = new HttpCookie("refugee_language", ((int) language).ToString())
+            var cookie = new HttpCookie(TranslationCookieName, ((int) language).ToString())
             {
                 Expires = DateTime.Now.AddDays(30)
             };
@@ -44,13 +46,14 @@ namespace RefugeeHousing.Translations
 
         private Language? GetLanguageFromCookie()
         {
-            var myCookie = HttpContext.Current.Request.Cookies.Get("refugee_language");
+            var myCookie = HttpContext.Current.Request.Cookies.Get(TranslationCookieName);
             if (myCookie == null) return null;
             try
             {
-                var cookieInt = Convert.ToInt32(myCookie.Value);
-                return Enum.IsDefined(typeof (Language), cookieInt) ? (Language) cookieInt : (Language?) null;
+                var cookieCode = Convert.ToInt32(myCookie.Value);
+                return Enum.IsDefined(typeof (Language), cookieCode) ? (Language)cookieCode : (Language?) null;
             }
+            //TODO SMH Log exceptions
             catch (FormatException) { return null; }
             catch (OverflowException) { return null; }
         }

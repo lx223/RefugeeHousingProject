@@ -9,11 +9,14 @@ namespace RefugeeHousing.Services
     {
         public void SetCookieToUserPreferredLanguage(string userEmail)
         {
-            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
-            var user = manager.FindByEmail(userEmail);
-            var service = new TranslationService();
-            service.SetTranslationCookie(user.PreferredLanguage);
-            service.SetTranslationFromCookieIfExists();
+            using (var db = new ApplicationDbContext())
+            {
+                var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+                var user = manager.FindByEmail(userEmail);
+                var service = new TranslationService();
+                service.SetTranslationCookie(user.PreferredLanguage);
+                service.SetTranslationFromCookieIfExists();
+            }
         }
     }
 }

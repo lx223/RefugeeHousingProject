@@ -13,7 +13,6 @@ using RefugeeHousing.Translations;
 namespace RefugeeHousing.Controllers
 {
     [Authorize]
-    [Localization]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
