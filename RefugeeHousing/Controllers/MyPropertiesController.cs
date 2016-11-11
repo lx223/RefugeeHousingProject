@@ -7,18 +7,18 @@ using RefugeeHousing.Models;
 
 namespace RefugeeHousing.Controllers
 {
-    public class AddListingController : Controller
+    public class MyPropertiesController : Controller
     {
         // GET: AddListing
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Add()
         {
             var listing = new Listing();
             return View(listing);
         }
 
         [HttpPost]
-        public ActionResult Index(Listing listing)
+        public ActionResult Add(Listing listing)
         {
             using (ApplicationDbContext db = new ApplicationDbContext())
             {

@@ -51,7 +51,7 @@ namespace RefugeeHousing.Controllers
         }
 
         //
-        // GET: /Manage/Index
+        // GET: /Manage/Add
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
