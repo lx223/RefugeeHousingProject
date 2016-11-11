@@ -17,7 +17,7 @@ namespace RefugeeHousing.Translations
 
     public class TranslationService : ITranslationService
     {
-        private const string TranslationCookieName = "refugee_language";
+        private const string TranslationCookieName = "user_language_preference";
 
         public void SetLanguage(string languageCode)
         {
