@@ -1,13 +1,20 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using RefugeeHousing.Models;
+using RefugeeHousing.Translations;
 
 namespace RefugeeHousing.Controllers
 {
-    public class ListingsController : Controller
+    [Localization]
+    public class PropertiesController : Controller
     {
-        public ActionResult List()
+        public ActionResult Index()
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             using (var db = new ApplicationDbContext())
             {
                 var listingsList = (new ListingsList {Listings = db.Listings.ToList()});

@@ -121,10 +121,16 @@
     <value>Add new listing</value>
   </data>
   <data name="AppliancesIncluded" xml:space="preserve">
-    <value>Appliances included:</value>
+    <value>Appliances included</value>
   </data>
   <data name="AppliancesIncludedPlaceholder" xml:space="preserve">
     <value>e.g. Fridge, Dishwasher, etc.</value>
+  </data>
+  <data name="AvailableProperties" xml:space="preserve">
+    <value>Available Properties</value>
+  </data>
+  <data name="Bedrooms" xml:space="preserve">
+    <value>Bedrooms</value>
   </data>
   <data name="Elevator" xml:space="preserve">
     <value>Elevator</value>
@@ -133,7 +139,7 @@
     <value>Furnished</value>
   </data>
   <data name="LanguagesSpoken" xml:space="preserve">
-    <value>Languages spoken:</value>
+    <value>Languages spoken</value>
   </data>
   <data name="LanguagesSpokenPlaceholder" xml:space="preserve">
     <value>e.g. Greek, English, etc.</value>
@@ -142,10 +148,22 @@
     <value>No</value>
   </data>
   <data name="NumberOfBedrooms" xml:space="preserve">
-    <value>Number of bedrooms:</value>
+    <value>Number of bedrooms</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="PriceGivenPerMonth" xml:space="preserve">
+    <value>Price listed is the rental price per month</value>
   </data>
   <data name="PricePerMonth" xml:space="preserve">
-    <value>Price per month:</value>
+    <value>Price per month</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Reference</value>
   </data>
   <data name="RegisterNewListing" xml:space="preserve">
     <value>Register new listing</value>

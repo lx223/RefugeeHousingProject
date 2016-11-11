@@ -7,7 +7,7 @@ namespace RefugeeHousing.Models
         public int Id { get; set; }
         
         public string LanguagesSpoken { get; set; }
-        public Decimal Price { get; set; }
+        public decimal Price { get; set; }
         public int NumberOfBedrooms { get; set; }
         public bool Furnished { get; set; }
         public string Appliances { get; set; }
