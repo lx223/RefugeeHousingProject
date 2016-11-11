@@ -17,8 +17,7 @@ namespace RefugeeHousing.Controllers
 
             using (var db = new ApplicationDbContext())
             {
-                var listingsList = (new ListingsList {Listings = db.Listings.ToList()});
-                return View(listingsList);
+                return View(db.Listings.ToList());
             }
         }
     }
