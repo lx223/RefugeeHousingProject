@@ -1,24 +1,27 @@
 ﻿@using Resources
 @model RefugeeHousing.Models.Listing
 
-<h2 class="display-1">@LocalizedText.AvailableProperties</h2>
+<h2 class="display-1">@(LocalizedText.Property + ": " + Model.Id)</h2>
 
 <p>@(LocalizedText.PriceGivenPerMonth).</p>
 
 <table class="table table-hover table-condensed">
-    <thead>
-        <tr>
-            <th>@LocalizedText.Reference</th>
-            <th>@LocalizedText.Bedrooms</th>
-            <th>@LocalizedText.Furnished</th>
-            <th>@LocalizedText.Price</th>
-        </tr>
-    </thead>
-        <tr>
-            <td>@Model.Id</td>
-            <td>@Model.NumberOfBedrooms</td>
-            <td>@(Model.Furnished ? LocalizedText.Yes : LocalizedText.No)</td>
-            <td>€@Model.Price</td>
-        </tr>
+    <tr>
+        <th>@LocalizedText.Reference</th>
+        <td>@Model.Id</td>
+    </tr>
+    <tr>
+        <th>@LocalizedText.Bedrooms</th>
+        <td>@Model.NumberOfBedrooms</td>
+    </tr>
+    <tr>
+        <th>@LocalizedText.Furnished</th>
+        <td>@Model.Furnished</td>
+    </tr>
+    <tr>
+        <th>@LocalizedText.Price</th>
+        <td>@Model.Price</td>
+    </tr>
 </table>
+
 

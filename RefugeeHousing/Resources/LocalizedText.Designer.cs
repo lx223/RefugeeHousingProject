@@ -196,6 +196,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Property.
+        /// </summary>
+        public static string Property {
+            get {
+                return ResourceManager.GetString("Property", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reference.
         /// </summary>
         public static string Reference {
