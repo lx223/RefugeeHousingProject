@@ -149,5 +149,23 @@ namespace Resources {
                 return ResourceManager.GetString("RegisterNewListing", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This property can be rented to refugees.
+        /// </summary>
+        public static string WillRentToRefugees {
+            get {
+                return ResourceManager.GetString("WillRentToRefugees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please confirm that the property can be rented to refugees.
+        /// </summary>
+        public static string WillRentToRefugeesPrompt {
+            get {
+                return ResourceManager.GetString("WillRentToRefugeesPrompt", resourceCulture);
+            }
+        }
     }
 }

@@ -147,4 +147,10 @@
   <data name="RegisterNewListing" xml:space="preserve">
     <value>Register new listing</value>
   </data>
+  <data name="WillRentToRefugees" xml:space="preserve">
+    <value>This property can be rented to refugees</value>
+  </data>
+  <data name="WillRentToRefugeesPrompt" xml:space="preserve">
+    <value>Please confirm that the property can be rented to refugees</value>
+  </data>
 </root>
