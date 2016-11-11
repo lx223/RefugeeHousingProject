@@ -6,7 +6,16 @@ using RefugeeHousing.Models;
 
 namespace RefugeeHousing.Translations
 {
-    public class TranslationService
+    public interface ITranslationService
+    {
+        void SetLanguage(string languageCode);
+        void SetLanguage(Language language);
+        void SetTranslationCookie(Language language);
+        void SetTranslationFromCookieIfExists();
+        Language GetLanguageFromCookieOrDefault();
+    }
+
+    public class TranslationService : ITranslationService
     {
         private const string TranslationCookieName = "refugee_language";
 

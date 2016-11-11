@@ -8,16 +8,22 @@ namespace RefugeeHousing.Controllers
 {
     public class TranslationController : Controller
     {
+        private readonly ITranslationService translationService;
+
+        public TranslationController(ITranslationService translationService)
+        {
+            this.translationService = translationService;
+        }
+
         // GET: Translation
         public ActionResult SetLanguage(Language language)
         {
-            var service = new TranslationService();
             if (User.Identity.IsAuthenticated)
             {
                 SavePreferenceToDatabase(language);
             }
-            service.SetTranslationCookie(language);
-            service.SetTranslationFromCookieIfExists();
+            translationService.SetTranslationCookie(language);
+            translationService.SetTranslationFromCookieIfExists();
 
             var urlReferrer = Request.UrlReferrer;
             if (urlReferrer != null)

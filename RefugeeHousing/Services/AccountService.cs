@@ -5,7 +5,12 @@ using RefugeeHousing.Translations;
 
 namespace RefugeeHousing.Services
 {
-    public class AccountService
+    public interface IAccountService
+    {
+        void SetCookieToUserPreferredLanguage(string userEmail);
+    }
+
+    public class AccountService : IAccountService
     {
         public void SetCookieToUserPreferredLanguage(string userEmail)
         {
