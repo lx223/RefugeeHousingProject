@@ -14,16 +14,18 @@ namespace RefugeeHousing
             //This was done because of the name clash between the PropertiesController and the Properties folder
             //The name PropertiesController was desired to create /Properties in the url
             routes.RouteExistingFiles = true;
+
+            routes.MapRoute(
+                name: "PropertyDetails",
+                url: "Properties/{id}",
+                defaults: new { controller = "Properties", action = "Details"},
+                constraints: new { id = @"\d+" }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new {controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
-
-            routes.MapRoute(
-                name: "PropertyDetails",
-                url: "{language}/Properties/{id}",
-                defaults: new { language = LanguageExtensions.GetDefault().GetCode(), action = "Details"}
             );
         }
     }
