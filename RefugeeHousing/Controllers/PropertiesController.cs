@@ -24,7 +24,7 @@ namespace RefugeeHousing.Controllers
                 var requestedListing = db.Listings.Find(id);
                 if (requestedListing == null)
                 {
-                    return new HttpNotFoundResult("Listing does not exist");
+                    return new HttpNotFoundResult("Listing " + id + " does not exist");
                 }
                 return View(requestedListing);
             }
