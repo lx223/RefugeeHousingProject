@@ -19,11 +19,6 @@ namespace RefugeeHousing.Controllers
 
         public ActionResult Details(int id)
         {
-            if (!User.Identity.IsAuthenticated)
-            {
-                return RedirectToAction("Index", "Home");
-            }
-
             using (var db = new ApplicationDbContext())
             {
                 var requestedListing = db.Listings.Find(id);
