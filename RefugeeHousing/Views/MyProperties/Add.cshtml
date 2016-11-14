@@ -41,6 +41,13 @@
             @Resources.LocalizedText.Elevator
         </label>
     </div>
-    
+
+    <div class="form-check">
+        <label>
+            <input type="checkbox" required oninvalid="this.setCustomValidity(@Resources.LocalizedText.WillRentToRefugeesPrompt)"/>
+            @Resources.LocalizedText.WillRentToRefugees
+        </label>
+    </div>
+
     <input type="submit" class="btn btn-primary" value="Register new listing" />
 }

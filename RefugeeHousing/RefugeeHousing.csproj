@@ -221,6 +221,11 @@
     <Compile Include="Migrations\201611111655115_Merge.Designer.cs">
       <DependentUpon>201611111655115_Merge.cs</DependentUpon>
     </Compile>
+    <Compile Include="Resources\LocalizedText.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalizedText.resx</DependentUpon>
+    </Compile>
     <Compile Include="Services\AccountService.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Controllers\PropertiesController.cs" />
@@ -277,11 +282,6 @@
       <DependentUpon>LocalizedText.el.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Resources\LocalizedText.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LocalizedText.resx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="Translations\TranslationService.cs" />
@@ -403,8 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\LocalizedText.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>LocalizedText.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>LocalizedText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
