@@ -167,7 +167,7 @@
   </data>
   <data name="RegisterNewListing" xml:space="preserve">
     <value>Register new listing</value>
-	</data>
+  </data>
   <data name="About" xml:space="preserve">
     <value>About</value>
   </data>
@@ -194,5 +194,8 @@
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>
+  </data>
+  <data name="NoResultsFound" xml:space="preserve">
+    <value>No Results Found</value>
   </data>
 </root>

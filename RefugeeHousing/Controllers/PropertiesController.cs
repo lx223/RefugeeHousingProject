@@ -18,17 +18,17 @@ namespace RefugeeHousing.Controllers
                 var listings = db.Listings.Select(x => x);
                 if (listingSearchModel != null)
                 {
-                    if (listingSearchModel.MinRooms != null)
+                    if (listingSearchModel.MinBedrooms != null)
                     {
-                        listings = listings.Where(x => x.NumberOfBedrooms >= (int) listingSearchModel.MinRooms);
+                        listings = listings.Where(x => x.NumberOfBedrooms >= (int) listingSearchModel.MinBedrooms);
                     }
-                    if (listingSearchModel.MaxRent != null)
+                    if (listingSearchModel.MaxPricePerMonth != null)
                     {
-                        listings = listings.Where(x => x.Price <= (int)listingSearchModel.MaxRent);
+                        listings = listings.Where(x => x.Price <= (int)listingSearchModel.MaxPricePerMonth);
                     }
-                    if (listingSearchModel.Furnished != null)
+                    if (listingSearchModel.IsFurnished != null)
                     {
-                        listings = listings.Where(x => x.Furnished == (bool) listingSearchModel.Furnished);
+                        listings = listings.Where(x => x.Furnished == (bool) listingSearchModel.IsFurnished);
                     }
                 }
                 return View(new ListingSearchModel { ListingsToDisplay = listings.ToList() });

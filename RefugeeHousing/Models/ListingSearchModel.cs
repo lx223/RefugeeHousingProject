@@ -4,9 +4,9 @@ namespace RefugeeHousing.Models
 {
     public class ListingSearchModel
     {
-        public int? MinRooms { get; set; }
-        public decimal? MaxRent { get; set; }
-        public bool? Furnished { get; set; }
+        public int? MinBedrooms { get; set; }
+        public decimal? MaxPricePerMonth { get; set; }
+        public bool? IsFurnished { get; set; }
 
         public List<Listing> ListingsToDisplay { get; set; }
     }

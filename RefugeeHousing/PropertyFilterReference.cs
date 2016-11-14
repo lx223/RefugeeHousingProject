@@ -17,7 +17,7 @@ namespace RefugeeHousing
             };
             for (var i = 1; i < 6; i++)
             {
-                minRoomOptions.Add(new SelectListItem {Text = i.ToString(), Value = i.ToString()});
+                minRoomOptions.Add(new SelectListItem {Text = i + @"+", Value = i.ToString()});
             }
             return minRoomOptions;
         }
