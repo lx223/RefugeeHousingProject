@@ -6,6 +6,7 @@ using RefugeeHousing.Translations;
 namespace RefugeeHousing.Controllers
 {
     [Localization]
+    [Authorize]
     public class PropertiesController : Controller
     {
         public ActionResult Index()
