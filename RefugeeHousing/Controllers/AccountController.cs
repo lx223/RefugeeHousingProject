@@ -3,9 +3,12 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using RefugeeHousing.Models;
+using RefugeeHousing.Services;
+using RefugeeHousing.Translations;
 
 namespace RefugeeHousing.Controllers
 {
@@ -14,15 +17,18 @@ namespace RefugeeHousing.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
-        public AccountController()
+        private readonly IAccountService accountService;
+        
+        public AccountController(IAccountService accountService)
         {
+            this.accountService = accountService;
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, IAccountService accountService)
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            this.accountService = accountService;
         }
 
         public ApplicationSignInManager SignInManager
@@ -76,11 +82,13 @@ namespace RefugeeHousing.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    accountService.SetCookieToUserPreferredLanguage(model.Email);
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+                // ReSharper disable once RedundantCaseLabel
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
@@ -124,6 +132,7 @@ namespace RefugeeHousing.Controllers
                     return RedirectToLocal(model.ReturnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
+                // ReSharper disable once RedundantCaseLabel
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid code.");
@@ -148,7 +157,8 @@ namespace RefugeeHousing.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var preferredLanguage = new TranslationService().GetLanguageFromCookieOrDefault();
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, PreferredLanguage = preferredLanguage};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -335,6 +345,7 @@ namespace RefugeeHousing.Controllers
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = false });
+                // ReSharper disable once RedundantCaseLabel
                 case SignInStatus.Failure:
                 default:
                     // If the user does not have an account, then prompt the user to create an account
@@ -424,13 +435,7 @@ namespace RefugeeHousing.Controllers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
-        private IAuthenticationManager AuthenticationManager
-        {
-            get
-            {
-                return HttpContext.GetOwinContext().Authentication;
-            }
-        }
+        private IAuthenticationManager AuthenticationManager => HttpContext.GetOwinContext().Authentication;
 
         private void AddErrors(IdentityResult result)
         {

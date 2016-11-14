@@ -1,13 +1,16 @@
-﻿using System;
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace RefugeeHousing.Models
 {
     public class Listing
     {
         public int Id { get; set; }
-        
+        [Required]
         public string LanguagesSpoken { get; set; }
+        [Required]
         public decimal Price { get; set; }
+        [Required]
         public int NumberOfBedrooms { get; set; }
         public bool Furnished { get; set; }
         public string Appliances { get; set; }

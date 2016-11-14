@@ -1,6 +1,5 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
-using RefugeeHousing.Translations;
 
 namespace RefugeeHousing
 {
@@ -10,10 +9,15 @@ namespace RefugeeHousing
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //This changes the priority of where routing looks - by default directories are checked before controllers.
+            //Setting RouteExistingFiles to true tells ASP.net to always do the routing, even if a file/folder already exists.
+            //This was done because of the name clash between the PropertiesController and the Properties folder
+            //The name PropertiesController was desired to create /Properties in the url
+            routes.RouteExistingFiles = true;
             routes.MapRoute(
                 name: "Default",
-                url: "{language}/{controller}/{action}/{id}",
-                defaults: new { language = LanguageExtensions.GetDefault().GetCode(), controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{controller}/{action}/{id}",
+                defaults: new {controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(

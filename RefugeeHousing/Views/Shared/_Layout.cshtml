@@ -1,5 +1,7 @@
-﻿@using RefugeeHousing.Translations
+﻿﻿﻿@using RefugeeHousing.Models
+@using RefugeeHousing.Translations
 @using Resources
+﻿@using RefugeeHousing.Translations
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,13 +21,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink(LocalizedText.ApplicationName, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink(LocalizedText.Home, "Index", "Home")</li>
+                    <li>@Html.ActionLink(LocalizedText.About, "About", "Home")</li>
+                    <li>@Html.ActionLink(LocalizedText.Contact, "Contact", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink(LocalizedText.Properties, "Index", "Properties")</li>
@@ -37,12 +39,7 @@
                         @foreach (Language language in Enum.GetValues(typeof (Language)))
                         {
                             <li>
-                                @Html.ActionLink(
-                                    language.GetName(),
-                                    ViewContext.RouteData.Values["action"].ToString(),
-                                    ViewContext.RouteData.Values["controller"].ToString(),
-                                    new {language = language.GetCode()},
-                                    null)
+                                @Html.ActionLink(language.GetName(),"SetLanguage", "Translation", new {language}, null)
                             </li>
                         }
                     </ul>

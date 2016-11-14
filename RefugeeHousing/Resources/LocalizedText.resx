@@ -173,6 +173,30 @@
   </data>
   <data name="RegisterNewListing" xml:space="preserve">
     <value>Register new listing</value>
+	</data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="ApplicationName" xml:space="preserve">
+    <value>Application Name</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Log off</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>

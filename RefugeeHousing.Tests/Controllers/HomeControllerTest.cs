@@ -1,13 +1,14 @@
 ﻿using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FluentAssertions;
+using NUnit.Framework;
 using RefugeeHousing.Controllers;
 
 namespace RefugeeHousing.Tests.Controllers
 {
-    [TestClass]
+    [TestFixture]
     public class HomeControllerTest
     {
-        [TestMethod]
+        [Test]
         public void Index()
         {
             // Arrange
@@ -17,10 +18,10 @@ namespace RefugeeHousing.Tests.Controllers
             ViewResult result = controller.Index() as ViewResult;
 
             // Assert
-            Assert.IsNotNull(result);
+            result.Should().NotBeNull();
         }
 
-        [TestMethod]
+        [Test]
         public void About()
         {
             // Arrange
@@ -30,10 +31,10 @@ namespace RefugeeHousing.Tests.Controllers
             ViewResult result = controller.About() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            ((string) result.ViewBag.Message).Should().Be("Your application description page.");
         }
 
-        [TestMethod]
+        [Test]
         public void Contact()
         {
             // Arrange
@@ -43,7 +44,7 @@ namespace RefugeeHousing.Tests.Controllers
             ViewResult result = controller.Contact() as ViewResult;
 
             // Assert
-            Assert.IsNotNull(result);
+            result.Should().NotBeNull();
         }
     }
 }

@@ -117,88 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddNewListing" xml:space="preserve">
-    <value>Προσθέστε νέα καταχώρηση</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="AppliancesIncluded" xml:space="preserve">
-    <value>Συσκευές περιλαμβάνονται</value>
-  </data>
-  <data name="AppliancesIncludedPlaceholder" xml:space="preserve">
-    <value>π.χ. Ψυγείο, Πλυντήριο πιάτων, κ.λπ.</value>
-  </data>
-  <data name="AvailableProperties" xml:space="preserve">
-    <value>διαθέσιμα Ακίνητα</value>
-  </data>
-  <data name="Bedrooms" xml:space="preserve">
-    <value>υπνοδωμάτια</value>
-  </data>
-  <data name="Elevator" xml:space="preserve">
-    <value>Ανελκυστήρας</value>
-  </data>
-  <data name="Furnished" xml:space="preserve">
-    <value>Επιπλωμένο</value>
-  </data>
-  <data name="LanguagesSpoken" xml:space="preserve">
-    <value>Γλώσσες που μιλάς</value>
-  </data>
-  <data name="LanguagesSpokenPlaceholder" xml:space="preserve">
-    <value>π.χ. Ελληνικά, Αγγλικά, κλπ</value>
-  </data>
-  <data name="Location" xml:space="preserve">
-    <value>Τοποθεσία</value>
-  </data>
-  <data name="No" xml:space="preserve">
-    <value>όχι</value>
-  </data>
-  <data name="NumberOfBedrooms" xml:space="preserve">
-    <value>Αριθμός υπνοδωματίων</value>
-  </data>
-  <data name="Price" xml:space="preserve">
-    <value>Τιμή</value>
-  </data>
-  <data name="PriceGivenPerMonth" xml:space="preserve">
-    <value>Τιμή που αναφέρονται είναι η τιμή ενοικίασης ανά μήνα</value>
-  </data>
-  <data name="PricePerMonth" xml:space="preserve">
-    <value>Τιμή ανά μήνα</value>
-  </data>
-  <data name="Properties" xml:space="preserve">
-    <value>Ιδιότητες</value>
-  </data>
-  <data name="Property" xml:space="preserve">
-    <value>Ιδιοκτησία</value>
-  </data>
-  <data name="Reference" xml:space="preserve">
-    <value>Αναφορά</value>
-  </data>
-  <data name="RegisterNewListing" xml:space="preserve">
-    <value>Καταχωρήστε νέα λίστα</value>
-  </data>
-  <data name="About" xml:space="preserve">
-    <value>Για</value>
-  </data>
-  <data name="ApplicationName" xml:space="preserve">
-    <value>Όνομα εφαρμογής</value>
-  </data>
-  <data name="Contact" xml:space="preserve">
-    <value>Επαφή</value>
-  </data>
-  <data name="Hello" xml:space="preserve">
-    <value>Χαίρετε</value>
-  </data>
-  <data name="Home" xml:space="preserve">
-    <value>Σπίτι</value>
-  </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>Σύνδεση</value>
-  </data>
-  <data name="LogOff" xml:space="preserve">
-    <value>Αποσύνδεση</value>
-  </data>
-  <data name="Register" xml:space="preserve">
-    <value>Κανω ΕΓΓΡΑΦΗ</value>
-  </data>
-  <data name="Yes" xml:space="preserve">
-    <value>Ναί</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>
