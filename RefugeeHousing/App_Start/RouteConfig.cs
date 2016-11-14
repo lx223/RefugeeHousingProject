@@ -15,6 +15,12 @@ namespace RefugeeHousing
                 url: "{language}/{controller}/{action}/{id}",
                 defaults: new { language = LanguageExtensions.GetDefault().GetCode(), controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "PropertyDetails",
+                url: "{language}/Properties/{id}",
+                defaults: new { language = LanguageExtensions.GetDefault().GetCode(), action = "Details"}
+            );
         }
     }
 }

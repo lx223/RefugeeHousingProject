@@ -144,6 +144,9 @@
   <data name="LanguagesSpokenPlaceholder" xml:space="preserve">
     <value>π.χ. Ελληνικά, Αγγλικά, κλπ</value>
   </data>
+  <data name="Location" xml:space="preserve">
+    <value>Τοποθεσία</value>
+  </data>
   <data name="No" xml:space="preserve">
     <value>όχι</value>
   </data>
