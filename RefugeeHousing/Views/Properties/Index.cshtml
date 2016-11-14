@@ -1,10 +1,31 @@
-﻿@using Resources
-@model List<RefugeeHousing.Models.Listing>
+﻿@using System.Collections
+@using System.Web.Mvc.Html
+@using Resources
+@model RefugeeHousing.Models.ListingSearchModel
 
 <h2 class="display-1">@LocalizedText.AvailableProperties</h2>
 
 <p>@(LocalizedText.PriceGivenPerMonth).</p>
 
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <label>Min Rooms:</label>
+        @Html.DropDownListFor(model => model.MinRooms, PropertyFilterReference.GetMinRoomsFilterList())
+    </div>
+
+    <div class="form-check">
+        <label>Max Rent:</label>
+        @Html.DropDownListFor(model => model.MaxRent, PropertyFilterReference.GetMaxMonthlyRentFilterList())
+    </div>
+
+    <div class="form-check">
+        <label>Furnished</label>
+        @Html.DropDownListFor(model => model.Furnished, PropertyFilterReference.GetFurnishedFilterList())
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Filter" />
+}
 <table class="table table-hover table-condensed">
     <thead>
         <tr>
@@ -14,7 +35,7 @@
             <th>@LocalizedText.Price</th>
         </tr>
     </thead>
-    @foreach (var listing in Model)
+    @foreach (var listing in Model.ListingsToDisplay)
     {
         <tr>
             <td>@listing.Id</td>
