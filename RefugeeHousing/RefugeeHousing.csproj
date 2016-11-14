@@ -352,7 +352,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\MyProperties\Add.cshtml" />
-    <Content Include="Views\AddListing\Index.cshtml" />
     <Content Include="Views\Properties\Index.cshtml" />
     <None Include="Web.Test.config">
       <DependentUpon>Web.config</DependentUpon>
