@@ -12,6 +12,7 @@
             <th>@LocalizedText.Bedrooms</th>
             <th>@LocalizedText.Furnished</th>
             <th>@LocalizedText.Price</th>
+            <th></th>
         </tr>
     </thead>
     @foreach (var listing in Model)
@@ -21,6 +22,7 @@
             <td>@listing.NumberOfBedrooms</td>
             <td>@(listing.Furnished ? LocalizedText.Yes : LocalizedText.No)</td>
             <td>€@listing.Price</td>
+            <td>@Html.ActionLink("Details", "Details", "Properties", new { id = listing.Id }, null)</td>
         </tr>
     }
 </table>

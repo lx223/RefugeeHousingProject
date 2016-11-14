@@ -356,6 +356,7 @@
     <None Include="Web.Test.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Views\Properties\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
