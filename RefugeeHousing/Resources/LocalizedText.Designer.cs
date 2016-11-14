@@ -78,7 +78,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Appliances included:.
+        ///   Looks up a localized string similar to Appliances included.
         /// </summary>
         public static string AppliancesIncluded {
             get {
@@ -107,6 +107,24 @@ namespace Resources {
         public static string Contact {
             get {
                 return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Available Properties.
+        /// </summary>
+        public static string AvailableProperties {
+            get {
+                return ResourceManager.GetString("AvailableProperties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bedrooms.
+        /// </summary>
+        public static string Bedrooms {
+            get {
+                return ResourceManager.GetString("Bedrooms", resourceCulture);
             }
         }
         
@@ -145,7 +163,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Languages spoken:.
+        ///   Looks up a localized string similar to Languages spoken.
         /// </summary>
         public static string LanguagesSpoken {
             get {
@@ -179,7 +197,16 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Number of bedrooms:.
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of bedrooms.
         /// </summary>
         public static string NumberOfBedrooms {
             get {
@@ -188,11 +215,47 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Price per month:.
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string Price {
+            get {
+                return ResourceManager.GetString("Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price listed is the rental price per month.
+        /// </summary>
+        public static string PriceGivenPerMonth {
+            get {
+                return ResourceManager.GetString("PriceGivenPerMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price per month.
         /// </summary>
         public static string PricePerMonth {
             get {
                 return ResourceManager.GetString("PricePerMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Properties.
+        /// </summary>
+        public static string Properties {
+            get {
+                return ResourceManager.GetString("Properties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reference.
+        /// </summary>
+        public static string Reference {
+            get {
+                return ResourceManager.GetString("Reference", resourceCulture);
             }
         }
         
@@ -210,6 +273,15 @@ namespace Resources {
         public static string Register {
             get {
                 return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

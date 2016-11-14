@@ -6,11 +6,10 @@ namespace RefugeeHousing.Models
     public class Listing
     {
         public int Id { get; set; }
-
         [Required]
         public string LanguagesSpoken { get; set; }
         [Required]
-        public Decimal Price { get; set; }
+        public decimal Price { get; set; }
         [Required]
         public int NumberOfBedrooms { get; set; }
         public bool Furnished { get; set; }

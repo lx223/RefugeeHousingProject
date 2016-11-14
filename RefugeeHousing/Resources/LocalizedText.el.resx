@@ -121,10 +121,16 @@
     <value>Προσθέστε νέα καταχώρηση</value>
   </data>
   <data name="AppliancesIncluded" xml:space="preserve">
-    <value>Συσκευές περιλαμβάνονται:</value>
+    <value>Συσκευές περιλαμβάνονται</value>
   </data>
   <data name="AppliancesIncludedPlaceholder" xml:space="preserve">
     <value>π.χ. Ψυγείο, Πλυντήριο πιάτων, κ.λπ.</value>
+  </data>
+  <data name="AvailableProperties" xml:space="preserve">
+    <value>διαθέσιμα Ακίνητα</value>
+  </data>
+  <data name="Bedrooms" xml:space="preserve">
+    <value>υπνοδωμάτια</value>
   </data>
   <data name="Elevator" xml:space="preserve">
     <value>Ανελκυστήρας</value>
@@ -133,16 +139,31 @@
     <value>Επιπλωμένο</value>
   </data>
   <data name="LanguagesSpoken" xml:space="preserve">
-    <value>Γλώσσες που μιλάς:</value>
+    <value>Γλώσσες που μιλάς</value>
   </data>
   <data name="LanguagesSpokenPlaceholder" xml:space="preserve">
     <value>π.χ. Ελληνικά, Αγγλικά, κλπ</value>
   </data>
+  <data name="No" xml:space="preserve">
+    <value>όχι</value>
+  </data>
   <data name="NumberOfBedrooms" xml:space="preserve">
-    <value>Αριθμός υπνοδωματίων:</value>
+    <value>Αριθμός υπνοδωματίων</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Τιμή</value>
+  </data>
+  <data name="PriceGivenPerMonth" xml:space="preserve">
+    <value>Τιμή που αναφέρονται είναι η τιμή ενοικίασης ανά μήνα</value>
   </data>
   <data name="PricePerMonth" xml:space="preserve">
-    <value>Τιμή ανά μήνα:</value>
+    <value>Τιμή ανά μήνα</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Ιδιότητες</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Αναφορά</value>
   </data>
   <data name="RegisterNewListing" xml:space="preserve">
     <value>Καταχωρήστε νέα λίστα</value>
@@ -170,5 +191,8 @@
   </data>
   <data name="Register" xml:space="preserve">
     <value>Κανω ΕΓΓΡΑΦΗ</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Ναί</value>
   </data>
 </root>

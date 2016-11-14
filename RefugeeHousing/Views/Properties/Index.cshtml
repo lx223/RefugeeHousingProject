@@ -1,0 +1,27 @@
+﻿@using Resources
+@model List<RefugeeHousing.Models.Listing>
+
+<h2 class="display-1">@LocalizedText.AvailableProperties</h2>
+
+<p>@(LocalizedText.PriceGivenPerMonth).</p>
+
+<table class="table table-hover table-condensed">
+    <thead>
+        <tr>
+            <th>@LocalizedText.Reference</th>
+            <th>@LocalizedText.Bedrooms</th>
+            <th>@LocalizedText.Furnished</th>
+            <th>@LocalizedText.Price</th>
+        </tr>
+    </thead>
+    @foreach (var listing in Model)
+    {
+        <tr>
+            <td>@listing.Id</td>
+            <td>@listing.NumberOfBedrooms</td>
+            <td>@(listing.Furnished ? LocalizedText.Yes : LocalizedText.No)</td>
+            <td>€@listing.Price</td>
+        </tr>
+    }
+</table>
+

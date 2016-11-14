@@ -1,5 +1,4 @@
-﻿﻿@using RefugeeHousing.Models
-@using RefugeeHousing.Translations
+﻿﻿﻿@using RefugeeHousing.Models
 @using Resources
 ﻿@using RefugeeHousing.Translations
 <!DOCTYPE html>
@@ -28,6 +27,10 @@
                     <li>@Html.ActionLink(LocalizedText.Home, "Index", "Home")</li>
                     <li>@Html.ActionLink(LocalizedText.About, "About", "Home")</li>
                     <li>@Html.ActionLink(LocalizedText.Contact, "Contact", "Home")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink(LocalizedText.Properties, "Index", "Properties")</li>
+                    }
                 </ul>
                 <div class="navbar-right">
                     @Html.Partial("_LoginPartial")
