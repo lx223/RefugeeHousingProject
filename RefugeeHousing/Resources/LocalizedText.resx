@@ -144,6 +144,9 @@
   <data name="LanguagesSpokenPlaceholder" xml:space="preserve">
     <value>e.g. Greek, English, etc.</value>
   </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
@@ -162,12 +165,15 @@
   <data name="Properties" xml:space="preserve">
     <value>Properties</value>
   </data>
+  <data name="Property" xml:space="preserve">
+    <value>Property</value>
+  </data>
   <data name="Reference" xml:space="preserve">
     <value>Reference</value>
   </data>
   <data name="RegisterNewListing" xml:space="preserve">
     <value>Register new listing</value>
-	</data>
+  </data>
   <data name="About" xml:space="preserve">
     <value>About</value>
   </data>
@@ -194,5 +200,8 @@
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>
+  </data>
+  <data name="PropertyDetails" xml:space="preserve">
+    <value>Property Details</value>
   </data>
 </root>
