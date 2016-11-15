@@ -187,6 +187,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Location.
+        /// </summary>
+        public static string Location {
+            get {
+                return ResourceManager.GetString("Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log in.
         /// </summary>
         public static string LogIn {
@@ -268,6 +277,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Property.
+        /// </summary>
+        public static string Property {
+            get {
+                return ResourceManager.GetString("Property", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Property Details.
+        /// </summary>
+        public static string PropertyDetails {
+            get {
+                return ResourceManager.GetString("PropertyDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reference.
         /// </summary>
         public static string Reference {
@@ -291,6 +318,24 @@ namespace Resources {
         public static string RegisterNewListing {
             get {
                 return ResourceManager.GetString("RegisterNewListing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This property can be rented to refugees.
+        /// </summary>
+        public static string WillRentToRefugees {
+            get {
+                return ResourceManager.GetString("WillRentToRefugees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please confirm that the property can be rented to refugees.
+        /// </summary>
+        public static string WillRentToRefugeesPrompt {
+            get {
+                return ResourceManager.GetString("WillRentToRefugeesPrompt", resourceCulture);
             }
         }
         

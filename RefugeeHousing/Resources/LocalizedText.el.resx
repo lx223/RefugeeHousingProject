@@ -144,6 +144,9 @@
   <data name="LanguagesSpokenPlaceholder" xml:space="preserve">
     <value>π.χ. Ελληνικά, Αγγλικά, κλπ</value>
   </data>
+  <data name="Location" xml:space="preserve">
+    <value>Τοποθεσία</value>
+  </data>
   <data name="No" xml:space="preserve">
     <value>όχι</value>
   </data>
@@ -161,6 +164,9 @@
   </data>
   <data name="Properties" xml:space="preserve">
     <value>Ιδιότητες</value>
+  </data>
+  <data name="Property" xml:space="preserve">
+    <value>Ιδιοκτησία</value>
   </data>
   <data name="Reference" xml:space="preserve">
     <value>Αναφορά</value>
@@ -197,5 +203,14 @@
   </data>
   <data name="NoResultsFound" xml:space="preserve">
     <value>Δεν βρέθηκαν αποτελέσματα</value>
+  </data>
+  <data name="PropertyDetails" xml:space="preserve">
+    <value>Λεπτομέρειες Ακινήτου</value>
+  </data>
+  <data name="WillRentToRefugees" xml:space="preserve">
+    <value>Αυτή η ιδιότητα μπορεί να ενοικιαστεί για τους πρόσφυγες</value>
+  </data>
+  <data name="WillRentToRefugeesPrompt" xml:space="preserve">
+    <value>Επιβεβαιώστε ότι το ακίνητο μπορεί να ενοικιαστεί για τους πρόσφυγες</value>
   </data>
 </root>
