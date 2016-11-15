@@ -10,28 +10,11 @@ namespace RefugeeHousing.Controllers
     public class PropertiesController : Controller
     {
         
-        public ActionResult Index(ListingSearchModel listingSearchModel)
+        public ActionResult Index()
         {
-            
             using (var db = new ApplicationDbContext())
             {
-                var listings = db.Listings.Select(x => x);
-                if (listingSearchModel != null)
-                {
-                    if (listingSearchModel.MinBedrooms != null)
-                    {
-                        listings = listings.Where(x => x.NumberOfBedrooms >= (int) listingSearchModel.MinBedrooms);
-                    }
-                    if (listingSearchModel.MaxPricePerMonth != null)
-                    {
-                        listings = listings.Where(x => x.Price <= (int)listingSearchModel.MaxPricePerMonth);
-                    }
-                    if (listingSearchModel.IsFurnished != null)
-                    {
-                        listings = listings.Where(x => x.Furnished == (bool) listingSearchModel.IsFurnished);
-                    }
-                }
-                return View(new ListingSearchModel { ListingsToDisplay = listings.ToList() });
+                return View(new ListingSearchModel { ListingsToDisplay = db.Listings.ToList() });
             }
         }
     }

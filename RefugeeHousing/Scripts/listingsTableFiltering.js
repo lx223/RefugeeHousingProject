@@ -1,25 +1,25 @@
 ﻿$.fn.dataTable.ext.search.push(
     function (settings, data, dataIndex) {
         
-        const minBedrooms = parseInt($('#filter-min-bedrooms-text').val(), 10);
-        const maxPrice = parseInt($('#filter-max-price-text').val(), 10);
-        const shouldBeFurnished = $('#filter-furnished-text').val();
+        const minBedroomsFilterText = parseInt($('#filter-min-bedrooms-text').val(), 10);
+        const maxPriceFilterText = parseInt($('#filter-max-price-text').val(), 10);
+        const shouldBeFurnishedFilterText = $('#filter-furnished-text').val();
 
-        const bedrooms = parseFloat(data[1]);
-        const furnished = data[2] === "Yes" ? "True" : "False";
-        const price = parseInt(data[3].substring(1));
+        const listingBedrooms = parseFloat(data[1]);
+        const listingIsFurnished = data[2] === "Yes" ? "True" : "False";
+        const listingPrice = parseInt(data[3].substring(1));
 
         
-        if (!isNaN(minBedrooms) && bedrooms < minBedrooms) {
+        if (!isNaN(minBedroomsFilterText) && listingBedrooms < minBedroomsFilterText) {
             return false;
         }
 
-        if (!isNaN(maxPrice) && price > maxPrice) {
+        if (!isNaN(maxPriceFilterText) && listingPrice > maxPriceFilterText) {
             return false;
         }
 
-        if (shouldBeFurnished !== null && shouldBeFurnished !== "") {
-            if (shouldBeFurnished !== furnished) {
+        if (shouldBeFurnishedFilterText !== null && shouldBeFurnishedFilterText !== "") {
+            if (shouldBeFurnishedFilterText !== listingIsFurnished) {
                 return false;
             }
         }

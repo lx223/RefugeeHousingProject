@@ -222,7 +222,7 @@
       <DependentUpon>201611111655115_Merge.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ListingSearchModel.cs" />
-    <Compile Include="PropertyFilterReference.cs" />
+    <Compile Include="Services\PropertyFilterService.cs" />
     <Compile Include="Services\AccountService.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Controllers\PropertiesController.cs" />
@@ -305,6 +305,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.dataTables.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />

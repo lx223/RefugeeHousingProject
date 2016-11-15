@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using Resources;
 
-namespace RefugeeHousing
+namespace RefugeeHousing.Services
 {
-    public class PropertyFilterReference
+    public class PropertyFilterService
     {
         public static IEnumerable<SelectListItem> GetMinRoomsFilterList()
         {

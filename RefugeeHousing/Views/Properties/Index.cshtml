@@ -1,5 +1,6 @@
 ﻿@using System.Collections
 @using System.Web.Mvc.Html
+@using RefugeeHousing.Services
 @using Resources
 @model RefugeeHousing.Models.ListingSearchModel
 
@@ -8,23 +9,22 @@
 
 <p>@(LocalizedText.PriceGivenPerMonth).</p>
 
-
 <hr>
 <div class="col-md-3">
     <label>Filter by:</label>
 </div>
 <div class="col-md-3">
     <label>@LocalizedText.Bedrooms:</label>
-    @Html.DropDownListFor(model => model.MinBedrooms, PropertyFilterReference.GetMinRoomsFilterList(), new { @id = "filter-min-bedrooms-text" })
+    @Html.DropDownListFor(model => model.MinBedrooms, PropertyFilterService.GetMinRoomsFilterList(), new { @id = "filter-min-bedrooms-text" })
 </div>
 <div class="col-md-3">
     <label>@LocalizedText.Furnished?:</label>
-    @Html.DropDownListFor(model => model.IsFurnished, PropertyFilterReference.GetFurnishedFilterList(), new {@id = "filter-furnished-text"})
+    @Html.DropDownListFor(model => model.IsFurnished, PropertyFilterService.GetFurnishedFilterList(), new {@id = "filter-furnished-text"})
 </div>
 
 <div class="col-md-3">
     <label>@LocalizedText.Price:</label>
-    @Html.DropDownListFor(model => model.MaxPricePerMonth, PropertyFilterReference.GetMaxMonthlyRentFilterList(), new { @id = "filter-max-price-text" })
+    @Html.DropDownListFor(model => model.MaxPricePerMonth, PropertyFilterService.GetMaxMonthlyRentFilterList(), new { @id = "filter-max-price-text" })
 </div>
 <br>
 <hr>
