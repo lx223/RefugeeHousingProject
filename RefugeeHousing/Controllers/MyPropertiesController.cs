@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using RefugeeHousing.Models;
 
 namespace RefugeeHousing.Controllers
@@ -18,6 +19,7 @@ namespace RefugeeHousing.Controllers
         {
             using (var db = new ApplicationDbContext())
             {
+                listing.ListingOwnerId = User.Identity.GetUserId();
                 db.Listings.Add(listing);
                 db.SaveChanges();
             }

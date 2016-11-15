@@ -15,5 +15,6 @@ namespace RefugeeHousing.Models
         public bool Furnished { get; set; }
         public string Appliances { get; set; }
         public bool Elevator { get; set; } 
+        public string ListingOwnerId { get; set; }
     }
 }

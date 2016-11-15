@@ -221,6 +221,10 @@
     <Compile Include="Migrations\201611111655115_Merge.Designer.cs">
       <DependentUpon>201611111655115_Merge.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611151046422_ListingOwnerIdOnListing.cs" />
+    <Compile Include="Migrations\201611151046422_ListingOwnerIdOnListing.Designer.cs">
+      <DependentUpon>201611151046422_ListingOwnerIdOnListing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\LocalizedText.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -394,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611111655115_Merge.resx">
       <DependentUpon>201611111655115_Merge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611151046422_ListingOwnerIdOnListing.resx">
+      <DependentUpon>201611151046422_ListingOwnerIdOnListing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\LocalizedText.el.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
