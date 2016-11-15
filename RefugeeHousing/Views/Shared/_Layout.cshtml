@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -57,7 +58,6 @@
 
     @Scripts.Render("~/bundles/jquery")
 
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
     @Scripts.Render("~/bundles/datatables")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
