@@ -221,7 +221,6 @@
     <Compile Include="Migrations\201611111655115_Merge.Designer.cs">
       <DependentUpon>201611111655115_Merge.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\ListingSearchModel.cs" />
     <Compile Include="Services\PropertyFilterService.cs" />
     <Compile Include="Services\AccountService.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />

@@ -14,7 +14,7 @@ namespace RefugeeHousing.Controllers
         {
             using (var db = new ApplicationDbContext())
             {
-                return View(new ListingSearchModel { ListingsToDisplay = db.Listings.ToList() });
+                return View(db.Listings.ToList());
             }
         }
     }
