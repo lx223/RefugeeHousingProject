@@ -9,7 +9,6 @@ namespace RefugeeHousing.Controllers
     [Authorize]
     public class PropertiesController : Controller
     {
-        
         public ActionResult Index()
         {
             using (var db = new ApplicationDbContext())
