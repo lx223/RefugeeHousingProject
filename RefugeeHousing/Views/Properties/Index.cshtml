@@ -3,36 +3,37 @@
 @using Resources
 @model RefugeeHousing.Models.ListingSearchModel
 
+
 <h2 class="display-1">@LocalizedText.AvailableProperties</h2>
+
+<p>@(LocalizedText.PriceGivenPerMonth).</p>
 
 
 <hr>
-<h4>Filter by:</h4>
-@using (Html.BeginForm())
-{
-    <div class="form-group col-md-3">
-        <label>@LocalizedText.Bedrooms:</label>
-        @Html.DropDownListFor(model => model.MinBedrooms, PropertyFilterReference.GetMinRoomsFilterList())
-    </div>
+<div class="col-md-3">
+    <label>Filter by:</label>
+</div>
+<div class="col-md-3">
+    <label>@LocalizedText.Bedrooms:</label>
+    @Html.DropDownListFor(model => model.MinBedrooms, PropertyFilterReference.GetMinRoomsFilterList(), new { @id = "filter-min-bedrooms-text" })
+</div>
+<div class="col-md-3">
+    <label>@LocalizedText.Furnished?:</label>
+    @Html.DropDownListFor(model => model.IsFurnished, PropertyFilterReference.GetFurnishedFilterList(), new {@id = "filter-furnished-text"})
+</div>
 
-    <div class="form-check col-md-3">
-        <label>@LocalizedText.PricePerMonth:</label>
-        @Html.DropDownListFor(model => model.MaxPricePerMonth, PropertyFilterReference.GetMaxMonthlyRentFilterList())
-    </div>
-
-    <div class="form-check col-md-3">
-        <label>@LocalizedText.Furnished?:</label>
-        @Html.DropDownListFor(model => model.IsFurnished, PropertyFilterReference.GetFurnishedFilterList())
-    </div>
-
-    <input type="submit" class="btn btn-primary col-md-3" value="Filter" />
-}
-<table class="table table-hover table-condensed">
+<div class="col-md-3">
+    <label>@LocalizedText.Price:</label>
+    @Html.DropDownListFor(model => model.MaxPricePerMonth, PropertyFilterReference.GetMaxMonthlyRentFilterList(), new { @id = "filter-max-price-text" })
+</div>
+<br>
+<hr>
+<table id="listings-table" class="table table-hover table-condensed">
     <thead>
     <tr>
         <th>@LocalizedText.Reference</th>
         <th>@LocalizedText.Bedrooms</th>
-        <th>@LocalizedText.Furnished</th>
+        <th>@LocalizedText.Furnished?</th>
         <th>@LocalizedText.Price</th>
     </tr>
     </thead>
@@ -46,11 +47,3 @@
         </tr>
     }
 </table>
-
-@if (!Model.ListingsToDisplay.Any())
-{
-    <p>No Results Found</p>
-}
-
-<p>@(LocalizedText.PriceGivenPerMonth).</p>
-
