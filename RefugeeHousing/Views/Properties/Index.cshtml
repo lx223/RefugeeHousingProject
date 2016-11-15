@@ -9,22 +9,27 @@
 
 <p>@(LocalizedText.PriceGivenPerMonth).</p>
 
-<hr>
-<div class="col-xs-12 col-sm-3">
-    <label>Filter by:</label>
-</div>
-<div class="col-xs-4 col-sm-3">
-    <label>@LocalizedText.Bedrooms:</label>
-        @Html.DropDownList("filter-min-bedrooms-text", PropertyFilterService.GetMinRoomsFilterList())
-</div>
-<div class="col-xs-4 col-sm-3">
-    <label>@LocalizedText.Furnished?:</label>
-        @Html.DropDownList("filter-furnished-text", PropertyFilterService.GetFurnishedFilterList())
-</div>
+<!-- TODO REF-24: Style all the form elements on this page with Bootstrap -->
 
-<div class="col-xs-4 col-sm-3">
+<hr>
+<!-- TODO REF-24: Ensure this works at all screen sizes -->
+<div class="row">
+  <div class="col-xs-12 col-sm-3">
+    <label>Filter by:</label>
+  </div>
+  <div class="col-xs-4 col-sm-3">
+    <label>@LocalizedText.Bedrooms:</label>
+    @Html.DropDownList("filter-min-bedrooms-text", PropertyFilterService.GetMinRoomsFilterList())
+  </div>
+  <div class="col-xs-4 col-sm-3">
+    <label>@LocalizedText.Furnished?:</label>
+    @Html.DropDownList("filter-furnished-text", PropertyFilterService.GetFurnishedFilterList())
+  </div>
+
+  <div class="col-xs-4 col-sm-3">
     <label>@LocalizedText.Price:</label>
-        @Html.DropDownList("filter-max-price-text", PropertyFilterService.GetMaxMonthlyRentFilterList())
+    @Html.DropDownList("filter-max-price-text", PropertyFilterService.GetMaxMonthlyRentFilterList())
+  </div>
 </div>
 <br>
 <hr>
