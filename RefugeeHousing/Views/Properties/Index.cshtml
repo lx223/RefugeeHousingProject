@@ -17,17 +17,23 @@
     <label>Filter by:</label>
   </div>
   <div class="col-xs-12 col-sm-3">
-    <label>@LocalizedText.Bedrooms:</label>
-    @Html.DropDownList("filter-min-bedrooms-text", PropertyFilterService.GetMinRoomsFilterList())
+    <div class="form-group">
+      <label>@LocalizedText.Bedrooms</label>
+      @Html.DropDownList("filter-min-bedrooms-text", PropertyFilterService.GetMinRoomsFilterList(), new { @class = "form-control" })
+    </div>
   </div>
   <div class="col-xs-12 col-sm-3">
-    <label>@LocalizedText.Furnished?:</label>
-    @Html.DropDownList("filter-furnished-text", PropertyFilterService.GetFurnishedFilterList())
+    <div class="form-group">
+      <label>@LocalizedText.Furnished</label>
+      @Html.DropDownList("filter-furnished-text", PropertyFilterService.GetFurnishedFilterList(), new { @class = "form-control" })
+    </div>
   </div>
 
   <div class="col-xs-12 col-sm-3">
-    <label>@LocalizedText.Price:</label>
-    @Html.DropDownList("filter-max-price-text", PropertyFilterService.GetMaxMonthlyRentFilterList())
+    <div class="form-group">
+      <label>@LocalizedText.Price</label>
+      @Html.DropDownList("filter-max-price-text", PropertyFilterService.GetMaxMonthlyRentFilterList(), new { @class = "form-control" })
+    </div>
   </div>
 </div>
 <br>
