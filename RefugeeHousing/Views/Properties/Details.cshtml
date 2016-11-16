@@ -23,6 +23,10 @@
         <td>@(Model.Furnished ? LocalizedText.Yes : LocalizedText.No)</td>
     </tr>
     <tr>
+        <th>@LocalizedText.AppliancesIncluded:</th>
+        <td>@(Model.Appliances)</td>
+    </tr>
+    <tr>
         <th>@LocalizedText.PricePerMonth:</th>
         <td>€@Model.Price</td>
     </tr>
