@@ -1,4 +1,5 @@
 ﻿$.fn.dataTable.ext.search.push(
+    // ReSharper disable once UnusedParameter
     function (settings, data, dataIndex) {
         
         const minBedroomsFilterText = parseInt($('#filter-min-bedrooms-text').val(), 10);

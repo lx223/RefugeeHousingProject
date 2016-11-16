@@ -6,7 +6,6 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using RefugeeHousing.Models;
-using RefugeeHousing.Translations;
 
 namespace RefugeeHousing.Controllers
 {
