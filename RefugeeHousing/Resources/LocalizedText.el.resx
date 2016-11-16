@@ -183,9 +183,6 @@
   <data name="Contact" xml:space="preserve">
     <value>Επαφή</value>
   </data>
-  <data name="Hello" xml:space="preserve">
-    <value>Χαίρετε</value>
-  </data>
   <data name="Home" xml:space="preserve">
     <value>Σπίτι</value>
   </data>
@@ -209,5 +206,8 @@
   </data>
   <data name="WillRentToRefugees" xml:space="preserve">
     <value>Αυτή η ιδιότητα μπορεί να ενοικιαστεί για τους πρόσφυγες</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Λογαριασμός χρήστη</value>
   </data>
 </root>

@@ -183,8 +183,8 @@
   <data name="Contact" xml:space="preserve">
     <value>Contact</value>
   </data>
-  <data name="Hello" xml:space="preserve">
-    <value>Hello</value>
+  <data name="Account" xml:space="preserve">
+    <value>Account</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
