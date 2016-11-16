@@ -204,4 +204,10 @@
   <data name="Account" xml:space="preserve">
     <value>Λογαριασμός χρήστη</value>
   </data>
+  <data name="AddProperty" xml:space="preserve">
+    <value>Ανάθεση ακινήτου</value>
+  </data>
+  <data name="AllProperties" xml:space="preserve">
+    <value>Όλα τα ακίνητα</value>
+  </data>
 </root>

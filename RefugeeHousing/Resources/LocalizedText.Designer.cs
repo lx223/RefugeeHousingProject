@@ -79,6 +79,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Property.
+        /// </summary>
+        public static string AddProperty {
+            get {
+                return ResourceManager.GetString("AddProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All Properties.
+        /// </summary>
+        public static string AllProperties {
+            get {
+                return ResourceManager.GetString("AllProperties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Appliances included.
         /// </summary>
         public static string AppliancesIncluded {
@@ -246,15 +264,6 @@ namespace Resources {
         public static string PricePerMonth {
             get {
                 return ResourceManager.GetString("PricePerMonth", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Properties.
-        /// </summary>
-        public static string Properties {
-            get {
-                return ResourceManager.GetString("Properties", resourceCulture);
             }
         }
         

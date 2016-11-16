@@ -28,7 +28,8 @@
                 <ul class="nav navbar-nav">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink(LocalizedText.Properties, "Index", "Properties")</li>
+                        <li>@Html.ActionLink(LocalizedText.AllProperties, "Index", "Properties")</li>
+                        <li>@Html.ActionLink(LocalizedText.AddProperty, "Add", "MyProperties")</li>
                     }
                 </ul>
                 <div class="navbar-right">
