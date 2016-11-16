@@ -331,15 +331,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please confirm that the property can be rented to refugees.
-        /// </summary>
-        public static string WillRentToRefugeesPrompt {
-            get {
-                return ResourceManager.GetString("WillRentToRefugeesPrompt", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Yes.
         /// </summary>
         public static string Yes {
