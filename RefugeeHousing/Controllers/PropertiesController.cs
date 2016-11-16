@@ -1,11 +1,9 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using RefugeeHousing.Models;
-using RefugeeHousing.Translations;
 
 namespace RefugeeHousing.Controllers
 {
-    [Localization]
     [Authorize]
     public class PropertiesController : Controller
     {
