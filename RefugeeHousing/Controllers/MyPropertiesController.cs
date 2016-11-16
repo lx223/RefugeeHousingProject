@@ -5,6 +5,7 @@ using RefugeeHousing.Models;
 
 namespace RefugeeHousing.Controllers
 {
+    [Authorize]
     public class MyPropertiesController : Controller
     {
         // GET: AddListing
