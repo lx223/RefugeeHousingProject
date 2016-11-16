@@ -174,14 +174,8 @@
   <data name="RegisterNewListing" xml:space="preserve">
     <value>Register new listing</value>
   </data>
-  <data name="About" xml:space="preserve">
-    <value>About</value>
-  </data>
   <data name="ApplicationName" xml:space="preserve">
     <value>Refugee Housing</value>
-  </data>
-  <data name="Contact" xml:space="preserve">
-    <value>Contact</value>
   </data>
   <data name="Account" xml:space="preserve">
     <value>Account</value>

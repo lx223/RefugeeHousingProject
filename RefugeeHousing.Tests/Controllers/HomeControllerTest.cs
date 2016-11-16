@@ -20,31 +20,5 @@ namespace RefugeeHousing.Tests.Controllers
             // Assert
             result.Should().NotBeNull();
         }
-
-        [Test]
-        public void About()
-        {
-            // Arrange
-            HomeController controller = new HomeController();
-
-            // Act
-            ViewResult result = controller.About() as ViewResult;
-
-            // Assert
-            ((string) result.ViewBag.Message).Should().Be("Your application description page.");
-        }
-
-        [Test]
-        public void Contact()
-        {
-            // Arrange
-            HomeController controller = new HomeController();
-
-            // Act
-            ViewResult result = controller.Contact() as ViewResult;
-
-            // Assert
-            result.Should().NotBeNull();
-        }
     }
 }

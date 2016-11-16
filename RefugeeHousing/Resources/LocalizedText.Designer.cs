@@ -61,15 +61,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About.
-        /// </summary>
-        public static string About {
-            get {
-                return ResourceManager.GetString("About", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Account.
         /// </summary>
         public static string Account {
@@ -129,15 +120,6 @@ namespace Resources {
         public static string Bedrooms {
             get {
                 return ResourceManager.GetString("Bedrooms", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Contact.
-        /// </summary>
-        public static string Contact {
-            get {
-                return ResourceManager.GetString("Contact", resourceCulture);
             }
         }
         
