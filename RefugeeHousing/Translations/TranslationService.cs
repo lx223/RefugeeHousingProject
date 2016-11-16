@@ -62,7 +62,6 @@ namespace RefugeeHousing.Translations
                 var cookieCode = Convert.ToInt32(myCookie.Value);
                 return Enum.IsDefined(typeof (Language), cookieCode) ? (Language)cookieCode : (Language?) null;
             }
-            //TODO SMH Log exceptions
             catch (FormatException) { return null; }
             catch (OverflowException) { return null; }
         }
