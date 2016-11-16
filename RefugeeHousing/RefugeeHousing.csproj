@@ -229,6 +229,14 @@
     <Compile Include="Migrations\201611161343279_AddListingOwner.Designer.cs">
       <DependentUpon>201611161343279_AddListingOwner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611161355027_LinkMissingListingOwners.cs" />
+    <Compile Include="Migrations\201611161355027_LinkMissingListingOwners.Designer.cs">
+      <DependentUpon>201611161355027_LinkMissingListingOwners.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611161434304_RequireAllListingsToHaveAnOwner.cs" />
+    <Compile Include="Migrations\201611161434304_RequireAllListingsToHaveAnOwner.Designer.cs">
+      <DependentUpon>201611161434304_RequireAllListingsToHaveAnOwner.cs</DependentUpon>
+    </Compile>
     <Compile Include="Services\PropertyFilterService.cs" />
     <Compile Include="Resources\LocalizedText.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -422,6 +430,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611161343279_AddListingOwner.resx">
       <DependentUpon>201611161343279_AddListingOwner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611161355027_LinkMissingListingOwners.resx">
+      <DependentUpon>201611161355027_LinkMissingListingOwners.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611161434304_RequireAllListingsToHaveAnOwner.resx">
+      <DependentUpon>201611161434304_RequireAllListingsToHaveAnOwner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\LocalizedText.el.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

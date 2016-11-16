@@ -1,4 +1,3 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace RefugeeHousing.Models
@@ -16,6 +15,7 @@ namespace RefugeeHousing.Models
         public string Appliances { get; set; }
         public bool Elevator { get; set; } 
         public string OwnerId { get; set; }
+        [Required]
         public ApplicationUser Owner { get; set; }
     }
 }
