@@ -10,18 +10,23 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Production|Any CPU = Production|Any CPU
 		Release|Any CPU = Release|Any CPU
 		Test|Any CPU = Test|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{522249D0-5AD5-4422-91AF-565D19736F44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{522249D0-5AD5-4422-91AF-565D19736F44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{522249D0-5AD5-4422-91AF-565D19736F44}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{522249D0-5AD5-4422-91AF-565D19736F44}.Production|Any CPU.Build.0 = Production|Any CPU
 		{522249D0-5AD5-4422-91AF-565D19736F44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{522249D0-5AD5-4422-91AF-565D19736F44}.Release|Any CPU.Build.0 = Release|Any CPU
 		{522249D0-5AD5-4422-91AF-565D19736F44}.Test|Any CPU.ActiveCfg = Test|Any CPU
 		{522249D0-5AD5-4422-91AF-565D19736F44}.Test|Any CPU.Build.0 = Test|Any CPU
 		{259840AF-F11B-4F5A-8013-19AB5E8EE741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{259840AF-F11B-4F5A-8013-19AB5E8EE741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{259840AF-F11B-4F5A-8013-19AB5E8EE741}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{259840AF-F11B-4F5A-8013-19AB5E8EE741}.Production|Any CPU.Build.0 = Production|Any CPU
 		{259840AF-F11B-4F5A-8013-19AB5E8EE741}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{259840AF-F11B-4F5A-8013-19AB5E8EE741}.Release|Any CPU.Build.0 = Release|Any CPU
 		{259840AF-F11B-4F5A-8013-19AB5E8EE741}.Test|Any CPU.ActiveCfg = Test|Any CPU

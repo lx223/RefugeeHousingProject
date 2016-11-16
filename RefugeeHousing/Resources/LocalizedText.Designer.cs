@@ -223,6 +223,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No Results Found.
+        /// </summary>
+        public static string NoResultsFound {
+            get {
+                return ResourceManager.GetString("NoResultsFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number of bedrooms.
         /// </summary>
         public static string NumberOfBedrooms {
@@ -318,15 +327,6 @@ namespace Resources {
         public static string WillRentToRefugees {
             get {
                 return ResourceManager.GetString("WillRentToRefugees", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please confirm that the property can be rented to refugees.
-        /// </summary>
-        public static string WillRentToRefugeesPrompt {
-            get {
-                return ResourceManager.GetString("WillRentToRefugeesPrompt", resourceCulture);
             }
         }
         

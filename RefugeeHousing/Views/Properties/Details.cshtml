@@ -19,8 +19,12 @@
         <td>@Model.NumberOfBedrooms</td>
     </tr>
     <tr>
-        <th>@LocalizedText.Furnished?:</th>
+        <th>@LocalizedText.Furnished:</th>
         <td>@(Model.Furnished ? LocalizedText.Yes : LocalizedText.No)</td>
+    </tr>
+    <tr>
+        <th>@LocalizedText.AppliancesIncluded:</th>
+        <td>@(Model.Appliances)</td>
     </tr>
     <tr>
         <th>@LocalizedText.Elevator?:</th>

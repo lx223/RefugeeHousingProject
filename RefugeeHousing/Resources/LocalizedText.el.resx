@@ -201,13 +201,13 @@
   <data name="Yes" xml:space="preserve">
     <value>Ναί</value>
   </data>
+  <data name="NoResultsFound" xml:space="preserve">
+    <value>Δεν βρέθηκαν αποτελέσματα</value>
+  </data>
   <data name="PropertyDetails" xml:space="preserve">
     <value>Λεπτομέρειες Ακινήτου</value>
   </data>
   <data name="WillRentToRefugees" xml:space="preserve">
     <value>Αυτή η ιδιότητα μπορεί να ενοικιαστεί για τους πρόσφυγες</value>
-  </data>
-  <data name="WillRentToRefugeesPrompt" xml:space="preserve">
-    <value>Επιβεβαιώστε ότι το ακίνητο μπορεί να ενοικιαστεί για τους πρόσφυγες</value>
   </data>
 </root>
