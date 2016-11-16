@@ -225,6 +225,10 @@
     <Compile Include="Migrations\201611151046422_ListingOwnerIdOnListing.Designer.cs">
       <DependentUpon>201611151046422_ListingOwnerIdOnListing.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611161343279_AddListingOwner.cs" />
+    <Compile Include="Migrations\201611161343279_AddListingOwner.Designer.cs">
+      <DependentUpon>201611161343279_AddListingOwner.cs</DependentUpon>
+    </Compile>
     <Compile Include="Services\PropertyFilterService.cs" />
     <Compile Include="Resources\LocalizedText.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -415,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611151046422_ListingOwnerIdOnListing.resx">
       <DependentUpon>201611151046422_ListingOwnerIdOnListing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611161343279_AddListingOwner.resx">
+      <DependentUpon>201611161343279_AddListingOwner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\LocalizedText.el.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

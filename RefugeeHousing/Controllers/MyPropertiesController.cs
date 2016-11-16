@@ -19,7 +19,7 @@ namespace RefugeeHousing.Controllers
         {
             using (var db = new ApplicationDbContext())
             {
-                listing.ListingOwnerId = User.Identity.GetUserId();
+                listing.OwnerId = User.Identity.GetUserId();
                 db.Listings.Add(listing);
                 db.SaveChanges();
             }
