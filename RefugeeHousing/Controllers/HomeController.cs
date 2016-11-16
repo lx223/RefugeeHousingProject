@@ -11,14 +11,14 @@ namespace RefugeeHousing.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Placeholder for About page.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Placeholder for contact page.";
 
             return View();
         }

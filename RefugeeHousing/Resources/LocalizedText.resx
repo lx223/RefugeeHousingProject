@@ -178,7 +178,7 @@
     <value>About</value>
   </data>
   <data name="ApplicationName" xml:space="preserve">
-    <value>Application Name</value>
+    <value>Refugee Housing</value>
   </data>
   <data name="Contact" xml:space="preserve">
     <value>Contact</value>
@@ -208,6 +208,6 @@
     <value>Property Details</value>
   </data>
   <data name="WillRentToRefugees" xml:space="preserve">
-    <value>This property can be rented to refugees</value>
+    <value>I agree that this property can be rented to refugees</value>
   </data>
 </root>
