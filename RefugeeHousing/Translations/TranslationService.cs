@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Threading;
 using System.Web;
+using NLog;
 
 namespace RefugeeHousing.Translations
 {
@@ -17,6 +18,8 @@ namespace RefugeeHousing.Translations
     public class TranslationService : ITranslationService
     {
         private const string TranslationCookieName = "user_language_preference";
+
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         public void SetLanguage(string languageCode)
         {
@@ -59,10 +62,18 @@ namespace RefugeeHousing.Translations
             try
             {
                 var cookieCode = Convert.ToInt32(myCookie.Value);
-                return Enum.IsDefined(typeof (Language), cookieCode) ? (Language)cookieCode : (Language?) null;
+                return Enum.IsDefined(typeof (Language), cookieCode) ? (Language) cookieCode : (Language?) null;
             }
-            catch (FormatException) { return null; }
-            catch (OverflowException) { return null; }
+            catch (FormatException e)
+            {
+                Logger.Error(e, $"Could not parse language cookie '{myCookie.Value}'");
+                return null;
+            }
+            catch (OverflowException e)
+            {
+                Logger.Error(e, $"Could not parse language cookie '{myCookie.Value}'");
+                return null;
+            }
         }
     }
 }
