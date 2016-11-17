@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using RefugeeHousing.Filters;
 using RefugeeHousing.Translations;
 
 namespace RefugeeHousing
@@ -7,7 +8,7 @@ namespace RefugeeHousing
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            filters.Add(new ExceptionHandlingAttribute());
             filters.Add(new LocalizationAttribute());
         }
     }
