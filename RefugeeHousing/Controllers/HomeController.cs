@@ -9,8 +9,6 @@ namespace RefugeeHousing.Controllers
 
         public ActionResult Index()
         {
-            Logger.Info("Homepage requested");
-
             return View();
         }
     }
