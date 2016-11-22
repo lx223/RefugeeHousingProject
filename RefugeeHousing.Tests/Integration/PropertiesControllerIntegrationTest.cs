@@ -26,7 +26,7 @@ namespace RefugeeHousing.Tests.Integration
             dbContext.Listings = new FakeDbSet.InMemoryDbSet<Listing>();
 
             propertyEmailService = A.Fake<IPropertyEmailService>();
-            propertyContactService = new PropertyContactService(propertyEmailService, dbContext);
+            propertyContactService = new PropertyContactService(propertyEmailService, dbContext, new EmailBuilder());
 
             propertiesController = new PropertiesController(propertyContactService);
         }
@@ -41,7 +41,7 @@ namespace RefugeeHousing.Tests.Integration
             dbContext.Listings.Add(new Listing {Id = propertyId, Owner = new ApplicationUser {Email = ownerEmailAddress}});
 
             const string enquirerName = "name of the enquirer";
-            var propertyEnquiry = new PropertyEnquiry { PropertyId = propertyId, InquirerName = enquirerName };
+            var propertyEnquiry = new PropertyEnquiry { PropertyId = propertyId, EnquirerName = enquirerName };
 
             // Act
             await propertiesController.ContactOwner(propertyEnquiry);

@@ -38,7 +38,6 @@ namespace RefugeeHousing.Controllers
             }
         }
 
-        // TODO REF-42: Route to something sensible like /Properties/<id>/Contact, or include ID in form
         [HttpPost]
         public async Task<EmptyResult> ContactOwner(PropertyEnquiry propertyEnquiry)
         {

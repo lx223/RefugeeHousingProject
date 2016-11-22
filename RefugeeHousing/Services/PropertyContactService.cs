@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using NLog;
 using RefugeeHousing.Models;
 using RefugeeHousing.ViewModels;
-using SendGrid.Helpers.Mail;
 
 namespace RefugeeHousing.Services
 {
@@ -19,13 +18,13 @@ namespace RefugeeHousing.Services
         private readonly IApplicationDbContext dbContext;
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+        private readonly IEmailBuilder emailBuilder;
 
-        private const string FromAddress = "refugeehousingproject@example.com";
-
-        public PropertyContactService(IPropertyEmailService propertyEmailService, IApplicationDbContext dbContext)
+        public PropertyContactService(IPropertyEmailService propertyEmailService, IApplicationDbContext dbContext, IEmailBuilder emailBuilder)
         {
             this.propertyEmailService = propertyEmailService;
             this.dbContext = dbContext;
+            this.emailBuilder = emailBuilder;
         }
 
         public async Task ContactOwner(PropertyEnquiry enquiry)
@@ -34,25 +33,11 @@ namespace RefugeeHousing.Services
                 .Include(l => l.Owner)
                 .First(l => l.Id == enquiry.PropertyId);
 
-            var recipient = listing.Owner.Email;
+            var email = emailBuilder.Build(enquiry, listing.Owner);
 
-            // TODO REF-42: Fill in real values
-            var from = new Email(FromAddress);
-            var to = new Email(recipient);
-            var subject = "Email from Refugee Housing Project";
-            var content = new Content("text/plain", ContentText(enquiry));
-
-            var email = new Mail(from, subject, to, content);
-
-            Logger.Info($"Sending email to '{recipient}' about property '{enquiry.PropertyId}'");
+            Logger.Info($"Sending email to '{listing.Owner.Email}' about property '{enquiry.PropertyId}'");
 
             await propertyEmailService.SendEmail(email);
-        }
-
-        private static string ContentText(PropertyEnquiry enquiry)
-        {
-            return "Hello,\n" +
-                   $"You have a query from {enquiry.InquirerName} regarding your property.";
         }
     }
 }

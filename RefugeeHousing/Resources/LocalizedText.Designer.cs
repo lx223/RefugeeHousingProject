@@ -142,11 +142,38 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact property owner.
+        /// </summary>
+        public static string ContactFormHeader {
+            get {
+                return ResourceManager.GetString("ContactFormHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Elevator.
         /// </summary>
         public static string Elevator {
             get {
                 return ResourceManager.GetString("Elevator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your email address.
+        /// </summary>
+        public static string EnquirerEmailAddress {
+            get {
+                return ResourceManager.GetString("EnquirerEmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your name.
+        /// </summary>
+        public static string EnquirerName {
+            get {
+                return ResourceManager.GetString("EnquirerName", resourceCulture);
             }
         }
         
@@ -309,6 +336,15 @@ namespace Resources {
         public static string RegisterNewListing {
             get {
                 return ResourceManager.GetString("RegisterNewListing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Submit Enquiry.
+        /// </summary>
+        public static string SubmitEnquiry {
+            get {
+                return ResourceManager.GetString("SubmitEnquiry", resourceCulture);
             }
         }
         

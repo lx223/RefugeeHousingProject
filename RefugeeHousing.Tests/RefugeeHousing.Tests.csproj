@@ -142,6 +142,7 @@
   <ItemGroup>
     <Compile Include="Integration\PropertiesControllerIntegrationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EmailBuilderTest.cs" />
     <Compile Include="Services\PropertyContactServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>

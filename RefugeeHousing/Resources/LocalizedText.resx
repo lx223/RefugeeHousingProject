@@ -207,4 +207,16 @@
   <data name="WillRentToRefugees" xml:space="preserve">
     <value>I agree that this property can be rented to refugees</value>
   </data>
+  <data name="ContactFormHeader" xml:space="preserve">
+    <value>Contact property owner</value>
+  </data>
+  <data name="EnquirerName" xml:space="preserve">
+    <value>Your name</value>
+  </data>
+  <data name="EnquirerEmailAddress" xml:space="preserve">
+    <value>Your email address</value>
+  </data>
+  <data name="SubmitEnquiry" xml:space="preserve">
+    <value>Submit Enquiry</value>
+  </data>
 </root>

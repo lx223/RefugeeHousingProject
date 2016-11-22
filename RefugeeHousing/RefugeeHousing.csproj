@@ -251,6 +251,7 @@
     <Compile Include="Migrations\201611161434304_RequireAllListingsToHaveAnOwner.Designer.cs">
       <DependentUpon>201611161434304_RequireAllListingsToHaveAnOwner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\EmailBuilder.cs" />
     <Compile Include="Services\PropertyContactService.cs" />
     <Compile Include="Services\PropertyEmailService.cs" />
     <Compile Include="Services\PropertyFilterService.cs" />
@@ -397,6 +398,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\MyProperties\Add.cshtml" />
     <Content Include="Views\Properties\Index.cshtml" />
+    <None Include="Views\Properties\_EnquiryForm.cshtml" />
     <None Include="Web.Production.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

@@ -210,4 +210,16 @@
   <data name="AllProperties" xml:space="preserve">
     <value>Όλα τα ακίνητα</value>
   </data>
+  <data name="ContactFormHeader" xml:space="preserve">
+    <value>ιδιοκτήτης ακινήτου επαφής</value>
+  </data>
+  <data name="EnquirerName" xml:space="preserve">
+    <value>Tο όνομα σου</value>
+  </data>
+  <data name="SubmitEnquiry" xml:space="preserve">
+    <value>υποβάλλει το ερώτημά</value>
+  </data>
+  <data name="EnquirerEmailAddress" xml:space="preserve">
+    <value>Το εμαιλ σου</value>
+  </data>
 </root>

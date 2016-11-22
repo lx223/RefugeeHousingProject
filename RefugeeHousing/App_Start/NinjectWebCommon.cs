@@ -70,6 +70,7 @@ namespace RefugeeHousing.App_Start
             kernel.Bind<IAccountService>().To<AccountService>();
             kernel.Bind<IPropertyEmailService>().To<PropertyEmailService>().InSingletonScope();
             kernel.Bind<IPropertyContactService>().To<PropertyContactService>().InSingletonScope();
+            kernel.Bind<IEmailBuilder>().To<EmailBuilder>().InSingletonScope();
         }        
     }
 }

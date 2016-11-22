@@ -1,37 +1,42 @@
-﻿@using Resources
+﻿@using RefugeeHousing.ViewModels
+@using Resources
 @model RefugeeHousing.Models.Listing
 
 <h2 class="display-1">@(LocalizedText.PropertyDetails)</h2>
 
 <table class="table table-hover table-condensed">
-    <tr>
-        <th>@LocalizedText.Reference:</th>
-        <td>@Model.Id</td>
-    </tr>
-    <tr>
-        <th>@LocalizedText.Location:</th>
-        <td>PLACEHOLDER</td>
-    </tr>
-    <tr>
-        <th>@LocalizedText.Bedrooms:</th>
-        <td>@Model.NumberOfBedrooms</td>
-    </tr>
-    <tr>
-        <th>@LocalizedText.Furnished:</th>
-        <td>@(Model.Furnished ? LocalizedText.Yes : LocalizedText.No)</td>
-    </tr>
-    <tr>
-        <th>@LocalizedText.AppliancesIncluded:</th>
-        <td>@(Model.Appliances)</td>
-    </tr>
-    <tr>
-        <th>@LocalizedText.Elevator:</th>
-        <td>@(Model.Elevator ? LocalizedText.Yes : LocalizedText.No)</td>
-    </tr>
-    <tr>
-        <th>@LocalizedText.PricePerMonth:</th>
-        <td>€@Model.Price</td>
-    </tr>
+  <tr>
+    <th>@LocalizedText.Reference:</th>
+    <td>@Model.Id</td>
+  </tr>
+  <tr>
+    <th>@LocalizedText.Location:</th>
+    <td>PLACEHOLDER</td>
+  </tr>
+  <tr>
+    <th>@LocalizedText.Bedrooms:</th>
+    <td>@Model.NumberOfBedrooms</td>
+  </tr>
+  <tr>
+    <th>@LocalizedText.Furnished:</th>
+    <td>@(Model.Furnished ? LocalizedText.Yes : LocalizedText.No)</td>
+  </tr>
+  <tr>
+    <th>@LocalizedText.AppliancesIncluded:</th>
+    <td>@(Model.Appliances)</td>
+  </tr>
+  <tr>
+    <th>@LocalizedText.Elevator:</th>
+    <td>@(Model.Elevator ? LocalizedText.Yes : LocalizedText.No)</td>
+  </tr>
+  <tr>
+    <th>@LocalizedText.PricePerMonth:</th>
+    <td>€@Model.Price</td>
+  </tr>
 </table>
 
+<h2 class="display-1">@(LocalizedText.ContactFormHeader)</h2>
 
+@{
+  Html.RenderPartial("_EnquiryForm", new PropertyEnquiry {PropertyId = Model.Id});
+}
