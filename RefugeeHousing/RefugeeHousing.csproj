@@ -320,6 +320,7 @@
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="Translations\TranslationService.cs" />
+    <Compile Include="ViewModels\AddListing.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
