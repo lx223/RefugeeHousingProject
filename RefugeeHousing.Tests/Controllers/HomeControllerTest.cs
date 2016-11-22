@@ -5,6 +5,7 @@ using RefugeeHousing.Controllers;
 
 namespace RefugeeHousing.Tests.Controllers
 {
+    // TODO REF-42: Delete once there are some meaningful tests
     [TestFixture]
     public class HomeControllerTest
     {

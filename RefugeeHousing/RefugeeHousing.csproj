@@ -251,6 +251,8 @@
     <Compile Include="Migrations\201611161434304_RequireAllListingsToHaveAnOwner.Designer.cs">
       <DependentUpon>201611161434304_RequireAllListingsToHaveAnOwner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\PropertyContactService.cs" />
+    <Compile Include="Services\PropertyEmailService.cs" />
     <Compile Include="Services\PropertyFilterService.cs" />
     <Compile Include="Resources\LocalizedText.Designer.cs">
       <AutoGen>True</AutoGen>
