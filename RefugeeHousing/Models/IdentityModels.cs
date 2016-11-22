@@ -21,7 +21,13 @@ namespace RefugeeHousing.Models
         public Language PreferredLanguage { get; set; }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public interface IApplicationDbContext
+    {
+        IDbSet<Listing> Listings { get; set; }
+        IDbSet<ApplicationUser> Users { get; set; }
+    }
+
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -33,6 +39,6 @@ namespace RefugeeHousing.Models
             return new ApplicationDbContext();
         }
 
-        public virtual DbSet<Listing> Listings { get; set; }
+        public virtual IDbSet<Listing> Listings { get; set; }
     }
 }

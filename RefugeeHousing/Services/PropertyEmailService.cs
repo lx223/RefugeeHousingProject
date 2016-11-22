@@ -21,12 +21,9 @@ namespace RefugeeHousing.Services
             // TODO REF-42: Handle exceptions and unexpected status codes (i.e. not 202 Accepted)
         }
 
-        // TODO REF-42: Can return something more specific?
-        private static async Task<object> Send(Mail email)
+        private static async Task<dynamic> Send(Mail email)
         {
             // TODO REF-42: Log warning if API key is null
-            // TODO REF-42: Log info if email is being sent
-
             var apiKey = Environment.GetEnvironmentVariable(ApiKeyEnvironmentVariable);
             var sendGridClient = new SendGridAPIClient(apiKey);
 
