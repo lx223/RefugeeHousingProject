@@ -7,6 +7,8 @@ namespace RefugeeHousing.Models
         public int Id { get; set; }
         [Required]
         public string LanguagesSpoken { get; set; }
+        public string LocationId { get; set; }
+        public Location Location { get; set; }
         [Required]
         public decimal Price { get; set; }
         [Required]

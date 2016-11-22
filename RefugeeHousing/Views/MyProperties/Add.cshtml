@@ -1,4 +1,5 @@
 ﻿@model RefugeeHousing.Models.Listing
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVoStnfDnGTcigrvKe6SzjT9i1ftA8x4U&libraries=places"></script>
 
 @{
     ViewBag.Title = Resources.LocalizedText.AddNewListing;
@@ -21,6 +22,11 @@
     <div class="form-group">
         <label>@Resources.LocalizedText.LanguagesSpoken</label>
         @Html.TextBoxFor(model => model.LanguagesSpoken, new {@class = "form-control", placeholder = Resources.LocalizedText.LanguagesSpokenPlaceholder, required = "required"})
+    </div>
+
+    <div class="form-group">
+        <label>@Resources.LocalizedText.Location</label>
+@*        @Html.TextBoxFor(model => model.Location, new {id = "location", @class = "form-control", placeholder = Resources.LocalizedText.LocationPlaceholder, onfocus = "autoCompleteLocation()" })*@
     </div>
 
     <div class="form-group">
@@ -51,3 +57,9 @@
 
     <input type="submit" class="btn btn-primary" value="Register new listing" />
 }
+
+<script type="text/javascript">
+    function autoCompleteLocation() {
+        new google.maps.places.Autocomplete(document.getElementById('location'));
+    }
+</script>

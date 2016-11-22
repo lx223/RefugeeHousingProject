@@ -210,4 +210,7 @@
   <data name="AllProperties" xml:space="preserve">
     <value>Όλα τα ακίνητα</value>
   </data>
+  <data name="LocationPlaceholder" xml:space="preserve">
+    <value>Εισάγετε τη διεύθυνσή σας</value>
+  </data>
 </root>

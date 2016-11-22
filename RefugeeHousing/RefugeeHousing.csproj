@@ -242,6 +242,11 @@
     <Compile Include="Migrations\201611161434304_RequireAllListingsToHaveAnOwner.Designer.cs">
       <DependentUpon>201611161434304_RequireAllListingsToHaveAnOwner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611221350106_AddPropertyLocation.cs" />
+    <Compile Include="Migrations\201611221350106_AddPropertyLocation.Designer.cs">
+      <DependentUpon>201611221350106_AddPropertyLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Services\PropertyFilterService.cs" />
     <Compile Include="Resources\LocalizedText.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -439,6 +444,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611161434304_RequireAllListingsToHaveAnOwner.resx">
       <DependentUpon>201611161434304_RequireAllListingsToHaveAnOwner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611221350106_AddPropertyLocation.resx">
+      <DependentUpon>201611221350106_AddPropertyLocation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\LocalizedText.el.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

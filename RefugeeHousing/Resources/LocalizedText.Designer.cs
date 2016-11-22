@@ -196,6 +196,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter your address.
+        /// </summary>
+        public static string LocationPlaceholder {
+            get {
+                return ResourceManager.GetString("LocationPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log in.
         /// </summary>
         public static string LogIn {
