@@ -3,13 +3,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using NLog;
 using RefugeeHousing.Models;
+using RefugeeHousing.ViewModels;
 using SendGrid.Helpers.Mail;
 
 namespace RefugeeHousing.Services
 {
     public interface IPropertyContactService
     {
-        Task ContactOwner(int propertyId);
+        Task ContactOwner(PropertyEnquiry enquiry);
     }
 
     public class PropertyContactService : IPropertyContactService
@@ -27,25 +28,31 @@ namespace RefugeeHousing.Services
             this.dbContext = dbContext;
         }
 
-        public async Task ContactOwner(int propertyId)
+        public async Task ContactOwner(PropertyEnquiry enquiry)
         {
             var listing = dbContext.Listings
                 .Include(l => l.Owner)
-                .First(l => l.Id == propertyId);
+                .First(l => l.Id == enquiry.PropertyId);
 
-            var owner = listing.Owner;
-            var recipient = owner.Email;
+            var recipient = listing.Owner.Email;
 
             // TODO REF-42: Fill in real values
             var from = new Email(FromAddress);
-            var subject = "This is a test email sent via SendGrid";
             var to = new Email(recipient);
-            var content = new Content("text/plain", "Hello, Email!");
-            var email = new Mail(@from, subject, to, content);
+            var subject = "Email from Refugee Housing Project";
+            var content = new Content("text/plain", ContentText(enquiry));
 
-            Logger.Info($"Sending email to '{recipient}' about property '{propertyId}'");
+            var email = new Mail(from, subject, to, content);
+
+            Logger.Info($"Sending email to '{recipient}' about property '{enquiry.PropertyId}'");
 
             await propertyEmailService.SendEmail(email);
+        }
+
+        private static string ContentText(PropertyEnquiry enquiry)
+        {
+            return "Hello,\n" +
+                   $"You have a query from {enquiry.InquirerName} regarding your property.";
         }
     }
 }

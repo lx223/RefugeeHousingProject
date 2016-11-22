@@ -5,6 +5,7 @@ using NUnit.Framework;
 using RefugeeHousing.Controllers;
 using RefugeeHousing.Models;
 using RefugeeHousing.Services;
+using RefugeeHousing.ViewModels;
 using SendGrid.Helpers.Mail;
 
 namespace RefugeeHousing.Tests.Integration
@@ -39,19 +40,24 @@ namespace RefugeeHousing.Tests.Integration
 
             dbContext.Listings.Add(new Listing {Id = propertyId, Owner = new ApplicationUser {Email = ownerEmailAddress}});
 
+            const string enquirerName = "name of the enquirer";
+            var propertyEnquiry = new PropertyEnquiry { PropertyId = propertyId, InquirerName = enquirerName };
+
             // Act
-            await propertiesController.ContactOwner(propertyId);
+            await propertiesController.ContactOwner(propertyEnquiry);
 
             // Assert
-            A.CallTo(() => propertyEmailService.SendEmail(A<Mail>.That.Matches(IsEmailToSingleRecipient(ownerEmailAddress)))).MustHaveHappened();
+            A.CallTo(() => propertyEmailService.SendEmail(A<Mail>.That.Matches(EmailMatching(ownerEmailAddress, enquirerName)))).MustHaveHappened();
         }
 
-        private static Expression<Func<Mail, bool>> IsEmailToSingleRecipient(string emailAddress)
+        private static Expression<Func<Mail, bool>> EmailMatching(string emailAddress, string enquirerName)
         {
             return m => 
                 m.Personalization.Count == 1
                 && m.Personalization[0].Tos.Count == 1
-                && m.Personalization[0].Tos[0].Address == emailAddress;
+                && m.Personalization[0].Tos[0].Address == emailAddress
+                // This is not a strict match, but it ensures that the email mentions the enquirer's name somewhere
+                && m.Contents[0].Value.Contains(enquirerName);
         }
     }
 }

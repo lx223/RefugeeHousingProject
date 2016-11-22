@@ -4,6 +4,7 @@ using FakeItEasy;
 using NUnit.Framework;
 using RefugeeHousing.Models;
 using RefugeeHousing.Services;
+using RefugeeHousing.ViewModels;
 using SendGrid.Helpers.Mail;
 
 namespace RefugeeHousing.Tests.Services
@@ -37,7 +38,7 @@ namespace RefugeeHousing.Tests.Services
             dbContext.Listings.Add(new Listing { Id = propertyId, Owner = new ApplicationUser { Email = ownerEmailAddress } });
 
             // Act
-            propertyContactService.ContactOwner(propertyId);
+            propertyContactService.ContactOwner(new PropertyEnquiry {PropertyId = propertyId});
 
             // Assert
             A.CallTo(() => propertyEmailService.SendEmail(A<Mail>.That.Matches(IsEmailToSingleRecipient(ownerEmailAddress)))).MustHaveHappened();
@@ -56,7 +57,7 @@ namespace RefugeeHousing.Tests.Services
             dbContext.Listings.Add(new Listing { Id = 3, Owner = new ApplicationUser { Email = ownerEmailAddress3 } });
 
             // Act
-            propertyContactService.ContactOwner(2);
+            propertyContactService.ContactOwner(new PropertyEnquiry {PropertyId = 2});
 
             // Assert
             A.CallTo(() => propertyEmailService.SendEmail(A<Mail>.That.Matches(IsEmailToSingleRecipient(ownerEmailAddress1)))).MustNotHaveHappened();
@@ -64,7 +65,27 @@ namespace RefugeeHousing.Tests.Services
             A.CallTo(() => propertyEmailService.SendEmail(A<Mail>.That.Matches(IsEmailToSingleRecipient(ownerEmailAddress1)))).MustNotHaveHappened();
         }
 
-        // TODO REF-42: Combine with integration test
+        [Test]
+        public void ContactingOwnerIncludesNameOfEnquirer()
+        {
+            // Arrange
+            // TODO REF-42: Tidy up unnecessary stuff
+            const int propertyId = 6;
+            const string ownerEmailAddress = "email address of owner";
+
+            dbContext.Listings.Add(new Listing { Id = propertyId, Owner = new ApplicationUser { Email = ownerEmailAddress } });
+
+            const string nameOfEnquirer = "name of enquirer";
+            var enquiry = new PropertyEnquiry {PropertyId = propertyId, InquirerName = nameOfEnquirer};
+
+            // Act
+            propertyContactService.ContactOwner(enquiry);
+
+            // Assert
+            A.CallTo(() => propertyEmailService.SendEmail(A<Mail>.That.Matches(m => m.Contents[0].Value.Contains(nameOfEnquirer)))).MustHaveHappened();
+        }
+
+        // TODO REF-42: Combine all matchers with integration test
         private static Expression<Func<Mail, bool>> IsEmailToSingleRecipient(string emailAddress)
         {
             return m =>

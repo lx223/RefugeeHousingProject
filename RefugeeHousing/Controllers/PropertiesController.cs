@@ -1,7 +1,9 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using RefugeeHousing.Models;
 using RefugeeHousing.Services;
+using RefugeeHousing.ViewModels;
 
 namespace RefugeeHousing.Controllers
 {
@@ -36,11 +38,11 @@ namespace RefugeeHousing.Controllers
             }
         }
 
-        // TODO REF-42: Make POST
-        // TODO REF-42: Route to something sensible like /Properties/<id>/Contact
-        public async System.Threading.Tasks.Task<EmptyResult> ContactOwner(int propertyId)
+        // TODO REF-42: Route to something sensible like /Properties/<id>/Contact, or include ID in form
+        [HttpPost]
+        public async Task<EmptyResult> ContactOwner(PropertyEnquiry propertyEnquiry)
         {
-            await propertyContactService.ContactOwner(propertyId);
+            await propertyContactService.ContactOwner(propertyEnquiry);
 
             return new EmptyResult();
         }
