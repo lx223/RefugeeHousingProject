@@ -246,6 +246,10 @@
     <Compile Include="Migrations\201611221350106_AddPropertyLocation.Designer.cs">
       <DependentUpon>201611221350106_AddPropertyLocation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611221356467_PopulateMissingLocations.cs" />
+    <Compile Include="Migrations\201611221356467_PopulateMissingLocations.Designer.cs">
+      <DependentUpon>201611221356467_PopulateMissingLocations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Location.cs" />
     <Compile Include="Services\PropertyFilterService.cs" />
     <Compile Include="Resources\LocalizedText.Designer.cs">
@@ -447,6 +451,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611221350106_AddPropertyLocation.resx">
       <DependentUpon>201611221350106_AddPropertyLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611221356467_PopulateMissingLocations.resx">
+      <DependentUpon>201611221356467_PopulateMissingLocations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\LocalizedText.el.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
