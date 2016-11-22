@@ -19,6 +19,8 @@ namespace RefugeeHousing.Services
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
+        private const string FromAddress = "refugeehousingproject@example.com";
+
         public PropertyContactService(IPropertyEmailService propertyEmailService, IApplicationDbContext dbContext)
         {
             this.propertyEmailService = propertyEmailService;
@@ -35,7 +37,7 @@ namespace RefugeeHousing.Services
             var recipient = owner.Email;
 
             // TODO REF-42: Fill in real values
-            var from = new Email("suzanne.hamilton@softwire.com");
+            var from = new Email(FromAddress);
             var subject = "This is a test email sent via SendGrid";
             var to = new Email(recipient);
             var content = new Content("text/plain", "Hello, Email!");
