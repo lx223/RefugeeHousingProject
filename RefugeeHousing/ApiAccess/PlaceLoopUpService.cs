@@ -15,7 +15,7 @@ namespace RefugeeHousing.ApiAccess
         {
             var client = new RestClient("https://maps.googleapis.com/maps/api/place/details/json?");
             var request = new RestRequest(Method.GET);
-            request.AddParameter("key", "AIzaSyAi0qtOthsQrOMs_IrfghpmlBKqaSUHmI0");
+            request.AddParameter("key", Resources.ApiKeys.GoogleMapsJavaScriptApi);
             request.AddParameter("placeid", locationId);
 
             if (language == Languages.Greek)

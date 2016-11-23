@@ -261,6 +261,11 @@
       <DependentUpon>201611221420166_MakePropertyLocationRequired.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Resources\ApiKeys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApiKeys.resx</DependentUpon>
+    </Compile>
     <Compile Include="Services\PropertyFilterService.cs" />
     <Compile Include="Resources\LocalizedText.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -469,6 +474,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611221420166_MakePropertyLocationRequired.resx">
       <DependentUpon>201611221420166_MakePropertyLocationRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ApiKeys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ApiKeys.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\LocalizedText.el.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
