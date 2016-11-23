@@ -225,4 +225,10 @@
   <data name="WillSignContract" xml:space="preserve">
     <value>Εξ ονόματος του οργανισμού μου, συμφωνώ ότι είμαστε πρόθυμοι να υπογράψετε μισθωτήριο για λογαριασμό μιας οικογένειας προσφύγων, και να πληρώσει το ενοίκιο μπροστά του πρώτου και του τελευταίου μήνα</value>
   </data>
+  <data name="OrganizationWebsite" xml:space="preserve">
+    <value>Σύνδεσμο για να μάθετε περισσότερες πληροφορίες για τον οργανισμό σας, π.χ. την ιστοσελίδα σας ή την σελίδα στο Facebook</value>
+  </data>
+  <data name="OrganizationName" xml:space="preserve">
+    <value>Όνομα Οργανισμού</value>
+  </data>
 </root>

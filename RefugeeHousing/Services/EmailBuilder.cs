@@ -31,7 +31,9 @@ namespace RefugeeHousing.Services
             // differently to the first line.
             return $@"Hello,
 
-You have a query from {enquiry.EnquirerName} regarding your property.
+You have a query regarding your property from {enquiry.EnquirerName}, on behalf of the organization '{enquiry.OrganizationName}'.
+
+For more details on the organization, visit {enquiry.OrganizationWebsite}
 
 This person has expressed their willingness to sign medium-to-long-term leases on behalf of refugee families, and to pay first and last month's rent up front.";
         }

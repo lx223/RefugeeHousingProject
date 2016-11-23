@@ -39,16 +39,42 @@ namespace RefugeeHousing.Tests.Services
         public void EmailIncludesNameOfEnquirer()
         {
             // Arrange
-            var owner = new ApplicationUser();
-
             const string nameOfEnquirer = "name of enquirer";
             var enquiry = new PropertyEnquiry { PropertyId = 2, EnquirerName = nameOfEnquirer };
 
             // Act
-            var email = emailBuilder.Build(enquiry, owner);
+            var email = emailBuilder.Build(enquiry, new ApplicationUser());
 
             // Assert
             email.Contents[0].Value.Should().Contain(nameOfEnquirer);
+        }
+
+        [Test]
+        public void EmailIncludesOrganizationName()
+        {
+            // Arrange
+            const string organizationName = "name of the NGO";
+            var enquiry = new PropertyEnquiry { PropertyId = 2, OrganizationName = organizationName };
+
+            // Act
+            var email = emailBuilder.Build(enquiry, new ApplicationUser());
+
+            // Assert
+            email.Contents[0].Value.Should().Contain(organizationName);
+        }
+
+        [Test]
+        public void EmailIncludesLinkToOrganizationWebsite()
+        {
+            // Arrange
+            const string organizationWebsite = "some organization website";
+            var enquiry = new PropertyEnquiry { PropertyId = 2, OrganizationWebsite = organizationWebsite };
+
+            // Act
+            var email = emailBuilder.Build(enquiry, new ApplicationUser());
+
+            // Assert
+            email.Contents[0].Value.Should().Contain(organizationWebsite);
         }
 
         [Test]

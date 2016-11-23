@@ -219,6 +219,12 @@
   <data name="EnquirerEmailAddress" xml:space="preserve">
     <value>Your email address</value>
   </data>
+  <data name="OrganizationName" xml:space="preserve">
+    <value>Organization name</value>
+  </data>
+  <data name="OrganizationWebsite" xml:space="preserve">
+    <value>Link to find more information about your organisation, e.g. your website or Facebook page</value>
+  </data>
   <data name="WillSignContract" xml:space="preserve">
     <value>On behalf of my organisation, I agree that we are willing to sign a lease on behalf of a refugee family, and to pay the first and last month's rent up front</value>
   </data>
