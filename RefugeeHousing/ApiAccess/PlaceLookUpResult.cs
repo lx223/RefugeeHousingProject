@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace RefugeeHousing.ApiClient
+namespace RefugeeHousing.ApiAccess
 {
-    public class PlaceIdLookUpResult
+    public class PlaceLookUpResult
     {
         public ResultWrapper Result { get; set; }
         public class ResultWrapper

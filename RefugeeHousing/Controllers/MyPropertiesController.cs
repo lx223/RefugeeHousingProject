@@ -1,12 +1,9 @@
 ﻿using System.Linq;
-using System.Net;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using RefugeeHousing.ApiAccess;
-using RefugeeHousing.ApiClient;
 using RefugeeHousing.Models;
 using RefugeeHousing.ViewModels;
-using RestSharp;
 
 namespace RefugeeHousing.Controllers
 {
@@ -34,8 +31,8 @@ namespace RefugeeHousing.Controllers
                 }
                 else
                 {
-                    var englishName = PlaceIdLoopUpService.FindLocalityNameByLocationId(locationId, PlaceIdLoopUpService.Languages.English);
-                    var greekName = PlaceIdLoopUpService.FindLocalityNameByLocationId(locationId, PlaceIdLoopUpService.Languages.English);
+                    var englishName = PlaceLoopUpService.FindLocalityNameByLocationId(locationId, PlaceLoopUpService.Languages.English);
+                    var greekName = PlaceLoopUpService.FindLocalityNameByLocationId(locationId, PlaceLoopUpService.Languages.Greek);
                     location = new Location {EnglishName = englishName, GreekName = greekName, Id = locationId};
                     db.Locations.Add(location);
                 }

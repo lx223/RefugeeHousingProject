@@ -224,7 +224,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiClient\PlaceIdLookUpResult.cs" />
+    <Compile Include="ApiAccess\PlaceLookUpResult.cs" />
+    <Compile Include="ApiAccess\PlaceLoopUpService.cs" />
     <Compile Include="Controllers\TranslationController.cs" />
     <Compile Include="Filters\ExceptionHandlingAttribute.cs" />
     <Compile Include="Migrations\201611111655115_Merge.cs" />

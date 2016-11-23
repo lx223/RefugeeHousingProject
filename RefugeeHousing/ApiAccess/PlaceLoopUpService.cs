@@ -1,10 +1,9 @@
 ﻿using System.Linq;
-using RefugeeHousing.ApiClient;
 using RestSharp;
 
 namespace RefugeeHousing.ApiAccess
 {
-    public class PlaceIdLoopUpService
+    public class PlaceLoopUpService
     {
         public enum Languages
         {
@@ -24,9 +23,9 @@ namespace RefugeeHousing.ApiAccess
                 request.AddParameter("language", "el");
             }
 
-            var response = client.Execute<PlaceIdLookUpResult>(request);
+            var response = client.Execute<PlaceLookUpResult>(request);
             var addressComponents = response.Data.Result.AddressComponents;
-            var localityComponent = addressComponents.Single(s => s.Types.Contains("locality"));
+            var localityComponent = addressComponents.Single(s => s.Types.Contains("administrative_area_level_5"));
             return localityComponent.LongName;
         }
     }

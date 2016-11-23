@@ -22,6 +22,4 @@ namespace RefugeeHousing.Models
         [Required]
         public ApplicationUser Owner { get; set; }
     }
-
-    
 }
