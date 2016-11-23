@@ -398,7 +398,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\MyProperties\Add.cshtml" />
     <Content Include="Views\Properties\Index.cshtml" />
-    <None Include="Views\Properties\_EnquiryForm.cshtml" />
+    <Content Include="Views\Properties\_EnquiryForm.cshtml" />
     <None Include="Web.Production.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
