@@ -367,6 +367,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to On behalf of my organisation, I agree that we are willing to sign a lease on behalf of a refugee family, and to pay the first and last month&apos;s rent up front.
+        /// </summary>
+        public static string WillSignContract {
+            get {
+                return ResourceManager.GetString("WillSignContract", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Yes.
         /// </summary>
         public static string Yes {

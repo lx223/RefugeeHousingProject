@@ -3,6 +3,8 @@
 
 @using (Html.BeginForm("ContactOwner", "Properties"))
 {
+  @Html.HiddenFor(model => model.PropertyId)
+
   <div class="form-group">
     <label>@LocalizedText.EnquirerName</label>
     @Html.TextBoxFor(model => model.EnquirerName, new {@class = "form-control", required = "required"})
@@ -13,7 +15,12 @@
     @Html.TextBoxFor(model => model.EnquirerEmail, new {@class = "form-control", required = "required"})
   </div>
 
-  @Html.HiddenFor(model => model.PropertyId)
+  <div class="form-check">
+    <label>
+      <input type="checkbox" name="agree_to_sign_contract" required />
+      @Resources.LocalizedText.WillSignContract
+    </label>
+  </div>
 
   <input type="submit" class="btn btn-primary" value="@LocalizedText.SubmitEnquiry" />
 }

@@ -219,6 +219,9 @@
   <data name="EnquirerEmailAddress" xml:space="preserve">
     <value>Your email address</value>
   </data>
+  <data name="WillSignContract" xml:space="preserve">
+    <value>On behalf of my organisation, I agree that we are willing to sign a lease on behalf of a refugee family, and to pay the first and last month's rent up front</value>
+  </data>
   <data name="SubmitEnquiry" xml:space="preserve">
     <value>Submit Enquiry</value>
   </data>
