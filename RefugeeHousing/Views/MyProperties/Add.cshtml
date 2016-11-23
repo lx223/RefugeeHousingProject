@@ -29,7 +29,7 @@
 
     <div class="form-group">
         <label>@Resources.LocalizedText.Location</label>
-        <input type="text" id="location" class="form-control" placeholder="@Resources.LocalizedText.LocationPlaceholder" onfocus="autoCompleteLocation()"/>
+        <input type="text" id="location" class="form-control" placeholder="@Resources.LocalizedText.LocationPlaceholder" />
         @Html.HiddenFor(model => model.PlaceId, new {id = "place_id"})
     </div>
 
