@@ -1,5 +1,7 @@
 ﻿@model RefugeeHousing.ViewModels.AddListing
+
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVoStnfDnGTcigrvKe6SzjT9i1ftA8x4U&libraries=places"></script>
+<script type="text/javascript" src="~/Scripts/autoCompleteLocation.js"></script>
 
 @{
     ViewBag.Title = Resources.LocalizedText.AddNewListing;
@@ -58,12 +60,3 @@
 
     <input type="submit" class="btn btn-primary" value="Register new listing" />
 }
-
-<script type="text/javascript">
-    function autoCompleteLocation() {
-        var places = new google.maps.places.Autocomplete(document.getElementById('location'));
-        google.maps.event.addListener(places, 'place_changed', function() {
-            document.getElementById('place_id').value = places.getPlace().place_id;
-        });
-    }
-</script>
