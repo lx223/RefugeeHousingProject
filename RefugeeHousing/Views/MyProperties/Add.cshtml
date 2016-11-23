@@ -1,7 +1,8 @@
 ﻿@model RefugeeHousing.ViewModels.AddListing
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=@(Resources.ApiKeys.GoogleMapsJavaScriptApi)"></script>
-<script type="text/javascript" src="~/Scripts/autoCompleteLocation.js"></script>
+<script type="text/javascript" src="~/Scripts/autocompleteLocation.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=@(Resources.ApiKeys.GoogleMapsJavaScriptApi)&callback=initAutocomplete" async defer></script>
+
 
 @{
     ViewBag.Title = Resources.LocalizedText.AddNewListing;

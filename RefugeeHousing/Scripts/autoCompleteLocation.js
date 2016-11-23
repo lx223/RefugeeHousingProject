@@ -1,8 +1,17 @@
-﻿function autoCompleteLocation() {
-    var places = new google.maps.places.Autocomplete(document.getElementById("location"), {
-        componentRestrictions: {"country": "gr"}
+﻿var autocomplete;
+
+function initAutocomplete() {
+    autocomplete = new google.maps.places.Autocomplete(document.getElementById("location"), {
+        componentRestrictions: { "country": "gr" }
     });
-    google.maps.event.addListener(places, "place_changed", function () {
-        document.getElementById("place_id").value = places.getPlace().place_id;
-    });
+    autocomplete.addListener("place_changed", placeChanged);
+}
+
+function placeChanged() {
+    var place = autocomplete.getPlace();
+    if (!place.geometry) {
+        window.alert("No details available for input: '" + place.name + "'");
+    } else {
+        document.getElementById("place_id").value = place.place_id;
+    }
 }
