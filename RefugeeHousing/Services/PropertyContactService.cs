@@ -35,7 +35,7 @@ namespace RefugeeHousing.Services
 
             var email = emailBuilder.Build(enquiry, listing.Owner);
 
-            Logger.Info($"Sending email to '{listing.Owner.Email}' about property '{enquiry.PropertyId}'");
+            Logger.Info($"Sending email to '{listing.Owner.Email}' on behalf of '{enquiry.EnquirerEmail}' about property '{enquiry.PropertyId}'");
 
             await propertyEmailService.SendEmail(email);
         }
