@@ -10,7 +10,8 @@
 
 <h2>@Resources.LocalizedText.AddNewListing</h2>
 
-@using (Html.BeginForm())
+<!-- Prevent the form from submitting if the user hits Enter, because the user might use Enter to select locations in the dropdown box-->
+@using (Html.BeginForm("Add", "MyProperties", FormMethod.Post, new { onkeydown = "return event.keyCode!=13" }))
 {
     <div class="form-group">
         <label>@Resources.LocalizedText.NumberOfBedrooms</label>
