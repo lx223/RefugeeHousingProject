@@ -2,6 +2,7 @@
 using System.Net;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using RefugeeHousing.ApiAccess;
 using RefugeeHousing.ApiClient;
 using RefugeeHousing.Models;
 using RefugeeHousing.ViewModels;
@@ -33,8 +34,8 @@ namespace RefugeeHousing.Controllers
                 }
                 else
                 {
-                    var englishName = FindLocalityNameByLocationId(locationId, false);
-                    var greekName = FindLocalityNameByLocationId(locationId, true);
+                    var englishName = PlaceIdLoopUpService.FindLocalityNameByLocationId(locationId, PlaceIdLoopUpService.Languages.English);
+                    var greekName = PlaceIdLoopUpService.FindLocalityNameByLocationId(locationId, PlaceIdLoopUpService.Languages.English);
                     location = new Location {EnglishName = englishName, GreekName = greekName, Id = locationId};
                     db.Locations.Add(location);
                 }
@@ -56,24 +57,6 @@ namespace RefugeeHousing.Controllers
             }
 
             return Redirect("/");
-        }
-
-        private static string FindLocalityNameByLocationId(string locationId, bool resultInGreek)
-        {
-            var client = new RestClient("https://maps.googleapis.com/maps/api/place/details/json?");
-            var request = new RestRequest(Method.GET);
-            request.AddParameter("key", "AIzaSyAi0qtOthsQrOMs_IrfghpmlBKqaSUHmI0");
-            request.AddParameter("placeid", locationId);
-
-            if (resultInGreek)
-            {
-                request.AddParameter("language", "el");
-            }
-
-            var response = client.Execute<PlaceIdLookUpResult>(request);
-            var addressComponents = response.Data.Result.AddressComponents;
-            var localityComponent = addressComponents.Single(s => s.Types.Contains("locality"));
-            return localityComponent.LongName;
         }
     }
 }
