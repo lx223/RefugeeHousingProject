@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using NLog;
@@ -33,6 +34,7 @@ namespace RefugeeHousing.Services
             {
                 // Only log the message to avoid noisy logs, because we know this exception only has one cause
                 Logger.Warn(e.Message);
+                Logger.Info("Here is the email that would have been sent: " + string.Join("\r\n", mail.Contents.Select(c => c.Value)));
             }
         }
 
