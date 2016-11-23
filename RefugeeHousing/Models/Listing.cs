@@ -1,9 +1,10 @@
 using System.ComponentModel.DataAnnotations;
+using RefugeeHousing.ViewModels;
 
 namespace RefugeeHousing.Models
 {
     public class Listing
-    {
+    { 
         public int Id { get; set; }
         [Required]
         public string LanguagesSpoken { get; set; }
@@ -21,4 +22,6 @@ namespace RefugeeHousing.Models
         [Required]
         public ApplicationUser Owner { get; set; }
     }
+
+    
 }
