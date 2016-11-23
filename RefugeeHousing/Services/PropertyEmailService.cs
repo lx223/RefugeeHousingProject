@@ -21,11 +21,18 @@ namespace RefugeeHousing.Services
 
         public async Task SendEmail(Mail mail)
         {
-            var emailTask = await Send(mail);
-
-            if (emailTask.StatusCode != HttpStatusCode.Accepted)
+            try
             {
-                throw new IOException($"Could not send email. SendGrid returned status code '{emailTask.StatusCode}'");
+                var result = await Send(mail);
+                if (result.StatusCode != HttpStatusCode.Accepted)
+                {
+                    throw new IOException($"Could not send email. SendGrid returned status code '{result.StatusCode}'");
+                }
+            }
+            catch (EmailNotConfiguredException e)
+            {
+                // Only log the message to avoid noisy logs, because we know this exception only has one cause
+                Logger.Warn(e.Message);
             }
         }
 
@@ -35,13 +42,17 @@ namespace RefugeeHousing.Services
 
             if (apiKey == null)
             {
-                Logger.Warn($"Could not find environment variable '{ApiKeyEnvironmentVariable}', so cannot send email.");
-                return Task.CompletedTask;
+                throw new EmailNotConfiguredException($"Could not find '{ApiKeyEnvironmentVariable}' environment variable, so cannot send email");
             }
 
             var sendGridClient = new SendGridAPIClient(apiKey);
 
             return await sendGridClient.client.mail.send.post(requestBody: email.Get());
         }
+    }
+
+    class EmailNotConfiguredException : InvalidOperationException
+    {
+        public EmailNotConfiguredException(string message) : base(message) {}
     }
 }
