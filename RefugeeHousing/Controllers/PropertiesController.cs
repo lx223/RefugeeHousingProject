@@ -39,11 +39,11 @@ namespace RefugeeHousing.Controllers
         }
 
         [HttpPost]
-        public async Task<EmptyResult> ContactOwner(PropertyEnquiry propertyEnquiry)
+        public async Task<RedirectToRouteResult> ContactOwner(PropertyEnquiry propertyEnquiry)
         {
             await propertyContactService.ContactOwner(propertyEnquiry);
 
-            return new EmptyResult();
+            return RedirectToAction("Details", new {id = propertyEnquiry.PropertyId});
         }
     }
 }
