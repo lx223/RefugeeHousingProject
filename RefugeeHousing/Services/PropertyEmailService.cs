@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Net;
 using System.Threading.Tasks;
 using NLog;
 using SendGrid;
@@ -19,9 +21,12 @@ namespace RefugeeHousing.Services
 
         public async Task SendEmail(Mail mail)
         {
-            await Send(mail);
+            var emailTask = await Send(mail);
 
-            // TODO REF-42: Handle exceptions and unexpected status codes (i.e. not 202 Accepted)
+            if (emailTask.StatusCode != HttpStatusCode.Accepted)
+            {
+                throw new IOException($"Could not send email. SendGrid returned status code '{emailTask.StatusCode}'");
+            }
         }
 
         private static async Task<dynamic> Send(Mail email)
@@ -30,7 +35,7 @@ namespace RefugeeHousing.Services
 
             if (apiKey == null)
             {
-                Logger.Warn($"Could not find environment variable {ApiKeyEnvironmentVariable}, so cannot send email.");
+                Logger.Warn($"Could not find environment variable '{ApiKeyEnvironmentVariable}', so cannot send email.");
                 return Task.CompletedTask;
             }
 
