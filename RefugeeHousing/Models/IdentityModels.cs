@@ -34,5 +34,6 @@ namespace RefugeeHousing.Models
         }
 
         public virtual DbSet<Listing> Listings { get; set; }
+        public virtual DbSet<Location> Locations { get; set; }
     }
 }
