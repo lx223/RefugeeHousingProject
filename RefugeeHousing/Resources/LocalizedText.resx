@@ -210,6 +210,9 @@
   <data name="ContactFormHeader" xml:space="preserve">
     <value>Contact property owner</value>
   </data>
+  <data name="PropertyOwnerLanguages" xml:space="preserve">
+    <value>Languages spoken by property owner</value>
+  </data>
   <data name="EnquirerName" xml:space="preserve">
     <value>Your name</value>
   </data>

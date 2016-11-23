@@ -219,4 +219,7 @@
   <data name="EnquirerEmailAddress" xml:space="preserve">
     <value>Το εμαιλ σου</value>
   </data>
+  <data name="PropertyOwnerLanguages" xml:space="preserve">
+    <value>Γλώσσες που ομιλούνται από ιδιοκτήτη ακινήτου</value>
+  </data>
 </root>

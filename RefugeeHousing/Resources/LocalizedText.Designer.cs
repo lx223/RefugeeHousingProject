@@ -313,6 +313,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Languages spoken by property owner.
+        /// </summary>
+        public static string PropertyOwnerLanguages {
+            get {
+                return ResourceManager.GetString("PropertyOwnerLanguages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reference.
         /// </summary>
         public static string Reference {

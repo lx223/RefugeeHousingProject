@@ -37,6 +37,8 @@
 
 <h2 class="display-1">@(LocalizedText.ContactFormHeader)</h2>
 
+<p>@LocalizedText.PropertyOwnerLanguages: @Model.LanguagesSpoken</p>
+
 @{
   Html.RenderPartial("_EnquiryForm", new PropertyEnquiry {PropertyId = Model.Id});
 }
