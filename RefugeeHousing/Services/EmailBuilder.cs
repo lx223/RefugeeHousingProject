@@ -20,8 +20,7 @@ namespace RefugeeHousing.Services
             var subject = "Email from Refugee Housing Project";
             var content = new Content("text/plain", ContentText(enquiry));
 
-            var email = new Mail(@from, subject, to, content);
-            email.ReplyTo = new Email(enquiry.EnquirerEmail);
+            var email = new Mail(@from, subject, to, content) {ReplyTo = new Email(enquiry.EnquirerEmail)};
 
             return email;
         }

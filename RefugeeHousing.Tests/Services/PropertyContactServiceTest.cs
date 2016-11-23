@@ -29,7 +29,7 @@ namespace RefugeeHousing.Tests.Services
         }
 
         [Test]
-        public void ContactingOwnerSendsEmail()
+        public async void ContactingOwnerSendsEmail()
         {
             // Arrange
             const int propertyId = 6;
@@ -44,14 +44,14 @@ namespace RefugeeHousing.Tests.Services
             A.CallTo(() => emailBuilder.Build(enquiry, owner)).Returns(expectedEmail);
 
             // Act
-            propertyContactService.ContactOwner(enquiry);
+            await propertyContactService.ContactOwner(enquiry);
 
             // Assert
             A.CallTo(() => propertyEmailService.SendEmail(expectedEmail)).MustHaveHappened();
         }
 
         [Test]
-        public void ContactingOwnerSendsEmailOnlyToOwnerOfProperty()
+        public async void ContactingOwnerSendsEmailOnlyToOwnerOfProperty()
         {
             // Arrange
             var propertyOwner = new ApplicationUser { Email = "some email address" };
@@ -66,7 +66,7 @@ namespace RefugeeHousing.Tests.Services
             A.CallTo(() => emailBuilder.Build(enquiry, propertyOwner)).Returns(expectedEmail);
 
             // Act
-            propertyContactService.ContactOwner(enquiry);
+            await propertyContactService.ContactOwner(enquiry);
 
             // Assert
             A.CallTo(() => propertyEmailService.SendEmail(expectedEmail)).MustHaveHappened();

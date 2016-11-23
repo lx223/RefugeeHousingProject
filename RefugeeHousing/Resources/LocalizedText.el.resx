@@ -162,9 +162,6 @@
   <data name="PricePerMonth" xml:space="preserve">
     <value>Τιμή ανά μήνα</value>
   </data>
-  <data name="Properties" xml:space="preserve">
-    <value>Ιδιότητες</value>
-  </data>
   <data name="Property" xml:space="preserve">
     <value>Ιδιοκτησία</value>
   </data>
