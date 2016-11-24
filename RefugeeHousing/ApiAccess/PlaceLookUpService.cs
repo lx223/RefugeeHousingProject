@@ -13,7 +13,7 @@ namespace RefugeeHousing.ApiAccess
 
         public string FindLocalityNameByLocationId(string locationId, Languages language)
         {
-            var client = new RestClient("https://maps.googleapis.com/maps/api/place/details/json?");
+            var client = new RestClient("https://maps.googleapis.com/maps/api/place/details/json");
             var request = new RestRequest(Method.GET);
             request.AddParameter("key", Resources.ApiKeys.GoogleMapsJavaScriptApi);
             request.AddParameter("placeid", locationId);
