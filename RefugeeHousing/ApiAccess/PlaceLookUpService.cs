@@ -6,6 +6,9 @@ namespace RefugeeHousing.ApiAccess
 {
     public class PlaceLookUpService
     {
+        private const string GoogleApiBaseUrl = "https://maps.googleapis.com/maps/api/place/details/json";
+        private const string LanguageGreek = "el";
+        private const string AddressTypes = "administrative_area_level_5";
         public enum Languages
         {
             English,
@@ -14,14 +17,14 @@ namespace RefugeeHousing.ApiAccess
 
         public string FindLocalityNameByLocationId(string locationId, Languages language)
         {
-            var client = new RestClient("https://maps.googleapis.com/maps/api/place/details/json");
+            var client = new RestClient(GoogleApiBaseUrl);
             var request = new RestRequest(Method.GET);
             request.AddParameter("key", Resources.ApiKeys.GoogleMapsJavaScriptApi);
             request.AddParameter("placeid", locationId);
 
             if (language == Languages.Greek)
             {
-                request.AddParameter("language", "el");
+                request.AddParameter("language", LanguageGreek);
             }
 
             var response = client.Execute<PlaceLookUpResult>(request);
@@ -31,7 +34,7 @@ namespace RefugeeHousing.ApiAccess
                 throw new IOException("Error in Google Place API result. Status code returned: " + response.StatusCode);
             }
             var addressComponents = response.Data.Result.AddressComponents;
-            var localityComponent = addressComponents.Single(s => s.Types.Contains("administrative_area_level_5"));
+            var localityComponent = addressComponents.Single(s => s.Types.Contains(AddressTypes));
             return localityComponent.LongName;
         }
     }
