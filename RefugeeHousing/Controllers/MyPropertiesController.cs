@@ -27,7 +27,7 @@ namespace RefugeeHousing.Controllers
                 var location = LocationRepository.GetOrCreateLocation(locationId);
                 
                 var currentUserId = User.Identity.GetUserId();
-                var currentUser = db.Users.Single(u => u.Id == currentUserId);
+                var currentUser = UserIdentityService.GetUser(currentUserId);
 
                 var listing = new Listing
                 {
