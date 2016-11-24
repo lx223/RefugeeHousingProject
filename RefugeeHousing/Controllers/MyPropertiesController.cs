@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
-using RefugeeHousing.ApiAccess;
 using RefugeeHousing.Models;
+using RefugeeHousing.Services;
 using RefugeeHousing.ViewModels;
 
 namespace RefugeeHousing.Controllers
@@ -24,20 +24,8 @@ namespace RefugeeHousing.Controllers
             using (var db = new ApplicationDbContext())
             {
                 var locationId = addListing.PlaceId;
-                Location location;
-                if (db.Locations.Any(l => l.Id == locationId))
-                {
-                    location = db.Locations.Single(l => l.Id == locationId);
-                }
-                else
-                {
-                    var placeLookUpService = new PlaceLookUpService();
-                    var englishName = placeLookUpService.FindLocalityNameByLocationId(locationId, PlaceLookUpService.Languages.English);
-                    var greekName = placeLookUpService.FindLocalityNameByLocationId(locationId, PlaceLookUpService.Languages.Greek);
-                    location = new Location {EnglishName = englishName, GreekName = greekName, Id = locationId};
-                    db.Locations.Add(location);
-                }
-
+                var location = LocationRepository.GetOrCreateLocation(locationId);
+                
                 var currentUserId = User.Identity.GetUserId();
                 var currentUser = db.Users.Single(u => u.Id == currentUserId);
 
