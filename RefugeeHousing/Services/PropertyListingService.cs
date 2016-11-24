@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using RefugeeHousing.Models;
+﻿using RefugeeHousing.Models;
 using RefugeeHousing.ViewModels;
 
 namespace RefugeeHousing.Services

@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using RefugeeHousing.ViewModels;
 
 namespace RefugeeHousing.Models
 {

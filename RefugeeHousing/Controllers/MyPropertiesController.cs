@@ -1,6 +1,5 @@
 ﻿using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
-using RefugeeHousing.Models;
 using RefugeeHousing.Services;
 using RefugeeHousing.ViewModels;
 
