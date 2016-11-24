@@ -1,16 +1,12 @@
 ﻿@model RefugeeHousing.ViewModels.AddListing
 
-<script type="text/javascript" src="~/Scripts/autocompleteLocation.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=@(Resources.ApiKeys.GoogleMapsJavaScriptApi)&callback=initAutocomplete" async defer></script>
-
-
 @{
     ViewBag.Title = Resources.LocalizedText.AddNewListing;
 }
 
 <h2>@Resources.LocalizedText.AddNewListing</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm(null, null, FormMethod.Post, new {id = "add-property-form"}))
 {
     <div class="form-group">
         <label>@Resources.LocalizedText.NumberOfBedrooms</label>
@@ -59,5 +55,9 @@
         </label>
     </div>
 
-    <input type="submit" class="btn btn-primary" value="Register new listing" />
+    <input type="submit" class="btn btn-primary" value="Register new listing"/>
 }
+
+<script type="text/javascript" src="~/Scripts/autocompleteLocation.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=@(Resources.ApiKeys.GoogleMapsJavaScriptApi)&callback=initAutocomplete" async defer></script>
+<script type="text/javascript" src="~/Scripts/placeIdValidator.js"></script>
