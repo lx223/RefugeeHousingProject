@@ -2,7 +2,6 @@
 
 function initAutocomplete() {
     var options = {
-        types: ["address"],
         componentRestrictions: { "country": "gr"}
     }
     autocomplete = new google.maps.places.Autocomplete(document.getElementById("location"), options);
