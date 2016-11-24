@@ -1,4 +1,5 @@
-﻿using RefugeeHousing.Models;
+﻿using System.Collections.Generic;
+using RefugeeHousing.Models;
 using RefugeeHousing.ViewModels;
 using SendGrid.Helpers.Mail;
 
@@ -27,6 +28,8 @@ namespace RefugeeHousing.Services
 
         private static string ContentText(PropertyEnquiry enquiry)
         {
+            var languagesSpoken = GetLanguagesSpoken(enquiry);
+
             // Do not add indents to trailing lines of this string. It causes SendGrid to format them
             // differently to the first line.
             return $@"Hello,
@@ -35,7 +38,24 @@ You have a query regarding your property from {enquiry.EnquirerName}, on behalf 
 
 For more details on the organization, visit {enquiry.OrganizationWebsite}
 
+Languages spoken by {enquiry.EnquirerName}: {languagesSpoken}
+
 This person has expressed their willingness to sign medium-to-long-term leases on behalf of refugee families, and to pay first and last month's rent up front.";
+        }
+
+        private static string GetLanguagesSpoken(PropertyEnquiry enquiry)
+        {
+            var languages = new List<string>();
+            if (enquiry.EnquirerSpeaksEnglish)
+            {
+                languages.Add("English");
+            }
+            if (enquiry.EnquirerSpeaksGreek)
+            {
+                languages.Add("Greek");
+            }
+
+            return string.Join(", ", languages);
         }
     }
 }

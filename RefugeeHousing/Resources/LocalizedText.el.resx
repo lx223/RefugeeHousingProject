@@ -231,4 +231,10 @@
   <data name="OrganizationName" xml:space="preserve">
     <value>Όνομα Οργανισμού</value>
   </data>
+  <data name="EnglishLanguage" xml:space="preserve">
+    <value>Αγγλικά</value>
+  </data>
+  <data name="GreekLanguage" xml:space="preserve">
+    <value>Eλληνικά</value>
+  </data>
 </root>

@@ -160,6 +160,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to English.
+        /// </summary>
+        public static string EnglishLanguage {
+            get {
+                return ResourceManager.GetString("EnglishLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your email address.
         /// </summary>
         public static string EnquirerEmailAddress {
@@ -183,6 +192,15 @@ namespace Resources {
         public static string Furnished {
             get {
                 return ResourceManager.GetString("Furnished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Greek.
+        /// </summary>
+        public static string GreekLanguage {
+            get {
+                return ResourceManager.GetString("GreekLanguage", resourceCulture);
             }
         }
         
