@@ -1,11 +1,13 @@
 ﻿var autocomplete;
 
+var placeChangedEvent = "place_changed"; // Event fired by Google API when the place changed
+
 function initAutocomplete() {
     var options = {
         componentRestrictions: { "country": "gr"}
     }
     autocomplete = new google.maps.places.Autocomplete(document.getElementById("location"), options);
-    autocomplete.addListener("place_changed", placeChanged);
+    autocomplete.addListener(placeChangedEvent, placeChanged);
 }
 
 function placeChanged() {
