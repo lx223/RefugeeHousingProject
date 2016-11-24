@@ -1,4 +1,5 @@
-﻿@model RefugeeHousing.ViewModels.AddListing
+﻿@using System.Web.Configuration
+@model RefugeeHousing.ViewModels.AddListing
 
 @{
     ViewBag.Title = Resources.LocalizedText.AddNewListing;
@@ -59,5 +60,5 @@
 }
 
 <script type="text/javascript" src="~/Scripts/autocompleteLocation.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=@(Resources.ApiKeys.GoogleMapsJavaScriptApi)&callback=initAutocomplete" async defer></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=@(WebConfigurationManager.AppSettings["GoogleApiKey"])&callback=initAutocomplete" async defer></script>
 <script type="text/javascript" src="~/Scripts/placeIdValidator.js"></script>

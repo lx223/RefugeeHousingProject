@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Linq;
+using System.Web.Configuration;
 using RestSharp;
 
 namespace RefugeeHousing.ApiAccess
@@ -19,7 +20,7 @@ namespace RefugeeHousing.ApiAccess
         {
             var client = new RestClient(GoogleApiBaseUrl);
             var request = new RestRequest(Method.GET);
-            request.AddParameter("key", Resources.ApiKeys.GoogleMapsJavaScriptApi);
+            request.AddParameter("key", WebConfigurationManager.AppSettings["GoogleApiKey"]);
             request.AddParameter("placeid", locationId);
 
             if (language == Languages.Greek)
