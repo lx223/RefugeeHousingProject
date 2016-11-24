@@ -31,8 +31,9 @@ namespace RefugeeHousing.Controllers
                 }
                 else
                 {
-                    var englishName = PlaceLookUpService.FindLocalityNameByLocationId(locationId, PlaceLookUpService.Languages.English);
-                    var greekName = PlaceLookUpService.FindLocalityNameByLocationId(locationId, PlaceLookUpService.Languages.Greek);
+                    var placeLookUpService = new PlaceLookUpService();
+                    var englishName = placeLookUpService.FindLocalityNameByLocationId(locationId, PlaceLookUpService.Languages.English);
+                    var greekName = placeLookUpService.FindLocalityNameByLocationId(locationId, PlaceLookUpService.Languages.Greek);
                     location = new Location {EnglishName = englishName, GreekName = greekName, Id = locationId};
                     db.Locations.Add(location);
                 }
