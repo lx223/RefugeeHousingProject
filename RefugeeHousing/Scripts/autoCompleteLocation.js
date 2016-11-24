@@ -12,13 +12,25 @@ function initAutocomplete() {
 
 function placeChanged() {
     var place = autocomplete.getPlace();
+
     if (!place.geometry) {
-        window.alert("No details available for input: '" + place.name + "'");
+        showErrorMessage("No details available for input: '" + place.name + "'");
     } else if (!isPlaceSpecific(place)) {
-        window.alert("Please input a more specific address.");
+        showErrorMessage("Please input a more specific address.");
     } else {
+        hideErrorMessage();
         document.getElementById("place_id").value = place.place_id;
     }
+}
+
+function showErrorMessage(message) {
+    $("#location-form-group").addClass("has-error");
+    $("#location-help-block").text(message);
+}
+
+function hideErrorMessage() {
+    $("#location-form-group").removeClass("has-error");
+    $("#location-help-block").text("");
 }
 
 function isPlaceSpecific(place) {
