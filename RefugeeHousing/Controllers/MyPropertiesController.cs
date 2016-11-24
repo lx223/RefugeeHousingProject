@@ -12,8 +12,8 @@ namespace RefugeeHousing.Controllers
         [HttpGet]
         public ActionResult Add()
         {
-            var addListing = new ListingViewModel();
-            return View(addListing);
+            var listingViewModel = new ListingViewModel();
+            return View(listingViewModel);
         }
 
         [HttpPost]
