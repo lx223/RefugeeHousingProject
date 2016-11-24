@@ -271,6 +271,7 @@
     <Compile Include="Services\AccountService.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Controllers\PropertiesController.cs" />
+    <Compile Include="Services\PropertyListingService.cs" />
     <Compile Include="Services\UserIdentityService.cs" />
     <Compile Include="Translations\LocalizationAttribute.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
