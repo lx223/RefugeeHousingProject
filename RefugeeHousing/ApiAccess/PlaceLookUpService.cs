@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.IO;
+using System.Linq;
 using RestSharp;
 
 namespace RefugeeHousing.ApiAccess
@@ -24,6 +25,11 @@ namespace RefugeeHousing.ApiAccess
             }
 
             var response = client.Execute<PlaceLookUpResult>(request);
+
+            if (response.ResponseStatus == ResponseStatus.Error)
+            {
+                throw new IOException("Error in Google Place API result. Status code returned: " + response.StatusCode);
+            }
             var addressComponents = response.Data.Result.AddressComponents;
             var localityComponent = addressComponents.Single(s => s.Types.Contains("administrative_area_level_5"));
             return localityComponent.LongName;
