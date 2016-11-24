@@ -9,20 +9,20 @@ namespace RefugeeHousing.Controllers
     [Authorize]
     public class MyPropertiesController : Controller
     {
-        // GET: AddListing
+        // GET: ListingViewModel
         [HttpGet]
         public ActionResult Add()
         {
-            var addListing = new AddListing();
+            var addListing = new ListingViewModel();
             return View(addListing);
         }
 
         [HttpPost]
-        public ActionResult Add(AddListing addListing)
+        public ActionResult Add(ListingViewModel listingViewModel)
         {
             using (var db = new ApplicationDbContext())
             {
-                var locationId = addListing.PlaceId;
+                var locationId = listingViewModel.PlaceId;
                 var location = LocationRepository.GetOrCreateLocation(db, locationId);
                 
                 var currentUserId = User.Identity.GetUserId();
@@ -30,14 +30,14 @@ namespace RefugeeHousing.Controllers
 
                 var listing = new Listing
                 {
-                    Appliances = addListing.Appliances,
-                    Elevator = addListing.Elevator,
-                    Furnished = addListing.Furnished,
-                    Price = addListing.Price,
-                    LanguagesSpoken = addListing.LanguagesSpoken,
+                    Appliances = listingViewModel.Appliances,
+                    Elevator = listingViewModel.Elevator,
+                    Furnished = listingViewModel.Furnished,
+                    Price = listingViewModel.Price,
+                    LanguagesSpoken = listingViewModel.LanguagesSpoken,
                     Location = location,
                     LocationId = locationId,
-                    NumberOfBedrooms = addListing.NumberOfBedrooms,
+                    NumberOfBedrooms = listingViewModel.NumberOfBedrooms,
                     Owner = currentUser,
                     OwnerId = currentUserId
                 };

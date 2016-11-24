@@ -1,6 +1,6 @@
 ﻿namespace RefugeeHousing.ViewModels
 {
-    public class AddListing
+    public class ListingViewModel
     {
         public string LanguagesSpoken { get; set; }
         public string PlaceId { get; set; }
