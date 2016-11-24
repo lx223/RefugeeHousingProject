@@ -31,11 +31,16 @@ namespace RefugeeHousing.Controllers
 
                 var listing = new Listing
                 {
-                    Appliances = addListing.Appliances, Elevator = addListing.Elevator,
-                    Furnished = addListing.Furnished, Price = addListing.Price,
-                    LanguagesSpoken = addListing.LanguagesSpoken, Location = location,
-                    LocationId = locationId, NumberOfBedrooms = addListing.NumberOfBedrooms,
-                    Owner = currentUser, OwnerId = currentUserId
+                    Appliances = addListing.Appliances,
+                    Elevator = addListing.Elevator,
+                    Furnished = addListing.Furnished,
+                    Price = addListing.Price,
+                    LanguagesSpoken = addListing.LanguagesSpoken,
+                    Location = location,
+                    LocationId = locationId,
+                    NumberOfBedrooms = addListing.NumberOfBedrooms,
+                    Owner = currentUser,
+                    OwnerId = currentUserId
                 };
 
                 db.Listings.Add(listing);
