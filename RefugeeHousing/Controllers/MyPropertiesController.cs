@@ -24,10 +24,10 @@ namespace RefugeeHousing.Controllers
             using (var db = new ApplicationDbContext())
             {
                 var locationId = addListing.PlaceId;
-                var location = LocationRepository.GetOrCreateLocation(locationId);
+                var location = LocationRepository.GetOrCreateLocation(db, locationId);
                 
                 var currentUserId = User.Identity.GetUserId();
-                var currentUser = UserIdentityService.GetUser(currentUserId);
+                var currentUser = UserIdentityService.GetUser(db, currentUserId);
 
                 var listing = new Listing
                 {

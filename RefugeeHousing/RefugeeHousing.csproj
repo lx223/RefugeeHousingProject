@@ -225,7 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiAccess\PlaceLookUpResult.cs" />
-    <Compile Include="ApiAccess\PlaceLoopUpService.cs" />
+    <Compile Include="ApiAccess\PlaceLookUpService.cs" />
     <Compile Include="Controllers\TranslationController.cs" />
     <Compile Include="Filters\ExceptionHandlingAttribute.cs" />
     <Compile Include="Migrations\201611111655115_Merge.cs" />
@@ -266,6 +266,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ApiKeys.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\LocationRepository.cs" />
     <Compile Include="Services\PropertyFilterService.cs" />
     <Compile Include="Resources\LocalizedText.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -275,6 +276,7 @@
     <Compile Include="Services\AccountService.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Controllers\PropertiesController.cs" />
+    <Compile Include="Services\UserIdentityService.cs" />
     <Compile Include="Translations\LocalizationAttribute.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
