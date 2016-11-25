@@ -37,7 +37,8 @@ namespace RefugeeHousing.ApiAccess
 
             if (response.ResponseStatus == ResponseStatus.Error)
             {
-                throw new IOException("Error in Google Place API result. Status code returned: " + response.StatusCode);
+                throw new IOException("Error in Google Place API when fetching location details for location id: " +
+                    locationId + ". Status code returned: " + response.StatusCode);
             }
             var addressComponents = response.Data.Result.AddressComponents;
             var localityComponent = addressComponents.Single(s => s.Types.Contains(AddressTypes));
