@@ -16,7 +16,7 @@ namespace RefugeeHousing.ViewModels
 
         public string GetLocation(Language language)
         {
-            return (language == Language.English) ? Location.EnglishName : Location.GreekName;
+            return (language == Language.Greek) ? Location.GreekName : Location.EnglishName;
         }
     }
 }
