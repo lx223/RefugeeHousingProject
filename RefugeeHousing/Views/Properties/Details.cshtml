@@ -1,5 +1,5 @@
 ﻿@using Resources
-@model RefugeeHousing.Models.Listing
+@model RefugeeHousing.ViewModels.ListingDetailsViewModel
 
 <h2 class="display-1">@(LocalizedText.PropertyDetails)</h2>
 
@@ -12,7 +12,7 @@
     </tr>
     <tr>
         <th>@LocalizedText.Location:</th>
-        <td>PLACEHOLDER</td>
+        <td>@Model.Location</td>
     </tr>
     <tr>
         <th>@LocalizedText.Bedrooms:</th>

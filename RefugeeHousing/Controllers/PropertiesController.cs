@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using RefugeeHousing.Models;
+using RefugeeHousing.Services;
 
 namespace RefugeeHousing.Controllers
 {
@@ -17,15 +19,13 @@ namespace RefugeeHousing.Controllers
 
         public ActionResult Details(int id)
         {
-            using (var db = new ApplicationDbContext())
+            var currentUserId = User.Identity.GetUserId();
+            var listing = PropertyListingService.GetListing(id, currentUserId);
+            if (listing == null)
             {
-                var requestedListing = db.Listings.Find(id);
-                if (requestedListing == null)
-                {
-                    return new HttpNotFoundResult("Listing " + id + " does not exist");
-                }
-                return View(requestedListing);
+                return new HttpNotFoundResult("Listing " + id + " does not exist");
             }
+            return View(listing);
         }
     }
 }

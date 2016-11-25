@@ -1,4 +1,5 @@
 ﻿using RefugeeHousing.Models;
+using RefugeeHousing.Translations;
 using RefugeeHousing.ViewModels;
 
 namespace RefugeeHousing.Services
@@ -29,6 +30,32 @@ namespace RefugeeHousing.Services
 
                 db.Listings.Add(listing);
                 db.SaveChanges();
+            }
+        }
+
+        public static ListingDetailsViewModel GetListing(int id, string currentUserId)
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                var requestedListing = db.Listings.Find(id);
+                if (requestedListing == null)
+                {
+                    return null;
+                }
+                var location = db.Locations.Find(requestedListing.LocationId);
+                var user = db.Users.Find(currentUserId);
+                var locationName = (user.PreferredLanguage == Language.English) ? location.EnglishName : location.GreekName;
+                var listingDetailsViewModel = new ListingDetailsViewModel()
+                {
+                    Appliances = requestedListing.Appliances,
+                    Elevator = requestedListing.Elevator,
+                    Furnished = requestedListing.Furnished,
+                    Id = requestedListing.Id,
+                    Location = locationName,
+                    NumberOfBedrooms = requestedListing.NumberOfBedrooms,
+                    Price = requestedListing.Price
+                };
+                return listingDetailsViewModel;
             }
         }
     }

@@ -329,6 +329,7 @@
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="Translations\TranslationService.cs" />
+    <Compile Include="ViewModels\ListingDetailsViewModel.cs" />
     <Compile Include="ViewModels\ListingViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
