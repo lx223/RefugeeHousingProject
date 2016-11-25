@@ -1,4 +1,6 @@
-﻿using RefugeeHousing.Models;
+﻿using System.Collections.Generic;
+using System.Linq;
+using RefugeeHousing.Models;
 ﻿using RefugeeHousing.ViewModels;
 
 namespace RefugeeHousing.Services
@@ -7,6 +9,7 @@ namespace RefugeeHousing.Services
     {
         void AddListingToDatabase(ListingViewModel listingViewModel, string currentUserId);
         ListingDetailsViewModel GetListing(int id);
+        IEnumerable<ListingDetailsViewModel> GetListings();
     }
 
     public class PropertyListingService : IPropertyListingService
@@ -72,5 +75,27 @@ namespace RefugeeHousing.Services
                 return listingDetailsViewModel;
             }
         }
+
+        public IEnumerable<ListingDetailsViewModel> GetListings()
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                var listings = db.Listings.ToList();
+
+                return (from listing in listings
+                    let location = db.Locations.Find(listing.LocationId)
+                    select new ListingDetailsViewModel
+                    {
+                        Appliances = listing.Appliances,
+                        Elevator = listing.Elevator,
+                        Furnished = listing.Furnished,
+                        Id = listing.Id,
+                        LanguagesSpoken = listing.LanguagesSpoken,
+                        Location = location,
+                        NumberOfBedrooms = listing.NumberOfBedrooms,
+                        Price = listing.Price
+                    }).ToList();
+            }
+        } 
     }
 }

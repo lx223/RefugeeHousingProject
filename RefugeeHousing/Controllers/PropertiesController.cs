@@ -24,10 +24,13 @@ namespace RefugeeHousing.Controllers
 
         public ActionResult Index()
         {
+            var currentUserId = User.Identity.GetUserId();
             using (var db = new ApplicationDbContext())
             {
-                return View(db.Listings.ToList());
+                ViewBag.User = userIdentityService.GetUser(db, currentUserId);
             }
+
+            return View(propertyListingService.GetListings().ToList());
         }
 
         public ActionResult Details(int id)

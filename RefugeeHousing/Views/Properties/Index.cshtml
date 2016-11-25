@@ -1,7 +1,8 @@
 ﻿@using System.Web.Mvc.Html
+@using RefugeeHousing.Models
 @using RefugeeHousing.Services
 @using Resources
-@model List<RefugeeHousing.Models.Listing>
+@model List<RefugeeHousing.ViewModels.ListingDetailsViewModel>
 
 
 <h2 class="display-1">@LocalizedText.AvailableProperties</h2>
@@ -41,16 +42,20 @@
         <th>@LocalizedText.Reference</th>
         <th>@LocalizedText.Bedrooms</th>
         <th>@LocalizedText.Furnished</th>
+        <th>@LocalizedText.Location</th>
         <th>@LocalizedText.Price</th>
       <th></th>
     </tr>
     </thead>
     @foreach (var listing in Model)
     {
+        var user = (ApplicationUser)ViewBag.User;
         <tr>
             <td>@listing.Id</td>
             <td>@listing.NumberOfBedrooms</td>
             <td>@(listing.Furnished ? LocalizedText.Yes : LocalizedText.No)</td>
+            <td>@listing.GetLocation(user.PreferredLanguage)</td>
+
             <td>€@listing.Price</td>
             <td>@Html.ActionLink("Details", "Details", "Properties", new { id = listing.Id }, null)</td>
         </tr>
