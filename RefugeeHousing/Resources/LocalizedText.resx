@@ -240,4 +240,15 @@
   <data name="SubmitEnquiry" xml:space="preserve">
     <value>Submit Enquiry</value>
   </data>
+  <data name="EnquiryEmail" xml:space="preserve">
+    <value>Hello,
+
+You have a query regarding your property from {0}, on behalf of the organization '{1}'.
+
+For more details on the organization, visit {2}
+
+Languages spoken by {0}: {3}
+
+This person has expressed their willingness to sign medium-to-long-term leases on behalf of refugee families, and to pay first and last month's rent up front.</value>
+  </data>
 </root>

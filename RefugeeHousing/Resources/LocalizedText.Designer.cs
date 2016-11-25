@@ -187,6 +187,23 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hello,
+        ///
+        ///You have a query regarding your property from {0}, on behalf of the organization &apos;{1}&apos;.
+        ///
+        ///For more details on the organization, visit {2}
+        ///
+        ///Languages spoken by {0}: {3}
+        ///
+        ///This person has expressed their willingness to sign medium-to-long-term leases on behalf of refugee families, and to pay first and last month&apos;s rent up front..
+        /// </summary>
+        public static string EnquiryEmail {
+            get {
+                return ResourceManager.GetString("EnquiryEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Furnished.
         /// </summary>
         public static string Furnished {
