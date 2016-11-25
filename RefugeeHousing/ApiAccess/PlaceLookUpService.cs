@@ -5,7 +5,12 @@ using RestSharp;
 
 namespace RefugeeHousing.ApiAccess
 {
-    public class PlaceLookUpService
+    public interface IPlaceLookUpService
+    {
+        string FindLocalityNameByLocationId(string locationId, PlaceLookUpService.Languages language);
+    }
+
+    public class PlaceLookUpService : IPlaceLookUpService
     {
         private const string GoogleApiBaseUrl = "https://maps.googleapis.com/maps/api/place/details/json";
         private const string LanguageGreek = "el";

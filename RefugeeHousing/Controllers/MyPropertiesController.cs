@@ -8,6 +8,13 @@ namespace RefugeeHousing.Controllers
     [Authorize]
     public class MyPropertiesController : Controller
     {
+        private readonly IPropertyListingService propertyListingService;
+
+        public MyPropertiesController(IPropertyListingService propertyListingService)
+        {
+            this.propertyListingService = propertyListingService;
+        }
+
         // GET: ListingViewModel
         [HttpGet]
         public ActionResult Add()
@@ -20,7 +27,7 @@ namespace RefugeeHousing.Controllers
         public ActionResult Add(ListingViewModel listingViewModel)
         {
             var currentUserId = User.Identity.GetUserId();
-            PropertyListingService.AddListingToDatabase(listingViewModel, currentUserId);
+            propertyListingService.AddListingToDatabase(listingViewModel, currentUserId);
 
             return Redirect("/");
         }

@@ -1,3 +1,4 @@
+using RefugeeHousing.ApiAccess;
 using RefugeeHousing.Services;
 using RefugeeHousing.Translations;
 
@@ -66,6 +67,9 @@ namespace RefugeeHousing.App_Start
         {
             kernel.Bind<ITranslationService>().To<TranslationService>();
             kernel.Bind<IAccountService>().To<AccountService>();
+            kernel.Bind<IPropertyListingService>().To<PropertyListingService>().InSingletonScope();
+            kernel.Bind<ILocationRepository>().To<LocationRepository>().InSingletonScope();
+            kernel.Bind<IPlaceLookUpService>().To<PlaceLookUpService>().InSingletonScope();
         }        
     }
 }
