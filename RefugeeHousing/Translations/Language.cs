@@ -19,6 +19,7 @@ namespace RefugeeHousing.Translations
                 case Language.Greek:
                     return "ελληνικά";
                 default:
+                    // ReSharper disable once LocalizableElement
                     throw new InvalidEnumArgumentException("Language not recognised. Language provided was: " + language);
             }
         }
@@ -32,6 +33,7 @@ namespace RefugeeHousing.Translations
                 case Language.Greek:
                     return "el";
                 default:
+                    // ReSharper disable once LocalizableElement
                     throw new InvalidEnumArgumentException("Language not recognised. Language provided was: " + language);
             }
         }

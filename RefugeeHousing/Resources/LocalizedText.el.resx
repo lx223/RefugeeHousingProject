@@ -162,9 +162,6 @@
   <data name="PricePerMonth" xml:space="preserve">
     <value>Τιμή ανά μήνα</value>
   </data>
-  <data name="Properties" xml:space="preserve">
-    <value>Ιδιότητες</value>
-  </data>
   <data name="Property" xml:space="preserve">
     <value>Ιδιοκτησία</value>
   </data>
@@ -212,5 +209,35 @@
   </data>
   <data name="LocationPlaceholder" xml:space="preserve">
     <value>Εισάγετε τη διεύθυνσή σας</value>
+  </data>
+  <data name="ContactFormHeader" xml:space="preserve">
+    <value>ιδιοκτήτης ακινήτου επαφής</value>
+  </data>
+  <data name="EnquirerName" xml:space="preserve">
+    <value>Tο όνομα σου</value>
+  </data>
+  <data name="SubmitEnquiry" xml:space="preserve">
+    <value>υποβάλλει το ερώτημά</value>
+  </data>
+  <data name="EnquirerEmailAddress" xml:space="preserve">
+    <value>Το εμαιλ σου</value>
+  </data>
+  <data name="PropertyOwnerLanguages" xml:space="preserve">
+    <value>Γλώσσες που ομιλούνται από ιδιοκτήτη ακινήτου</value>
+  </data>
+  <data name="WillSignContract" xml:space="preserve">
+    <value>Εξ ονόματος του οργανισμού μου, συμφωνώ ότι είμαστε πρόθυμοι να υπογράψετε μισθωτήριο για λογαριασμό μιας οικογένειας προσφύγων, και να πληρώσει το ενοίκιο μπροστά του πρώτου και του τελευταίου μήνα</value>
+  </data>
+  <data name="OrganizationWebsite" xml:space="preserve">
+    <value>Σύνδεσμο για να μάθετε περισσότερες πληροφορίες για τον οργανισμό σας, π.χ. την ιστοσελίδα σας ή την σελίδα στο Facebook</value>
+  </data>
+  <data name="OrganizationName" xml:space="preserve">
+    <value>Όνομα Οργανισμού</value>
+  </data>
+  <data name="EnglishLanguage" xml:space="preserve">
+    <value>Αγγλικά</value>
+  </data>
+  <data name="GreekLanguage" xml:space="preserve">
+    <value>Eλληνικά</value>
   </data>
 </root>

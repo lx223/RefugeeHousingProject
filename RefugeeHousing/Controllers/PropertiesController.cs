@@ -1,12 +1,22 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using RefugeeHousing.Models;
+using RefugeeHousing.Services;
+using RefugeeHousing.ViewModels;
 
 namespace RefugeeHousing.Controllers
 {
     [Authorize]
     public class PropertiesController : Controller
     {
+        private readonly IPropertyContactService propertyContactService;
+
+        public PropertiesController(IPropertyContactService propertyContactService)
+        {
+            this.propertyContactService = propertyContactService;
+        }
+
         public ActionResult Index()
         {
             using (var db = new ApplicationDbContext())
@@ -26,6 +36,14 @@ namespace RefugeeHousing.Controllers
                 }
                 return View(requestedListing);
             }
+        }
+
+        [HttpPost]
+        public async Task<RedirectToRouteResult> ContactOwner(PropertyEnquiry propertyEnquiry)
+        {
+            await propertyContactService.ContactOwner(propertyEnquiry);
+
+            return RedirectToAction("Details", new {id = propertyEnquiry.PropertyId});
         }
     }
 }

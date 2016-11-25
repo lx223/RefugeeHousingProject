@@ -142,6 +142,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact property owner.
+        /// </summary>
+        public static string ContactFormHeader {
+            get {
+                return ResourceManager.GetString("ContactFormHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Elevator.
         /// </summary>
         public static string Elevator {
@@ -151,11 +160,47 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to English.
+        /// </summary>
+        public static string EnglishLanguage {
+            get {
+                return ResourceManager.GetString("EnglishLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your email address.
+        /// </summary>
+        public static string EnquirerEmailAddress {
+            get {
+                return ResourceManager.GetString("EnquirerEmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your name.
+        /// </summary>
+        public static string EnquirerName {
+            get {
+                return ResourceManager.GetString("EnquirerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Furnished.
         /// </summary>
         public static string Furnished {
             get {
                 return ResourceManager.GetString("Furnished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Greek.
+        /// </summary>
+        public static string GreekLanguage {
+            get {
+                return ResourceManager.GetString("GreekLanguage", resourceCulture);
             }
         }
         
@@ -250,6 +295,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Organization name.
+        /// </summary>
+        public static string OrganizationName {
+            get {
+                return ResourceManager.GetString("OrganizationName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Link to find more information about your organisation, e.g. your website or Facebook page.
+        /// </summary>
+        public static string OrganizationWebsite {
+            get {
+                return ResourceManager.GetString("OrganizationWebsite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Price.
         /// </summary>
         public static string Price {
@@ -295,6 +358,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Languages spoken by property owner.
+        /// </summary>
+        public static string PropertyOwnerLanguages {
+            get {
+                return ResourceManager.GetString("PropertyOwnerLanguages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reference.
         /// </summary>
         public static string Reference {
@@ -322,11 +394,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Submit Enquiry.
+        /// </summary>
+        public static string SubmitEnquiry {
+            get {
+                return ResourceManager.GetString("SubmitEnquiry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I agree that this property can be rented to refugees.
         /// </summary>
         public static string WillRentToRefugees {
             get {
                 return ResourceManager.GetString("WillRentToRefugees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On behalf of my organisation, I agree that we are willing to sign a lease on behalf of a refugee family, and to pay the first and last month&apos;s rent up front.
+        /// </summary>
+        public static string WillSignContract {
+            get {
+                return ResourceManager.GetString("WillSignContract", resourceCulture);
             }
         }
         
