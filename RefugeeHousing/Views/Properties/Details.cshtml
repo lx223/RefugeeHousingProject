@@ -1,4 +1,5 @@
-﻿@using Resources
+﻿@using RefugeeHousing.Models
+@using Resources
 @model RefugeeHousing.ViewModels.ListingDetailsViewModel
 
 <h2 class="display-1">@(LocalizedText.PropertyDetails)</h2>
@@ -11,8 +12,9 @@
         <td>@Model.Id</td>
     </tr>
     <tr>
+        @{ var user = (ApplicationUser) ViewBag.User; }
         <th>@LocalizedText.Location:</th>
-        <td>@Model.Location</td>
+        <td>@Model.GetLocation(user.PreferredLanguage)</td>
     </tr>
     <tr>
         <th>@LocalizedText.Bedrooms:</th>

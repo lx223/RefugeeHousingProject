@@ -33,7 +33,7 @@ namespace RefugeeHousing.Services
             }
         }
 
-        public static ListingDetailsViewModel GetListing(int id, string currentUserId)
+        public ListingDetailsViewModel GetListing(int id)
         {
             using (var db = new ApplicationDbContext())
             {
@@ -43,18 +43,17 @@ namespace RefugeeHousing.Services
                     return null;
                 }
                 var location = db.Locations.Find(requestedListing.LocationId);
-                var user = db.Users.Find(currentUserId);
-                var locationName = (user.PreferredLanguage == Language.English) ? location.EnglishName : location.GreekName;
-                var listingDetailsViewModel = new ListingDetailsViewModel()
+                var listingDetailsViewModel = new ListingDetailsViewModel
                 {
                     Appliances = requestedListing.Appliances,
                     Elevator = requestedListing.Elevator,
                     Furnished = requestedListing.Furnished,
                     Id = requestedListing.Id,
-                    Location = locationName,
+                    Location = location,
                     NumberOfBedrooms = requestedListing.NumberOfBedrooms,
                     Price = requestedListing.Price
                 };
+
                 return listingDetailsViewModel;
             }
         }
