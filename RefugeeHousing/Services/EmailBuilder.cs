@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using RefugeeHousing.Models;
+using RefugeeHousing.Translations;
 using RefugeeHousing.ViewModels;
+using Resources;
 using SendGrid.Helpers.Mail;
 
 namespace RefugeeHousing.Services
@@ -19,40 +22,40 @@ namespace RefugeeHousing.Services
             var from = new Email(FromAddress);
             var to = new Email(owner.Email);
             var subject = "Email from Refugee Housing Project";
-            var content = new Content("text/plain", ContentText(enquiry));
+            var content = new Content("text/plain", ContentText(enquiry, owner.PreferredLanguage));
 
             var email = new Mail(@from, subject, to, content) {ReplyTo = new Email(enquiry.EnquirerEmail)};
 
             return email;
         }
 
-        private static string ContentText(PropertyEnquiry enquiry)
+        private static string ContentText(PropertyEnquiry enquiry, Language languageSpokenByPropertyOwner)
         {
-            var languagesSpoken = GetLanguagesSpoken(enquiry);
+            var cultureInfo = new CultureInfo(languageSpokenByPropertyOwner.GetCode());
 
-            // Do not add indents to trailing lines of this string. It causes SendGrid to format them
-            // differently to the first line.
-            return $@"Hello,
+            var languagesSpoken = GetLanguagesSpokenByNgoWorker(enquiry, languageSpokenByPropertyOwner);
 
-You have a query regarding your property from {enquiry.EnquirerName}, on behalf of the organization '{enquiry.OrganizationName}'.
-
-For more details on the organization, visit {enquiry.OrganizationWebsite}
-
-Languages spoken by {enquiry.EnquirerName}: {languagesSpoken}
-
-This person has expressed their willingness to sign medium-to-long-term leases on behalf of refugee families, and to pay first and last month's rent up front.";
+            return string.Format(
+                // ReSharper disable once AssignNullToNotNullAttribute
+                LocalizedText.ResourceManager.GetString("EnquiryEmail", cultureInfo),
+                enquiry.EnquirerName,
+                enquiry.OrganizationName,
+                enquiry.OrganizationWebsite,
+                languagesSpoken);
         }
 
-        private static string GetLanguagesSpoken(PropertyEnquiry enquiry)
+        private static string GetLanguagesSpokenByNgoWorker(PropertyEnquiry enquiry, Language languageSpokenByPropertyOwner)
         {
+            var cultureInfo = new CultureInfo(languageSpokenByPropertyOwner.GetCode());
+
             var languages = new List<string>();
             if (enquiry.EnquirerSpeaksEnglish)
             {
-                languages.Add("English");
+                languages.Add(LocalizedText.ResourceManager.GetString("EnglishLanguage", cultureInfo));
             }
             if (enquiry.EnquirerSpeaksGreek)
             {
-                languages.Add("Greek");
+                languages.Add(LocalizedText.ResourceManager.GetString("GreekLanguage", cultureInfo));
             }
 
             return string.Join(", ", languages);

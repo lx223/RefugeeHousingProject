@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using RefugeeHousing.Models;
 using RefugeeHousing.Services;
+using RefugeeHousing.Translations;
 using RefugeeHousing.ViewModels;
 
 namespace RefugeeHousing.Tests.Services
@@ -11,6 +12,8 @@ namespace RefugeeHousing.Tests.Services
     {
 
         private EmailBuilder emailBuilder;
+
+        private static readonly Language[] Languages = { Language.English, Language.Greek};
 
         [SetUp]
         public void SetUp()
@@ -53,62 +56,80 @@ namespace RefugeeHousing.Tests.Services
         // The following tests of email content are not very strict because we don't want them to be
         // fragile, but they do ensure that we haven't missed out any important data from the email:
 
-        [Test]
-        public void EmailIncludesNameOfEnquirer()
+        [TestCase(Language.English, "Hello", "Χαίρετε")]
+        [TestCase(Language.Greek, "Χαίρετε", "Hello")]
+        public void EmailIsTranslated(Language language, string expectedContentFragment, string incorrectContent)
+        {
+            // Arrange
+            var owner = new ApplicationUser { PreferredLanguage = language };
+
+            // Act
+            var email = emailBuilder.Build(new PropertyEnquiry(), owner);
+
+            // Assert
+            email.Contents[0].Value.Should().Contain(expectedContentFragment);
+            email.Contents[0].Value.Should().NotContain(incorrectContent);
+        }
+
+        [Test, TestCaseSource(nameof(Languages))]
+        public void EmailIncludesNameOfEnquirer(Language language)
         {
             // Arrange
             const string nameOfEnquirer = "name of enquirer";
             var enquiry = new PropertyEnquiry { EnquirerName = nameOfEnquirer };
 
             // Act
-            var email = emailBuilder.Build(enquiry, new ApplicationUser());
+            var email = emailBuilder.Build(enquiry, new ApplicationUser {PreferredLanguage = language});
 
             // Assert
             email.Contents[0].Value.Should().Contain(nameOfEnquirer);
         }
 
-        [Test]
-        public void EmailIncludesOrganizationName()
+        [Test, TestCaseSource(nameof(Languages))]
+        public void EmailIncludesOrganizationName(Language language)
         {
             // Arrange
             const string organizationName = "name of the NGO";
             var enquiry = new PropertyEnquiry { OrganizationName = organizationName };
 
             // Act
-            var email = emailBuilder.Build(enquiry, new ApplicationUser());
+            var email = emailBuilder.Build(enquiry, new ApplicationUser { PreferredLanguage = language });
 
             // Assert
             email.Contents[0].Value.Should().Contain(organizationName);
         }
 
-        [Test]
-        public void EmailIncludesLinkToOrganizationWebsite()
+        [Test, TestCaseSource(nameof(Languages))]
+        public void EmailIncludesLinkToOrganizationWebsite(Language language)
         {
             // Arrange
             const string organizationWebsite = "some organization website";
             var enquiry = new PropertyEnquiry { OrganizationWebsite = organizationWebsite };
 
             // Act
-            var email = emailBuilder.Build(enquiry, new ApplicationUser());
+            var email = emailBuilder.Build(enquiry, new ApplicationUser { PreferredLanguage = language });
 
             // Assert
             email.Contents[0].Value.Should().Contain(organizationWebsite);
         }
 
-        [TestCase(true, false, "English")]
-        [TestCase(false, true, "Greek")]
-        [TestCase(true, true, "English, Greek")]
-        public void EmailIncludesLanguagesSpokenByNgoWorker(bool english, bool greek, string expectedLanguages)
+        [TestCase(true, false, Language.English, "Languages spoken by name of property owner: English")]
+        [TestCase(false, true, Language.English, "Languages spoken by name of property owner: Greek")]
+        [TestCase(true, true, Language.English, "Languages spoken by name of property owner: English, Greek")]
+        [TestCase(true, false, Language.Greek, "Γλώσσες που ομιλούνται από name of property owner: Αγγλικά")]
+        [TestCase(false, true, Language.Greek, "Γλώσσες που ομιλούνται από name of property owner: Eλληνικά")]
+        [TestCase(true, true, Language.Greek, "Γλώσσες που ομιλούνται από name of property owner: Αγγλικά, Eλληνικά")]
+        public void EmailIncludesLanguagesSpokenByNgoWorkerTranslatedIntoPropertyOwnersLanguage(
+            bool english, bool greek, Language preferredLanguageOfOwner, string expectedLanguageText)
         {
             // Arrange
-            const string enquirerName = "name of property owner";
-            var enquiry = new PropertyEnquiry { EnquirerName = enquirerName, EnquirerSpeaksEnglish = english, EnquirerSpeaksGreek = greek};
+            var enquiry = new PropertyEnquiry { EnquirerName = "name of property owner", EnquirerSpeaksEnglish = english, EnquirerSpeaksGreek = greek};
 
             // Act
-            var email = emailBuilder.Build(enquiry, new ApplicationUser());
+            var email = emailBuilder.Build(enquiry, new ApplicationUser {PreferredLanguage = preferredLanguageOfOwner});
 
             // Assert
-            email.Contents[0].Value.Should().Contain($"Languages spoken by {enquirerName}: {expectedLanguages}");
+            email.Contents[0].Value.Should().Contain(expectedLanguageText);
         }
     }
 }
