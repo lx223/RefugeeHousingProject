@@ -1,14 +1,25 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using RefugeeHousing.Models;
 using RefugeeHousing.Services;
+using RefugeeHousing.ViewModels;
 
 namespace RefugeeHousing.Controllers
 {
     [Authorize]
     public class PropertiesController : Controller
     {
+        private readonly IPropertyContactService propertyContactService;
+        private readonly IPropertyListingService propertyListingService;
+
+        public PropertiesController(IPropertyContactService propertyContactService, IPropertyListingService propertyListingService)
+        {
+            this.propertyContactService = propertyContactService;
+            this.propertyListingService = propertyListingService;
+        }
+
         public ActionResult Index()
         {
             using (var db = new ApplicationDbContext())
@@ -19,7 +30,6 @@ namespace RefugeeHousing.Controllers
 
         public ActionResult Details(int id)
         {
-            var propertyListingService = new PropertyListingService();
             var listing = propertyListingService.GetListing(id);
             if (listing == null)
             {
@@ -33,6 +43,14 @@ namespace RefugeeHousing.Controllers
             }
            
             return View(listing);
+        }
+
+        [HttpPost]
+        public async Task<RedirectToRouteResult> ContactOwner(PropertyEnquiry propertyEnquiry)
+        {
+            await propertyContactService.ContactOwner(propertyEnquiry);
+
+            return RedirectToAction("Details", new {id = propertyEnquiry.PropertyId});
         }
     }
 }

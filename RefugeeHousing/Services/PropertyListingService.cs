@@ -1,17 +1,29 @@
 ﻿using RefugeeHousing.Models;
-using RefugeeHousing.Translations;
-using RefugeeHousing.ViewModels;
+﻿using RefugeeHousing.ViewModels;
 
 namespace RefugeeHousing.Services
 {
-    public class PropertyListingService
+    public interface IPropertyListingService
     {
-        public static void AddListingToDatabase(ListingViewModel listingViewModel, string currentUserId)
+        void AddListingToDatabase(ListingViewModel listingViewModel, string currentUserId);
+        ListingDetailsViewModel GetListing(int id);
+    }
+
+    public class PropertyListingService : IPropertyListingService
+    {
+        private readonly ILocationRepository locationRepository;
+
+        public PropertyListingService(ILocationRepository locationRepository)
+        {
+            this.locationRepository = locationRepository;
+        }
+
+        public void AddListingToDatabase(ListingViewModel listingViewModel, string currentUserId)
         {
             using (var db = new ApplicationDbContext())
             {
                 var locationId = listingViewModel.PlaceId;
-                var location = LocationRepository.GetOrCreateLocation(db, locationId);
+                var location = locationRepository.GetOrCreateLocation(db, locationId);
                 var currentUser = UserIdentityService.GetUser(db, currentUserId);
 
                 var listing = new Listing
@@ -49,6 +61,7 @@ namespace RefugeeHousing.Services
                     Elevator = requestedListing.Elevator,
                     Furnished = requestedListing.Furnished,
                     Id = requestedListing.Id,
+                    LanguagesSpoken = requestedListing.LanguagesSpoken,
                     Location = location,
                     NumberOfBedrooms = requestedListing.NumberOfBedrooms,
                     Price = requestedListing.Price

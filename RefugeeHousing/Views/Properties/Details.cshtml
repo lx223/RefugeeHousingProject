@@ -1,10 +1,10 @@
 ﻿@using RefugeeHousing.Models
+@using RefugeeHousing.Models
+@using RefugeeHousing.ViewModels
 @using Resources
-@model RefugeeHousing.ViewModels.ListingDetailsViewModel
+@model ListingDetailsViewModel
 
 <h2 class="display-1">@(LocalizedText.PropertyDetails)</h2>
-
-<p>@(LocalizedText.PriceGivenPerMonth).</p>
 
 <table class="table table-hover table-condensed">
     <tr>
@@ -38,4 +38,10 @@
     </tr>
 </table>
 
+<h2 class="display-1">@(LocalizedText.ContactFormHeader)</h2>
 
+<p>@LocalizedText.PropertyOwnerLanguages: @Model.LanguagesSpoken</p>
+
+@{
+    Html.RenderPartial("_EnquiryForm", new PropertyEnquiry { PropertyId = Model.Id });
+}

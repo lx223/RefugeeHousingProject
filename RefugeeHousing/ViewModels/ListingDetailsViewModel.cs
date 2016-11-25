@@ -12,6 +12,7 @@ namespace RefugeeHousing.ViewModels
         public bool Furnished { get; set; }
         public string Appliances { get; set; }
         public bool Elevator { get; set; }
+        public string LanguagesSpoken { get; set; }
 
         public string GetLocation(Language language)
         {

@@ -4,9 +4,21 @@ using RefugeeHousing.Models;
 
 namespace RefugeeHousing.Services
 {
-    public class LocationRepository
+    public interface ILocationRepository
     {
-        public static Location GetOrCreateLocation(ApplicationDbContext db, string locationId)
+        Location GetOrCreateLocation(ApplicationDbContext db, string locationId);
+    }
+
+    public class LocationRepository : ILocationRepository
+    {
+        private readonly IPlaceLookUpService placeLookUpService;
+
+        public LocationRepository(IPlaceLookUpService placeLookUpService)
+        {
+            this.placeLookUpService = placeLookUpService;
+        }
+
+        public Location GetOrCreateLocation(ApplicationDbContext db, string locationId)
         {
             Location location;
             if (db.Locations.Any(l => l.Id == locationId))
@@ -15,7 +27,6 @@ namespace RefugeeHousing.Services
             }
             else
             {
-                var placeLookUpService = new PlaceLookUpService();
                 var englishName = placeLookUpService.FindLocalityNameByLocationId(locationId,
                     PlaceLookUpService.Languages.English);
                 var greekName = placeLookUpService.FindLocalityNameByLocationId(locationId,
