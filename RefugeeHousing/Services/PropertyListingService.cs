@@ -12,10 +12,12 @@ namespace RefugeeHousing.Services
     public class PropertyListingService : IPropertyListingService
     {
         private readonly ILocationRepository locationRepository;
+        private readonly IUserIdentityService userIdentityService;
 
-        public PropertyListingService(ILocationRepository locationRepository)
+        public PropertyListingService(ILocationRepository locationRepository, IUserIdentityService userIdentityService)
         {
             this.locationRepository = locationRepository;
+            this.userIdentityService = userIdentityService;
         }
 
         public void AddListingToDatabase(ListingViewModel listingViewModel, string currentUserId)
@@ -24,7 +26,7 @@ namespace RefugeeHousing.Services
             {
                 var locationId = listingViewModel.PlaceId;
                 var location = locationRepository.GetOrCreateLocation(db, locationId);
-                var currentUser = UserIdentityService.GetUser(db, currentUserId);
+                var currentUser = userIdentityService.GetUser(db, currentUserId);
 
                 var listing = new Listing
                 {

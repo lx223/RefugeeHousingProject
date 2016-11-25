@@ -13,11 +13,13 @@ namespace RefugeeHousing.Controllers
     {
         private readonly IPropertyContactService propertyContactService;
         private readonly IPropertyListingService propertyListingService;
+        private readonly IUserIdentityService userIdentityService;
 
-        public PropertiesController(IPropertyContactService propertyContactService, IPropertyListingService propertyListingService)
+        public PropertiesController(IPropertyContactService propertyContactService, IPropertyListingService propertyListingService, IUserIdentityService userIdentityService)
         {
             this.propertyContactService = propertyContactService;
             this.propertyListingService = propertyListingService;
+            this.userIdentityService = userIdentityService;
         }
 
         public ActionResult Index()
@@ -39,7 +41,7 @@ namespace RefugeeHousing.Controllers
             var currentUserId = User.Identity.GetUserId();
             using (var db = new ApplicationDbContext())
             {
-                ViewBag.User = UserIdentityService.GetUser(db, currentUserId);
+                ViewBag.User = userIdentityService.GetUser(db, currentUserId);
             }
            
             return View(listing);

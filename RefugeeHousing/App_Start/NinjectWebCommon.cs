@@ -75,6 +75,7 @@ namespace RefugeeHousing.App_Start
             kernel.Bind<IPropertyEmailService>().To<PropertyEmailService>().InSingletonScope();
             kernel.Bind<IPropertyContactService>().To<PropertyContactService>().InSingletonScope();
             kernel.Bind<IEmailBuilder>().To<EmailBuilder>().InSingletonScope();
+            kernel.Bind<IUserIdentityService>().To<UserIdentityService>().InSingletonScope();
         }        
     }
 }

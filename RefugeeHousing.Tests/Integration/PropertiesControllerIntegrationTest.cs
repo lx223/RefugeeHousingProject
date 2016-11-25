@@ -16,6 +16,7 @@ namespace RefugeeHousing.Tests.Integration
         private IPropertyEmailService propertyEmailService;
         private IPropertyContactService propertyContactService;
         private IPropertyListingService propertyListingService;
+        private IUserIdentityService userIdentityService;
         private IApplicationDbContext dbContext;
 
         private PropertiesController propertiesController;
@@ -29,8 +30,9 @@ namespace RefugeeHousing.Tests.Integration
             propertyEmailService = A.Fake<IPropertyEmailService>();
             propertyContactService = new PropertyContactService(propertyEmailService, dbContext, new EmailBuilder());
             propertyListingService = A.Fake<IPropertyListingService>();
+            userIdentityService = A.Fake<UserIdentityService>();
 
-            propertiesController = new PropertiesController(propertyContactService, propertyListingService);
+            propertiesController = new PropertiesController(propertyContactService, propertyListingService, userIdentityService);
         }
 
         [Test]
