@@ -1,5 +1,4 @@
-﻿using RefugeeHousing.ApiAccess;
-using RefugeeHousing.Models;
+﻿using RefugeeHousing.Models;
 using RefugeeHousing.ViewModels;
 
 namespace RefugeeHousing.Services

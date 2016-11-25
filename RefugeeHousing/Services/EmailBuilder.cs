@@ -36,6 +36,7 @@ namespace RefugeeHousing.Services
             var languagesSpoken = GetLanguagesSpokenByNgoWorker(enquiry, languageSpokenByPropertyOwner);
 
             return string.Format(
+                // ReSharper disable once AssignNullToNotNullAttribute
                 LocalizedText.ResourceManager.GetString("EnquiryEmail", cultureInfo),
                 enquiry.EnquirerName,
                 enquiry.OrganizationName,

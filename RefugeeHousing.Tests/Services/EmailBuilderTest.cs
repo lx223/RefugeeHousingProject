@@ -13,7 +13,7 @@ namespace RefugeeHousing.Tests.Services
 
         private EmailBuilder emailBuilder;
 
-        private static Language[] languages = { Language.English, Language.Greek};
+        private static readonly Language[] Languages = { Language.English, Language.Greek};
 
         [SetUp]
         public void SetUp()
@@ -71,7 +71,7 @@ namespace RefugeeHousing.Tests.Services
             email.Contents[0].Value.Should().NotContain(incorrectContent);
         }
 
-        [Test, TestCaseSource(nameof(languages))]
+        [Test, TestCaseSource(nameof(Languages))]
         public void EmailIncludesNameOfEnquirer(Language language)
         {
             // Arrange
@@ -85,7 +85,7 @@ namespace RefugeeHousing.Tests.Services
             email.Contents[0].Value.Should().Contain(nameOfEnquirer);
         }
 
-        [Test, TestCaseSource(nameof(languages))]
+        [Test, TestCaseSource(nameof(Languages))]
         public void EmailIncludesOrganizationName(Language language)
         {
             // Arrange
@@ -99,7 +99,7 @@ namespace RefugeeHousing.Tests.Services
             email.Contents[0].Value.Should().Contain(organizationName);
         }
 
-        [Test, TestCaseSource(nameof(languages))]
+        [Test, TestCaseSource(nameof(Languages))]
         public void EmailIncludesLinkToOrganizationWebsite(Language language)
         {
             // Arrange
