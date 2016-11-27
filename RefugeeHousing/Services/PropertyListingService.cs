@@ -81,21 +81,34 @@ namespace RefugeeHousing.Services
             using (var db = new ApplicationDbContext())
             {
                 var listings = db.Listings.ToList();
-
-                return (from listing in listings
-                    let location = db.Locations.Find(listing.LocationId)
-                    select new ListingDetailsViewModel
-                    {
-                        Appliances = listing.Appliances,
-                        Elevator = listing.Elevator,
-                        Furnished = listing.Furnished,
-                        Id = listing.Id,
-                        LanguagesSpoken = listing.LanguagesSpoken,
-                        Location = location,
-                        NumberOfBedrooms = listing.NumberOfBedrooms,
-                        Price = listing.Price
-                    }).ToList();
+                return ConvertListingToListingDetailsViewModel(listings, db);
             }
-        } 
+        }
+   
+        public IEnumerable<ListingDetailsViewModel> GetListings(string ownerId)
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                var listings = db.Listings.Where(l => l.OwnerId == ownerId).ToList();
+                return ConvertListingToListingDetailsViewModel(listings, db);
+            }
+        }
+
+        private static IEnumerable<ListingDetailsViewModel> ConvertListingToListingDetailsViewModel(List<Listing> listings, ApplicationDbContext db)
+        {
+            return (from listing in listings
+                let location = db.Locations.Find(listing.LocationId)
+                select new ListingDetailsViewModel
+                {
+                    Appliances = listing.Appliances,
+                    Elevator = listing.Elevator,
+                    Furnished = listing.Furnished,
+                    Id = listing.Id,
+                    LanguagesSpoken = listing.LanguagesSpoken,
+                    Location = location,
+                    NumberOfBedrooms = listing.NumberOfBedrooms,
+                    Price = listing.Price
+                }).ToList();
+        }
     }
 }

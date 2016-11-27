@@ -1,5 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using RefugeeHousing.Models;
 using RefugeeHousing.Services;
 using RefugeeHousing.ViewModels;
 
@@ -9,10 +11,23 @@ namespace RefugeeHousing.Controllers
     public class MyPropertiesController : Controller
     {
         private readonly IPropertyListingService propertyListingService;
+        private readonly IUserIdentityService userIdentityService;
 
-        public MyPropertiesController(IPropertyListingService propertyListingService)
+        public MyPropertiesController(IPropertyListingService propertyListingService, IUserIdentityService userIdentityService)
         {
             this.propertyListingService = propertyListingService;
+            this.userIdentityService = userIdentityService;
+        }
+
+        public ActionResult Index()
+        {
+            var currentUserId = User.Identity.GetUserId();
+            using (var db = new ApplicationDbContext())
+            {
+                ViewBag.User = userIdentityService.GetUser(db, currentUserId);
+            }
+
+            return View(propertyListingService.GetListings().ToList());
         }
 
         // GET: ListingViewModel

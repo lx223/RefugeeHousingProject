@@ -424,6 +424,7 @@
     <Content Include="Views\MyProperties\Add.cshtml" />
     <Content Include="Views\Properties\Index.cshtml" />
     <Content Include="Views\Properties\_EnquiryForm.cshtml" />
+    <Content Include="Views\MyProperties\Index.cshtml" />
     <None Include="Web.Production.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
