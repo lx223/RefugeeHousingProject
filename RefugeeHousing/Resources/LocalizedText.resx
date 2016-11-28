@@ -254,4 +254,10 @@ This person has expressed their willingness to sign medium-to-long-term leases o
   <data name="MyProperties" xml:space="preserve">
     <value>My Properties</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
 </root>

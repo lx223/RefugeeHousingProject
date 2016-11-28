@@ -255,4 +255,10 @@
   <data name="MyProperties" xml:space="preserve">
     <value>Ακίνητα μου</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Διαγράφω</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Επεξεργασία</value>
+  </data>
 </root>
