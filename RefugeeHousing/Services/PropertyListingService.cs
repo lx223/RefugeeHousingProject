@@ -10,6 +10,7 @@ namespace RefugeeHousing.Services
         void AddListingToDatabase(ListingViewModel listingViewModel, string currentUserId);
         ListingDetailsViewModel GetListing(int id);
         IEnumerable<ListingDetailsViewModel> GetListings();
+        IEnumerable<ListingDetailsViewModel> GetListings(string ownerId);
     }
 
     public class PropertyListingService : IPropertyListingService

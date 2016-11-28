@@ -29,6 +29,7 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink(LocalizedText.AllProperties, "Index", "Properties")</li>
+                        <li>@Html.ActionLink(LocalizedText.MyProperties, "Index", "MyProperties")</li>
                         <li>@Html.ActionLink(LocalizedText.AddProperty, "Add", "MyProperties")</li>
                     }
                 </ul>

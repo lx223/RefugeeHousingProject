@@ -27,7 +27,7 @@ namespace RefugeeHousing.Controllers
                 ViewBag.User = userIdentityService.GetUser(db, currentUserId);
             }
 
-            return View(propertyListingService.GetListings().ToList());
+            return View(propertyListingService.GetListings(currentUserId).ToList());
         }
 
         // GET: ListingViewModel
