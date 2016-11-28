@@ -40,7 +40,6 @@
 $(document).ready(function () {
     var table = $('#listings-table').DataTable();
 
-    // Event listener to the two range filtering inputs to redraw on input
     $('#filter-min-bedrooms-text, #filter-max-price-text, #filter-furnished-text').change(function () {
         table.draw();
     });
