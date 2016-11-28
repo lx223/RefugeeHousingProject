@@ -47,6 +47,18 @@ namespace RefugeeHousing.Controllers
             return Redirect("/");
         }
 
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            return Redirect("/MyProperties/Index");
+        }
+
 
     }
 }

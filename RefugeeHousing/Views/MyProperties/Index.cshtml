@@ -52,6 +52,7 @@
             <th>@LocalizedText.Location</th>
             <th>@LocalizedText.Price</th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     @foreach (var listing in Model)
@@ -62,9 +63,9 @@
             <td>@listing.NumberOfBedrooms</td>
             <td>@(listing.Furnished ? LocalizedText.Yes : LocalizedText.No)</td>
             <td>@listing.GetLocation(user.PreferredLanguage)</td>
-
             <td>€@listing.Price</td>
-            <td>@Html.ActionLink("Details", "Details", "Properties", new { id = listing.Id }, null)</td>
+            <td>@Html.ActionLink("Edit", "Edit", "MyProperties", new {id = listing.Id}, null)</td>
+            <td>@Html.ActionLink("Delete", "Delete", "MyProperties", new { id = listing.Id }, null)</td>
         </tr>
     }
 </table>
