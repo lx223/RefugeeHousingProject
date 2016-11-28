@@ -62,9 +62,8 @@
             <td>@listing.NumberOfBedrooms</td>
             <td>@(listing.Furnished ? LocalizedText.Yes : LocalizedText.No)</td>
             <td>@listing.GetLocation(user.PreferredLanguage)</td>
-
             <td>€@listing.Price</td>
-            <td>@Html.ActionLink("Details", "Details", "Properties", new {id = listing.Id}, null)</td>
+            <td>@Html.ActionLink(@LocalizedText.Details, "Details", "Properties", new { id = listing.Id }, null)</td>
         </tr>
     }
 </table>

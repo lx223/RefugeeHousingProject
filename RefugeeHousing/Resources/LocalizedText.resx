@@ -204,6 +204,9 @@
   <data name="PropertyDetails" xml:space="preserve">
     <value>Property Details</value>
   </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
   <data name="WillRentToRefugees" xml:space="preserve">
     <value>I agree that this property can be rented to refugees</value>
   </data>
