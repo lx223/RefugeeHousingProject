@@ -160,6 +160,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete listing.
+        /// </summary>
+        public static string DeleteListingConfirmation {
+            get {
+                return ResourceManager.GetString("DeleteListingConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deleting listing failed. You are not authorized to delete this listing. Listing ID.
+        /// </summary>
+        public static string DeleteListingFailedUnauthorized {
+            get {
+                return ResourceManager.GetString("DeleteListingFailedUnauthorized", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
         public static string Edit {

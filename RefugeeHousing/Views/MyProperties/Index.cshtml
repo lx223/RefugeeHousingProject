@@ -35,7 +35,7 @@
             <td>
                 @Ajax.ActionLink(@LocalizedText.Delete, "Delete", "MyProperties", new {id = listing.Id}, new AjaxOptions
                 {
-                    Confirm = "Are you sure you want to delete?",
+                    Confirm = LocalizedText.DeleteListingConfirmation + " " + listing.Id + " ?",
                     OnSuccess = "deleteResultHandler",
                     HttpMethod = "DELETE"
                 })

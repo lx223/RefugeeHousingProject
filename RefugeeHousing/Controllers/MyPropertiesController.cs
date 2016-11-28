@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity;
 using RefugeeHousing.Models;
 using RefugeeHousing.Services;
 using RefugeeHousing.ViewModels;
+using Resources;
 
 namespace RefugeeHousing.Controllers
 {
@@ -61,7 +62,7 @@ namespace RefugeeHousing.Controllers
 
             if (listing.OwnerId != currentUserId)
             {
-                return Json(new {ok = false, message = "Unauthorized"});
+                return Json(new {ok = false, message = LocalizedText.DeleteListingFailedUnauthorized + " " + id});
             }
             propertyListingService.DeleteListing(id);
             return Json(new { ok = true });
