@@ -14,7 +14,7 @@
     init: function() {
       $("#add-property-form").submit(function (event) {
         var placeId = $("#place_id").val();
-        if (placeId == "") {
+        if (placeId === "") {
           showErrorMessage("Please use Location autocomplete to input a valid address");
           event.preventDefault();
         } else {

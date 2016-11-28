@@ -16,7 +16,7 @@
   function containsAdministrativeAreaLevel5Address(addressComponents) {
     for (var i = 0; i < addressComponents.length; i++) {
       var types = addressComponents[i]["types"];
-      if (types.indexOf("administrative_area_level_5") != -1) {
+      if (types.indexOf("administrative_area_level_5") !== -1) {
         return true;
       }
     }
@@ -49,6 +49,7 @@
     var options = {
       componentRestrictions: { "country": "gr" }
     }
+// ReSharper disable once UseOfImplicitGlobalInFunctionScope
     autocomplete = new google.maps.places.Autocomplete(document.getElementById("location"), options);
     autocomplete.addListener(placeChangedEvent, placeChanged);
   }
