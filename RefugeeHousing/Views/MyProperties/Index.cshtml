@@ -45,13 +45,4 @@
 </table>
 
 <script type="text/javascript" src="~/Scripts/listingsTable.js"></script>
-
-<script type="text/javascript">
-    function deleteResultHandler(response) {
-        if (response.ok) {
-            window.location.reload();
-        } else {
-            alert(response.message);
-        }     
-    }
-</script>
+<script type="text/javascript" src="~/Scripts/listingDeleteHandler.js"></script>
