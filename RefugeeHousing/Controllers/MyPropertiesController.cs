@@ -53,9 +53,21 @@ namespace RefugeeHousing.Controllers
             return View();
         }
 
-        [HttpGet]
+        [HttpPost]
         public ActionResult Delete(int id)
         {
+            var currentUserId = User.Identity.GetUserId();
+            var listing = propertyListingService.GetListing(id);
+
+            if (listing.OwnerId == currentUserId)
+            {
+                propertyListingService.DeleteListing(id);
+            }
+            else
+            {
+                
+            }
+
             return Redirect("/MyProperties/Index");
         }
 

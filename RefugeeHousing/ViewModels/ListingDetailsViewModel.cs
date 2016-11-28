@@ -13,6 +13,7 @@ namespace RefugeeHousing.ViewModels
         public string Appliances { get; set; }
         public bool Elevator { get; set; }
         public string LanguagesSpoken { get; set; }
+        public string OwnerId { get; set; }
 
         public string GetLocation(Language language)
         {
