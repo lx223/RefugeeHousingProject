@@ -252,4 +252,7 @@
 Αυτό το άτομο έχει εκφράσει την προθυμία τους να υπογράψουν μεσο-μακροπρόθεσμες μισθώσεις για λογαριασμό των οικογενειών των προσφύγων, και να πληρώσει το ενοίκιο πρώτο και το τελευταίο μήνα μέχρι το μέτωπο.</value>
     <comment>Ensure that the string format arguments are kept in sync in each language.</comment>
   </data>
+  <data name="MyProperties" xml:space="preserve">
+    <value>Ακίνητα μου</value>
+  </data>
 </root>

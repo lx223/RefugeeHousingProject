@@ -251,4 +251,7 @@ Languages spoken by {0}: {3}
 
 This person has expressed their willingness to sign medium-to-long-term leases on behalf of refugee families, and to pay first and last month's rent up front.</value>
   </data>
+  <data name="MyProperties" xml:space="preserve">
+    <value>My Properties</value>
+  </data>
 </root>

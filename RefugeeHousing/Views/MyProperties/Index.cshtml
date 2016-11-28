@@ -1,7 +1,13 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
+﻿@using System.Web.Mvc.Html
+@using RefugeeHousing.Models
+@using RefugeeHousing.Services
+@using Resources
+@model List<RefugeeHousing.ViewModels.ListingDetailsViewModel>
 
-<h2>Index</h2>
 
+<h2 class="display-1">@LocalizedText.MyProperties</h2>
+
+<p>@(LocalizedText.PriceGivenPerMonth).</p>
+
+<hr>
+@Html.Partial("_PropertiesListPartial", Model)

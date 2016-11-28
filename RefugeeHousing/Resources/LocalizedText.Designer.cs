@@ -285,6 +285,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My Properties.
+        /// </summary>
+        public static string MyProperties {
+            get {
+                return ResourceManager.GetString("MyProperties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
         public static string No {
