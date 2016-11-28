@@ -10,39 +10,6 @@
 <p>@(LocalizedText.PriceGivenPerMonth).</p>
 
 <hr>
-<div class="row">
-    <div class="col-xs-12 col-sm-3">
-        <label>Filter by:</label>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12 col-sm-3">
-        <div class="form-group">
-            <label>@LocalizedText.Bedrooms</label>
-            @Html.DropDownList("filter-min-bedrooms-text", PropertyFilterService.GetMinRoomsFilterList(), new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-3">
-        <div class="form-group">
-            <label>@LocalizedText.Furnished</label>
-            @Html.DropDownList("filter-furnished-text", PropertyFilterService.GetFurnishedFilterList(), new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-3">
-        <div class="form-group">
-            <label>@LocalizedText.Location</label>
-            @Html.TextBox("filter-location-text", null, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-3">
-        <div class="form-group">
-            <label>@LocalizedText.Price</label>
-            @Html.DropDownList("filter-max-price-text", PropertyFilterService.GetMaxMonthlyRentFilterList(), new { @class = "form-control" })
-        </div>
-    </div>
-</div>
-<br>
-<hr>
 <table id="listings-table" class="table table-hover table-condensed">
     <thead>
         <tr>
@@ -69,3 +36,5 @@
         </tr>
     }
 </table>
+
+<script type="text/javascript" src="~/Scripts/listingsTable.js"></script>
