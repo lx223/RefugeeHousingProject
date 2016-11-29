@@ -57,8 +57,8 @@ namespace RefugeeHousing.Controllers
                 ViewBag.User = userIdentityService.GetUser(db, currentUserId);
             }
 
-            var listing = propertyListingService.GetListing(id);
-            return View(listing);
+            var listingViewModel = propertyListingService.GetListingViewModel(id);
+            return View(listingViewModel);
         }
 
         [AcceptVerbs(HttpVerbs.Delete)]

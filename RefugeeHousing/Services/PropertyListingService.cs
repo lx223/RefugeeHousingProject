@@ -10,6 +10,7 @@ namespace RefugeeHousing.Services
     {
         void AddListingToDatabase(ListingViewModel listingViewModel, string currentUserId);
         ListingDetailsViewModel GetListing(int id);
+        ListingViewModel GetListingViewModel(int id);
         IEnumerable<ListingDetailsViewModel> GetListings();
         IEnumerable<ListingDetailsViewModel> GetListings(string ownerId);
         void DeleteListing(int id);
@@ -77,6 +78,32 @@ namespace RefugeeHousing.Services
                 };
 
                 return listingDetailsViewModel;
+            }
+        }
+
+        public ListingViewModel GetListingViewModel(int id)
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                var listing = db.Listings.Find(id);
+                if (listing == null)
+                {
+                    return null;
+                }
+                var location = db.Locations.Find(listing.LocationId);
+                var listingViewModel = new ListingViewModel
+                {
+                    Appliances = listing.Appliances,
+                    Elevator = listing.Elevator,
+                    Furnished = listing.Furnished,
+                    LanguagesSpoken = listing.LanguagesSpoken,
+                    Location = location,
+                    NumberOfBedrooms = listing.NumberOfBedrooms,
+                    PlaceId = listing.LocationId,
+                    Price = listing.Price
+                };
+
+                return listingViewModel;
             }
         }
 
