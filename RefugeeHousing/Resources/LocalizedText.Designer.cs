@@ -187,6 +187,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit listing.
+        /// </summary>
+        public static string EditListing {
+            get {
+                return ResourceManager.GetString("EditListing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Elevator.
         /// </summary>
         public static string Elevator {
