@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using RefugeeHousing.Models;
@@ -54,7 +56,7 @@ namespace RefugeeHousing.Controllers
             return View();
         }
 
-        [AcceptVerbs(HttpVerbs.Delete)]
+        [HttpPost]
         public ActionResult Delete(int id)
         {
             var currentUserId = User.Identity.GetUserId();
@@ -62,10 +64,11 @@ namespace RefugeeHousing.Controllers
 
             if (listing.OwnerId != currentUserId)
             {
-                return Json(new {ok = false, message = LocalizedText.DeleteListingFailedUnauthorized + " " + id});
+                return new HttpUnauthorizedResult(LocalizedText.DeleteListingFailedUnauthorized + " " + id);
             }
+
             propertyListingService.DeleteListing(id);
-            return Json(new { ok = true });
+            return RedirectToAction("Index");
         }
     }
 }
