@@ -1,5 +1,4 @@
-﻿@using System.Web.Configuration
-@model RefugeeHousing.ViewModels.ListingViewModel
+﻿@model RefugeeHousing.ViewModels.ListingViewModel
 
 @{
     ViewBag.Title = Resources.LocalizedText.AddNewListing;
@@ -57,9 +56,7 @@
         </label>
     </div>
 
-    <input type="submit" class="btn btn-primary" value="Register new listing"/>
+    <input type="submit" class="btn btn-primary" value="@Resources.LocalizedText.RegisterNewListing"/>
 }
 
-<script type="text/javascript" src="~/Scripts/autocompleteLocation.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=@(WebConfigurationManager.AppSettings["GoogleApiKey"])&callback=initAutocomplete" async defer></script>
-<script type="text/javascript" src="~/Scripts/placeIdValidator.js"></script>
+<script type="text/javascript" src="~/Scripts/addProperty.js"></script>

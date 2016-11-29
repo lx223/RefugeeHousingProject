@@ -10,6 +10,18 @@
     <title>@ViewBag.Title - Refugee Housing Project</title>
     @Styles.Render("~/Content/css")
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.css">
+  <script src="/Scripts/require.js"></script>
+  <script type="text/javascript">
+    require.config({
+      baseUrl: "/scripts",
+      paths: {
+        jquery: "jquery-1.10.2.min",
+        'datatables.net': "https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min",
+        'datatables': 'https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min',
+        'googlemaps': 'https://maps.googleapis.com/maps/api/js?libraries=places&key=' + '@(System.Web.Configuration.WebConfigurationManager.AppSettings["GoogleApiKey"])'
+      }
+    });
+  </script>
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     <script src="https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.js"></script>
@@ -51,10 +63,8 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+        <hr/>
     </div>
-
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>

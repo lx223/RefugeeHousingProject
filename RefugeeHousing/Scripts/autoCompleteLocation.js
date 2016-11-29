@@ -1,53 +1,62 @@
-﻿var autocomplete;
+﻿define(["googlemaps", "jquery"], function (googleMaps, $) {
+  var autocomplete;
 
-var placeChangedEvent = "place_changed"; // Event fired by Google API when the place changed
+  var placeChangedEvent = "place_changed"; // Event fired by Google API when the place changed
 
-function initAutocomplete() {
-    var options = {
-        componentRestrictions: { "country": "gr"}
+  function showErrorMessage(message) {
+    $("#location-form-group").addClass("has-error");
+    $("#location-help-block").text(message);
+  }
+
+  function hideErrorMessage() {
+    $("#location-form-group").removeClass("has-error");
+    $("#location-help-block").text("");
+  }
+
+  function containsAdministrativeAreaLevel5Address(addressComponents) {
+    for (var i = 0; i < addressComponents.length; i++) {
+      var types = addressComponents[i]["types"];
+      if (types.indexOf("administrative_area_level_5") !== -1) {
+        return true;
+      }
     }
-    autocomplete = new google.maps.places.Autocomplete(document.getElementById("location"), options);
-    autocomplete.addListener(placeChangedEvent, placeChanged);
-}
+    return false;
+  }
 
-function placeChanged() {
+  function isPlaceSpecific(place) {
+    var addressComponents = place["address_components"];
+    if (containsAdministrativeAreaLevel5Address(addressComponents)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function placeChanged() {
     var place = autocomplete.getPlace();
 
     if (!place.geometry) {
-        showErrorMessage("No details available for input: '" + place.name + "'");
+      showErrorMessage("No details available for input: '" + place.name + "'");
     } else if (!isPlaceSpecific(place)) {
-        showErrorMessage("Please input a more specific address.");
+      showErrorMessage("Please input a more specific address.");
     } else {
-        hideErrorMessage();
-        document.getElementById("place_id").value = place.place_id;
+      hideErrorMessage();
+      document.getElementById("place_id").value = place.place_id;
     }
-}
+  }
 
-function showErrorMessage(message) {
-    $("#location-form-group").addClass("has-error");
-    $("#location-help-block").text(message);
-}
-
-function hideErrorMessage() {
-    $("#location-form-group").removeClass("has-error");
-    $("#location-help-block").text("");
-}
-
-function isPlaceSpecific(place) {
-    var addressComponents = place["address_components"];
-    if (containsAdministrativeAreaLevel5Address(addressComponents)) {
-        return true;
-    } else {
-        return false;
+  function initAutocomplete() {
+    var options = {
+      componentRestrictions: { "country": "gr" }
     }
-}
+// ReSharper disable once UseOfImplicitGlobalInFunctionScope
+    autocomplete = new google.maps.places.Autocomplete(document.getElementById("location"), options);
+    autocomplete.addListener(placeChangedEvent, placeChanged);
+  }
 
-function containsAdministrativeAreaLevel5Address(addressComponents) {
-    for (var i = 0; i < addressComponents.length; i++) {
-        var types = addressComponents[i]["types"];
-        if (types.indexOf("administrative_area_level_5") != -1) {
-            return true;
-        }
+  return {
+    init: function() {
+      initAutocomplete();
     }
-    return false;
-}
+  }
+});
