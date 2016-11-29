@@ -1,3 +1,7 @@
-﻿$(document).ready(function () {
-    var table = $('#listings-table').DataTable();
+﻿define(["jquery", "datatables"], function ($) {
+    return {
+        init: function() {
+            var table = $('#listings-table').DataTable();
+        }
+    }
 });

@@ -1,4 +1,4 @@
-﻿require(["jquery", "datatables"], function($) {
+﻿define(["jquery", "datatables"], function($, datatables) {
   $.fn.dataTable.ext.search.push(
     // ReSharper disable once UnusedParameter
     function(settings, data, dataIndex) {
@@ -38,18 +38,22 @@
     }
   );
 
-  var table = $('#listings-table').DataTable();
+    function initListingsTableFiltering() {
+        var table = $('#listings-table').DataTable();
 
-  // Event listener to the two range filtering inputs to redraw on input
-  $('#filter-min-bedrooms-text, #filter-max-price-text, #filter-furnished-text').change(function() {
-    table.draw();
-  });
+        $('#filter-min-bedrooms-text, #filter-max-price-text, #filter-furnished-text').change(function () {
+            table.draw();
+        });
 
-  $('#filter-min-bedrooms-text, #filter-max-price-text, #filter-furnished-text').change(function () {
-    table.draw();
-  });
+        $('#filter-location-text').on('input', function () {
+            table.draw();
+        });
+    }
 
-  $('#filter-location-text').on('input', function() {
-    table.draw();
-  });
+    return {
+        init: function () {
+            initListingsTableFiltering();
+        }
+    }
+
 });
