@@ -51,7 +51,14 @@ namespace RefugeeHousing.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            return View();
+            var currentUserId = User.Identity.GetUserId();
+            using (var db = new ApplicationDbContext())
+            {
+                ViewBag.User = userIdentityService.GetUser(db, currentUserId);
+            }
+
+            var listing = propertyListingService.GetListing(id);
+            return View(listing);
         }
 
         [AcceptVerbs(HttpVerbs.Delete)]
