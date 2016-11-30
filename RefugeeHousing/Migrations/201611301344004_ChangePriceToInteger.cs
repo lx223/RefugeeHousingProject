@@ -7,7 +7,6 @@ namespace RefugeeHousing.Migrations
     {
         public override void Up()
         {
-            Sql("ALTER TABLE dbo.Listings DROP CONSTRAINT DF__Listings__Price__1FCDBCEB");
             AlterColumn("dbo.Listings", "Price", c => c.Int(nullable: false));
         }
         
