@@ -22,7 +22,7 @@ function placeChanged() {
         } else {
             hideErrorMessage();
             document.getElementById("place_id").value = place.place_id;
-            document.getElementById("locality").innerText = locality;
+            document.getElementById("locality").value = locality;
         }
     }
 }
