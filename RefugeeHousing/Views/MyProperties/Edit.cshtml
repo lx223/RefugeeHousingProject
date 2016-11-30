@@ -14,55 +14,71 @@
 {
     var user = (ApplicationUser)ViewBag.User;
     <div class="row">
-        <div class="form-group col-xs-12">
-            <label>@Resources.LocalizedText.NumberOfBedrooms</label>
-            @Html.TextBoxFor(model => model.NumberOfBedrooms, new {@class = "form-control", type = "number", required = "required"})
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label>@Resources.LocalizedText.NumberOfBedrooms</label>
+                @Html.TextBoxFor(model => model.NumberOfBedrooms, new {@class = "form-control", type = "number", required = "required"})
+            </div>
         </div>
     </div>
     <div class="row">
-        <div class="form-group col-xs-12">
-            <label>@Resources.LocalizedText.PricePerMonth (€)</label>
-            @Html.TextBoxFor(model => model.Price, new {@class = "form-control", type = "number", min = "1", step = "1", required = "required"})
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label>@Resources.LocalizedText.PricePerMonth (€)</label>
+                @Html.TextBoxFor(model => model.Price, new { @class = "form-control", type = "number", min = "1", step = "1", required = "required" })
+            </div>
         </div>
     </div>
     <div class="row">
-        <div class="form-group col-xs-12">
-            <label>@Resources.LocalizedText.LanguagesSpoken</label>
-            @Html.TextBoxFor(model => model.LanguagesSpoken, new {@class = "form-control", placeholder = Resources.LocalizedText.LanguagesSpokenPlaceholder, required = "required"})
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label>@Resources.LocalizedText.LanguagesSpoken</label>
+                @Html.TextBoxFor(model => model.LanguagesSpoken, new { @class = "form-control", placeholder = Resources.LocalizedText.LanguagesSpokenPlaceholder, required = "required" })
+            </div>
         </div>
     </div>
     <div class="row">
-        <div class="form-group col-xs-12 col-sm-9" id="location-form-group">
-            <label>@Resources.LocalizedText.Location</label>
-            <input Value="@Model.GetLocation(user.PreferredLanguage)" type="text" id="location" class="form-control" placeholder="@Resources.LocalizedText.LocationPlaceholder" aria-describedby="location-help-block"/>
-            <span id="location-help-block" class="help-block"></span>
-            @Html.HiddenFor(model => model.PlaceId, new {id = "place_id"})
+        <div class="col-xs-12 col-sm-9">
+            <div class="form-group"  id="location-form-group">
+                <label>@Resources.LocalizedText.Location</label>
+                <input Value="@Model.GetLocation(user.PreferredLanguage)" type="text" id="location" class="form-control" placeholder="@Resources.LocalizedText.LocationPlaceholder" aria-describedby="location-help-block" />
+                <span id="location-help-block" class="help-block"></span>
+                @Html.HiddenFor(model => model.PlaceId, new { id = "place_id" })
+            </div>
         </div>
-        <div class="form-group col-xs-12 col-sm-3">
-            <label>Locality</label>
-            <input type="text" id="locality" class="form-control" readonly="readonly"/>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-xs-12">
-            <label>@Resources.LocalizedText.AppliancesIncluded</label>
-            @Html.TextBoxFor(model => model.Appliances, new {@class = "form-control", placeholder = Resources.LocalizedText.AppliancesIncludedPlaceholder})
+        <div class="col-xs-12 col-sm-3">
+            <div class="form-group">
+                <label>Locality</label>
+                <input type="text" id="locality" class="form-control" readonly="readonly"/>
+            </div>
         </div>
     </div>
     <div class="row">
-        <div class="form-check col-xs-12">
-            <label>
-                @Html.CheckBoxFor(model => model.Furnished)
-                @Resources.LocalizedText.Furnished
-            </label>
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label>@Resources.LocalizedText.AppliancesIncluded</label>
+                @Html.TextBoxFor(model => model.Appliances, new { @class = "form-control", placeholder = Resources.LocalizedText.AppliancesIncludedPlaceholder })
+            </div>
         </div>
     </div>
     <div class="row">
-        <div class="form-check col-xs-12">
-            <label>
-                @Html.CheckBoxFor(model => model.Elevator)
-                @Resources.LocalizedText.Elevator
-            </label>
+        <div class="col-xs-12">
+            <div class="form-check">
+                <label>
+                    @Html.CheckBoxFor(model => model.Furnished)
+                    @Resources.LocalizedText.Furnished
+                </label>
+            </div>
+                        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-check">
+                <label>
+                    @Html.CheckBoxFor(model => model.Elevator)
+                    @Resources.LocalizedText.Elevator
+                </label>
+            </div>
         </div>
     </div>
     <div class="row">
