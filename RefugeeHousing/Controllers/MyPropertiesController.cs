@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Data.Entity;
+using System.Linq;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using RefugeeHousing.Models;
@@ -59,6 +60,16 @@ namespace RefugeeHousing.Controllers
 
             var listingViewModel = propertyListingService.GetListingViewModel(id);
             return View(listingViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(int id, ListingViewModel listingViewModel)
+        {
+            var currentUserId = User.Identity.GetUserId();
+            propertyListingService.UpdateListing(id, listingViewModel, currentUserId);
+
+            return RedirectToAction("Index");
+
         }
 
         [AcceptVerbs(HttpVerbs.Delete)]

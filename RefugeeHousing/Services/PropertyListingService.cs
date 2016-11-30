@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using RefugeeHousing.Models;
 ﻿using RefugeeHousing.ViewModels;
@@ -13,6 +14,7 @@ namespace RefugeeHousing.Services
         ListingViewModel GetListingViewModel(int id);
         IEnumerable<ListingDetailsViewModel> GetListings();
         IEnumerable<ListingDetailsViewModel> GetListings(string ownerId);
+        void UpdateListing(int listingId, ListingViewModel listingViewModel, string currentUserId);
         void DeleteListing(int id);
     }
 
@@ -122,6 +124,31 @@ namespace RefugeeHousing.Services
             {
                 var listings = db.Listings.Where(l => l.OwnerId == ownerId).ToList();
                 return ConvertListingToListingDetailsViewModel(listings, db);
+            }
+        }
+
+        public void UpdateListing(int listingId, ListingViewModel listingViewModel, string currentUserId)
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                var locationId = listingViewModel.PlaceId;
+                var location = locationRepository.GetOrCreateLocation(db, locationId);
+                var currentUser = userIdentityService.GetUser(db, currentUserId);
+                var listing = db.Listings.Find(listingId);
+
+                listing.Appliances = listingViewModel.Appliances;
+                listing.Elevator = listingViewModel.Elevator;
+                listing.Furnished = listingViewModel.Furnished;
+                listing.Price = listingViewModel.Price;
+                listing.LanguagesSpoken = listingViewModel.LanguagesSpoken;
+                listing.Location = location;
+                listing.LocationId = locationId;
+                listing.NumberOfBedrooms = listingViewModel.NumberOfBedrooms;
+                listing.Owner = currentUser;
+                listing.OwnerId = currentUserId;
+
+
+                db.SaveChanges();
             }
         }
 
