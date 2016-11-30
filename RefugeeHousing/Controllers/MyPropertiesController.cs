@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
@@ -64,7 +65,8 @@ namespace RefugeeHousing.Controllers
 
             if (listing.OwnerId != currentUserId)
             {
-                return new HttpUnauthorizedResult(LocalizedText.DeleteListingFailedUnauthorized + " " + id);
+                Response.StatusCode = (int) HttpStatusCode.Forbidden;
+                return new EmptyResult();
             }
 
             propertyListingService.DeleteListing(id);
