@@ -294,6 +294,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Locality.
+        /// </summary>
+        public static string Locality {
+            get {
+                return ResourceManager.GetString("Locality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Location.
         /// </summary>
         public static string Location {
