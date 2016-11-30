@@ -15,11 +15,15 @@ function placeChanged() {
 
     if (!place.geometry) {
         showErrorMessage("No details available for input: '" + place.name + "'");
-    } else if (!isPlaceSpecific(place)) {
-        showErrorMessage("Please input a more specific address.");
     } else {
-        hideErrorMessage();
-        document.getElementById("place_id").value = place.place_id;
+        var locality = getAdministrativeAreaLevel5Address(place);
+        if (locality == null) {
+            showErrorMessage("Please input a more specific address.");
+        } else {
+            hideErrorMessage();
+            document.getElementById("place_id").value = place.place_id;
+            document.getElementById("locality").innerText = locality;
+        }
     }
 }
 
@@ -33,21 +37,13 @@ function hideErrorMessage() {
     $("#location-help-block").text("");
 }
 
-function isPlaceSpecific(place) {
+function getAdministrativeAreaLevel5Address(place) {
     var addressComponents = place["address_components"];
-    if (containsAdministrativeAreaLevel5Address(addressComponents)) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function containsAdministrativeAreaLevel5Address(addressComponents) {
     for (var i = 0; i < addressComponents.length; i++) {
         var types = addressComponents[i]["types"];
         if (types.indexOf("administrative_area_level_5") != -1) {
-            return true;
+            return addressComponents[i]["long_name"];
         }
     }
-    return false;
+    return null;
 }
