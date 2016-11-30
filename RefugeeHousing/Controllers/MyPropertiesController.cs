@@ -53,6 +53,11 @@ namespace RefugeeHousing.Controllers
         public ActionResult Edit(int id)
         {
             var currentUserId = User.Identity.GetUserId();
+            var listing = propertyListingService.GetListing(id);
+            if (listing.OwnerId != currentUserId)
+            {
+                return HttpNotFound("Unauthorized");
+            }
             using (var db = new ApplicationDbContext())
             {
                 ViewBag.User = userIdentityService.GetUser(db, currentUserId);
@@ -66,6 +71,11 @@ namespace RefugeeHousing.Controllers
         public ActionResult Edit(int id, ListingViewModel listingViewModel)
         {
             var currentUserId = User.Identity.GetUserId();
+            var listing = propertyListingService.GetListing(id);
+            if (listing.OwnerId != currentUserId)
+            {
+                return HttpNotFound("Unauthorized");
+            }
             propertyListingService.UpdateListing(id, listingViewModel, currentUserId);
 
             return RedirectToAction("Index");
