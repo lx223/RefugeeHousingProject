@@ -11,7 +11,7 @@ namespace RefugeeHousing.Models
         [Required]
         public Location Location { get; set; }
         [Required]
-        public decimal Price { get; set; }
+        public int Price { get; set; }
         [Required]
         public int NumberOfBedrooms { get; set; }
         public bool Furnished { get; set; }

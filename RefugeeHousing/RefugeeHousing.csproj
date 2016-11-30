@@ -268,6 +268,10 @@
     <Compile Include="Migrations\201611221420166_MakePropertyLocationRequired.Designer.cs">
       <DependentUpon>201611221420166_MakePropertyLocationRequired.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611301344004_ChangePriceToInteger.cs" />
+    <Compile Include="Migrations\201611301344004_ChangePriceToInteger.Designer.cs">
+      <DependentUpon>201611301344004_ChangePriceToInteger.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Location.cs" />
     <Compile Include="Services\LocationRepository.cs" />
     <Compile Include="Services\EmailBuilder.cs" />
@@ -493,6 +497,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611221420166_MakePropertyLocationRequired.resx">
       <DependentUpon>201611221420166_MakePropertyLocationRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611301344004_ChangePriceToInteger.resx">
+      <DependentUpon>201611301344004_ChangePriceToInteger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\LocalizedText.el.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
