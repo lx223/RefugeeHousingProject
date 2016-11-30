@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using RefugeeHousing.Models;
@@ -56,7 +57,8 @@ namespace RefugeeHousing.Controllers
             var listing = propertyListingService.GetListing(id);
             if (listing.OwnerId != currentUserId)
             {
-                return HttpNotFound("Unauthorized");
+                Response.StatusCode = (int) HttpStatusCode.Forbidden;
+                return new EmptyResult();
             }
             using (var db = new ApplicationDbContext())
             {
@@ -74,7 +76,8 @@ namespace RefugeeHousing.Controllers
             var listing = propertyListingService.GetListing(id);
             if (listing.OwnerId != currentUserId)
             {
-                return HttpNotFound("Unauthorized");
+                Response.StatusCode = (int)HttpStatusCode.Forbidden;
+                return new EmptyResult();
             }
             propertyListingService.UpdateListing(id, listingViewModel, currentUserId);
 
