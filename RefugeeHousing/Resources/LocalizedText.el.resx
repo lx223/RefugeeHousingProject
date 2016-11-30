@@ -264,7 +264,4 @@
   <data name="DeleteListingConfirmation" xml:space="preserve">
     <value>Είστε σίγουροι ότι θέλετε να διαγράψετε την καταχώρισή</value>
   </data>
-  <data name="DeleteListingFailedUnauthorized" xml:space="preserve">
-    <value>Διαγραφή λίστα απέτυχε. Δεν επιτρέπεται να διαγράψετε αυτή την καταχώριση. Αριθμός Αγγελίας</value>
-  </data>
 </root>

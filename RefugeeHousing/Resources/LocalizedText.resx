@@ -263,7 +263,4 @@ This person has expressed their willingness to sign medium-to-long-term leases o
   <data name="DeleteListingConfirmation" xml:space="preserve">
     <value>Are you sure you want to delete listing</value>
   </data>
-  <data name="DeleteListingFailedUnauthorized" xml:space="preserve">
-    <value>Deleting listing failed. You are not authorized to delete this listing. Listing ID</value>
-  </data>
 </root>
