@@ -1,12 +1,13 @@
 ﻿@using System.Web.Configuration
 @using RefugeeHousing.Models
 @using RefugeeHousing.ViewModels
+@using Resources
 @model ListingViewModel
 
 @{
     ViewBag.Title = Resources.LocalizedText.EditListing;
 }
-<h2>@ViewBag.User</h2>
+
 <h2>@Resources.LocalizedText.EditListing</h2>
 
 @using (Html.BeginForm(null, null, FormMethod.Post, new {id = "add-property-form"}))
@@ -53,7 +54,7 @@
         </label>
     </div>
 
-    <input type="submit" class="btn btn-primary" value="Register new listing"/>
+    <input type="submit" class="btn btn-primary" value="@LocalizedText.UpdateListing"/>
 }
 
 <script type="text/javascript" src="~/Scripts/autocompleteLocation.js"></script>

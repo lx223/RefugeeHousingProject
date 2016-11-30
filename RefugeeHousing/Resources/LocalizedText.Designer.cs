@@ -474,6 +474,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Update listing.
+        /// </summary>
+        public static string UpdateListing {
+            get {
+                return ResourceManager.GetString("UpdateListing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I agree that this property can be rented to refugees.
         /// </summary>
         public static string WillRentToRefugees {

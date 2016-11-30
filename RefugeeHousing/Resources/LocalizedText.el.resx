@@ -270,4 +270,7 @@
   <data name="EditListing" xml:space="preserve">
     <value>Βελτίωση εγγραφής</value>
   </data>
+  <data name="UpdateListing" xml:space="preserve">
+    <value>Ενημέρωση Καταχώρησης</value>
+  </data>
 </root>
