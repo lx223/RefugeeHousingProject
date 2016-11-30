@@ -37,19 +37,8 @@ namespace RefugeeHousing.Services
                 var location = locationRepository.GetOrCreateLocation(db, locationId);
                 var currentUser = userIdentityService.GetUser(db, currentUserId);
 
-                var listing = new Listing
-                {
-                    Appliances = listingViewModel.Appliances,
-                    Elevator = listingViewModel.Elevator,
-                    Furnished = listingViewModel.Furnished,
-                    Price = listingViewModel.Price,
-                    LanguagesSpoken = listingViewModel.LanguagesSpoken,
-                    Location = location,
-                    LocationId = locationId,
-                    NumberOfBedrooms = listingViewModel.NumberOfBedrooms,
-                    Owner = currentUser,
-                    OwnerId = currentUserId
-                };
+                var listing = new Listing();
+                SetListingFields(listing, listingViewModel, location, locationId, currentUser, currentUserId);
 
                 db.Listings.Add(listing);
                 db.SaveChanges();
@@ -136,20 +125,24 @@ namespace RefugeeHousing.Services
                 var currentUser = userIdentityService.GetUser(db, currentUserId);
                 var listing = db.Listings.Find(listingId);
 
-                listing.Appliances = listingViewModel.Appliances;
-                listing.Elevator = listingViewModel.Elevator;
-                listing.Furnished = listingViewModel.Furnished;
-                listing.Price = listingViewModel.Price;
-                listing.LanguagesSpoken = listingViewModel.LanguagesSpoken;
-                listing.Location = location;
-                listing.LocationId = locationId;
-                listing.NumberOfBedrooms = listingViewModel.NumberOfBedrooms;
-                listing.Owner = currentUser;
-                listing.OwnerId = currentUserId;
-
+                SetListingFields(listing, listingViewModel, location, locationId, currentUser, currentUserId);
 
                 db.SaveChanges();
             }
+        }
+
+        private void SetListingFields(Listing listing, ListingViewModel listingViewModel, Location location, string locationId, ApplicationUser currentUser, string currentUserId)
+        {
+            listing.Appliances = listingViewModel.Appliances;
+            listing.Elevator = listingViewModel.Elevator;
+            listing.Furnished = listingViewModel.Furnished;
+            listing.Price = listingViewModel.Price;
+            listing.LanguagesSpoken = listingViewModel.LanguagesSpoken;
+            listing.Location = location;
+            listing.LocationId = locationId;
+            listing.NumberOfBedrooms = listingViewModel.NumberOfBedrooms;
+            listing.Owner = currentUser;
+            listing.OwnerId = currentUserId;
         }
 
         public void DeleteListing(int id)
