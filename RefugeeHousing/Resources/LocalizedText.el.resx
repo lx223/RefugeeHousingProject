@@ -264,4 +264,7 @@
   <data name="Details" xml:space="preserve">
     <value>Καθέκαστα</value>
   </data>
+  <data name="DeleteListingConfirmation" xml:space="preserve">
+    <value>Είστε σίγουροι ότι θέλετε να διαγράψετε την καταχώρισή</value>
+  </data>
 </root>

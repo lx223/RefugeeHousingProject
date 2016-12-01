@@ -1,9 +1,13 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using RefugeeHousing.Models;
 using RefugeeHousing.Services;
 using RefugeeHousing.ViewModels;
+using Resources;
 
 namespace RefugeeHousing.Controllers
 {
@@ -53,12 +57,20 @@ namespace RefugeeHousing.Controllers
             return View();
         }
 
-        [HttpGet]
+        [HttpPost]
         public ActionResult Delete(int id)
         {
-            return Redirect("/MyProperties/Index");
+            var currentUserId = User.Identity.GetUserId();
+            var listing = propertyListingService.GetListing(id);
+
+            if (listing.OwnerId != currentUserId)
+            {
+                Response.StatusCode = (int) HttpStatusCode.Forbidden;
+                return new EmptyResult();
+            }
+
+            propertyListingService.DeleteListing(id);
+            return RedirectToAction("Index");
         }
-
-
     }
 }

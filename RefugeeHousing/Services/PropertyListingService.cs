@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using RefugeeHousing.Models;
 ﻿using RefugeeHousing.ViewModels;
@@ -11,6 +12,7 @@ namespace RefugeeHousing.Services
         ListingDetailsViewModel GetListing(int id);
         IEnumerable<ListingDetailsViewModel> GetListings();
         IEnumerable<ListingDetailsViewModel> GetListings(string ownerId);
+        void DeleteListing(int id);
     }
 
     public class PropertyListingService : IPropertyListingService
@@ -70,7 +72,8 @@ namespace RefugeeHousing.Services
                     LanguagesSpoken = requestedListing.LanguagesSpoken,
                     Location = location,
                     NumberOfBedrooms = requestedListing.NumberOfBedrooms,
-                    Price = requestedListing.Price
+                    Price = requestedListing.Price,
+                    OwnerId = requestedListing.OwnerId
                 };
 
                 return listingDetailsViewModel;
@@ -95,6 +98,16 @@ namespace RefugeeHousing.Services
             }
         }
 
+        public void DeleteListing(int id)
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                var listing = db.Listings.Find(id);
+                db.Listings.Remove(listing);
+                db.SaveChanges();
+            }
+        }
+
         private static IEnumerable<ListingDetailsViewModel> ConvertListingToListingDetailsViewModel(List<Listing> listings, ApplicationDbContext db)
         {
             return (from listing in listings
@@ -108,7 +121,8 @@ namespace RefugeeHousing.Services
                     LanguagesSpoken = listing.LanguagesSpoken,
                     Location = location,
                     NumberOfBedrooms = listing.NumberOfBedrooms,
-                    Price = listing.Price
+                    Price = listing.Price,
+                    OwnerId = listing.OwnerId
                 }).ToList();
         }
     }

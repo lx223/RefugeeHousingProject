@@ -1,6 +1,5 @@
 ﻿@using System.Web.Mvc.Html
 @using RefugeeHousing.Models
-@using RefugeeHousing.Services
 @using Resources
 @model List<RefugeeHousing.ViewModels.ListingDetailsViewModel>
 
@@ -32,7 +31,13 @@
             <td>@listing.GetLocation(user.PreferredLanguage)</td>
             <td>€@listing.Price</td>
             <td>@Html.ActionLink(@LocalizedText.Edit, "Edit", "MyProperties", new {id = listing.Id}, null)</td>
-            <td>@Html.ActionLink(@LocalizedText.Delete, "Delete", "MyProperties", new { id = listing.Id }, null)</td>
+            <td>
+                @using (@Html.BeginForm("Delete", "MyProperties", new { id = listing.Id }, FormMethod.Post)) {
+                <div class="form-group">
+                    <input type="submit" class="btn btn-link" value=@LocalizedText.Delete onclick="return confirm('@(LocalizedText.DeleteListingConfirmation + " " + listing.Id + "?")')"/>
+                </div>
+                }
+            </td>
         </tr>
     }
 </table>

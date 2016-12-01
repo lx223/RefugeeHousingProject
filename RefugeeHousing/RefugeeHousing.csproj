@@ -381,6 +381,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\listingDeleteHandler.js" />
     <Content Include="Scripts\listingsTable.js" />
     <Content Include="Scripts\listingsTableFiltering.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />

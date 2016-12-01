@@ -263,4 +263,7 @@ This person has expressed their willingness to sign medium-to-long-term leases o
   <data name="Details" xml:space="preserve">
     <value>Details</value>
   </data>
+  <data name="DeleteListingConfirmation" xml:space="preserve">
+    <value>Are you sure you want to delete listing</value>
+  </data>
 </root>
