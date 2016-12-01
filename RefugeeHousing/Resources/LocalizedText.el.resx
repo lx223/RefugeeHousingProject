@@ -279,4 +279,52 @@
   <data name="UpdateListing" xml:space="preserve">
     <value>Ενημέρωση Καταχώρησης</value>
   </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Άλλαξε κωδικό</value>
+  </data>
+  <data name="ConfirmEmail" xml:space="preserve">
+    <value>Επιβεβαίωση διεύθυνσης ηλεκτρονικού ταχυδρομείου</value>
+  </data>
+  <data name="CreatePassword" xml:space="preserve">
+    <value>Δημιούργησε κωδικό</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Λάθος</value>
+  </data>
+  <data name="ForgotPasswordConfirmation" xml:space="preserve">
+    <value>Ξεχάσατε Επιβεβαίωση Κωδικού</value>
+  </data>
+  <data name="ForgotYourPassword" xml:space="preserve">
+    <value>Ξέχασες τον κωδικό σου;</value>
+  </data>
+  <data name="LockedOut" xml:space="preserve">
+    <value>Κλειδωμένος έξω</value>
+  </data>
+  <data name="LoginFailure" xml:space="preserve">
+    <value>Είσοδος αποτυχία</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Διαχειρίζομαι</value>
+  </data>
+  <data name="ManageYourExternalLogins" xml:space="preserve">
+    <value>Διαχειριστείτε την εξωτερική σας logins</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Τηλεφωνικό νούμερο</value>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>Επαναφέρετε τον κωδικό πρόσβασης</value>
+  </data>
+  <data name="ResetPasswordConfirmation" xml:space="preserve">
+    <value>Επαναφορά επιβεβαίωση κωδικού πρόσβασης</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Στείλετε</value>
+  </data>
+  <data name="Verify" xml:space="preserve">
+    <value>Επαληθεύω</value>
+  </data>
+  <data name="VerifyPhoneNumber" xml:space="preserve">
+    <value>Επαλήθευση του αριθμού τηλεφώνου</value>
+  </data>
 </root>
