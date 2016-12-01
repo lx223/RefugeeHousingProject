@@ -326,6 +326,12 @@ This person has expressed their willingness to sign medium-to-long-term leases o
   <data name="VerifyPhoneNumber" xml:space="preserve">
     <value>Verify Phone Number</value>
   </data>
+  <data name="ConfirmationPasswordDoesNotMatch" xml:space="preserve">
+    <value>The password and confirmation password do not match.</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
   </data>
@@ -335,10 +341,19 @@ This person has expressed their willingness to sign medium-to-long-term leases o
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
+  <data name="PasswordTooShort" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
   <data name="RegisterAsNewUser" xml:space="preserve">
     <value>Register as a new user</value>
   </data>
   <data name="RememberMe" xml:space="preserve">
     <value>Remember me?</value>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Create a new account.</value>
+  </data>
+  <data name="FieldRequired" xml:space="preserve">
+    <value>The {0} field is required.</value>
   </data>
 </root>

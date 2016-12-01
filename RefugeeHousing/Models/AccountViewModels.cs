@@ -65,20 +65,20 @@ namespace RefugeeHousing.Models
 
     public class RegisterViewModel
     {
-        [Required]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(LocalizedText))]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "Email", ResourceType = typeof(LocalizedText))]
         public string Email { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(LocalizedText))]
+        [StringLength(100, ErrorMessageResourceName = "PasswordTooShort", ErrorMessageResourceType = typeof(LocalizedText), MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Password", ResourceType = typeof(LocalizedText))]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "ConfirmPassword", ResourceType = typeof(LocalizedText))]
+        [Compare("Password", ErrorMessageResourceName = "ConfirmationPasswordDoesNotMatch", ErrorMessageResourceType = typeof(LocalizedText))]
         public string ConfirmPassword { get; set; }
     }
 

@@ -151,6 +151,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The password and confirmation password do not match..
+        /// </summary>
+        public static string ConfirmationPasswordDoesNotMatch {
+            get {
+                return ResourceManager.GetString("ConfirmationPasswordDoesNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm Email.
         /// </summary>
         public static string ConfirmEmail {
@@ -160,11 +169,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm password.
+        /// </summary>
+        public static string ConfirmPassword {
+            get {
+                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact property owner.
         /// </summary>
         public static string ContactFormHeader {
             get {
                 return ResourceManager.GetString("ContactFormHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create a new account..
+        /// </summary>
+        public static string CreateAccount {
+            get {
+                return ResourceManager.GetString("CreateAccount", resourceCulture);
             }
         }
         
@@ -299,6 +326,15 @@ namespace Resources {
         public static string Error {
             get {
                 return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} field is required..
+        /// </summary>
+        public static string FieldRequired {
+            get {
+                return ResourceManager.GetString("FieldRequired", resourceCulture);
             }
         }
         
@@ -515,6 +551,15 @@ namespace Resources {
         public static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} must be at least {2} characters long..
+        /// </summary>
+        public static string PasswordTooShort {
+            get {
+                return ResourceManager.GetString("PasswordTooShort", resourceCulture);
             }
         }
         

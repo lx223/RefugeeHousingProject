@@ -327,6 +327,12 @@
   <data name="VerifyPhoneNumber" xml:space="preserve">
     <value>Επαλήθευση του αριθμού τηλεφώνου</value>
   </data>
+  <data name="ConfirmationPasswordDoesNotMatch" xml:space="preserve">
+    <value>Ο κωδικός πρόσβασης κωδικός πρόσβασης και η επιβεβαίωση δεν ταιριάζουν.</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Επιβεβαίωση κωδικού πρόσβασης</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>ΗΛΕΚΤΡΟΝΙΚΗ ΔΙΕΥΘΥΝΣΗ</value>
   </data>
@@ -336,10 +342,19 @@
   <data name="Password" xml:space="preserve">
     <value>Σύνθημα</value>
   </data>
+  <data name="PasswordTooShort" xml:space="preserve">
+    <value>Το {0} πρέπει να είναι τουλάχιστον {2} χαρακτήρες.</value>
+  </data>
   <data name="RegisterAsNewUser" xml:space="preserve">
     <value>Εγγραφείτε ως νέος χρήστης</value>
   </data>
   <data name="RememberMe" xml:space="preserve">
     <value>Θυμήσου με?</value>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Δημιούργησε νέο λογαριασμό.</value>
+  </data>
+  <data name="FieldRequired" xml:space="preserve">
+    <value>Το {0} πεδίο είναι υποχρεωτικό.</value>
   </data>
 </root>
