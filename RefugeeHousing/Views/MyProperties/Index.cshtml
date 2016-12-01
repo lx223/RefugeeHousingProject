@@ -23,19 +23,23 @@
     </thead>
     @foreach (var listing in Model)
     {
-        var user = (ApplicationUser)ViewBag.User;
+        var user = (ApplicationUser) ViewBag.User;
         <tr>
             <td>@listing.Id</td>
             <td>@listing.NumberOfBedrooms</td>
             <td>@(listing.Furnished ? LocalizedText.Yes : LocalizedText.No)</td>
             <td>@listing.GetLocation(user.PreferredLanguage)</td>
             <td>€@listing.Price</td>
-            <td>@Html.ActionLink(@LocalizedText.Edit, "Edit", "MyProperties", new {id = listing.Id}, null)</td>
             <td>
-                @using (@Html.BeginForm("Delete", "MyProperties", new { id = listing.Id }, FormMethod.Post)) {
-                <div class="form-group">
+                @using (@Html.BeginForm("Edit", "MyProperties", new {id = listing.Id}, FormMethod.Get))
+                {
+                    <input type="submit" class="btn btn-link" value=@LocalizedText.Edit />
+                }
+            </td>
+            <td>
+                @using (@Html.BeginForm("Delete", "MyProperties", new {id = listing.Id}, FormMethod.Post))
+                {
                     <input type="submit" class="btn btn-link" value=@LocalizedText.Delete onclick="return confirm('@(LocalizedText.DeleteListingConfirmation + " " + listing.Id + "?")')"/>
-                </div>
                 }
             </td>
         </tr>
