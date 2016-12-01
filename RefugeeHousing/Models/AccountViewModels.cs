@@ -49,12 +49,12 @@ namespace RefugeeHousing.Models
 
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(LocalizedText))]
         [Display(Name = "Email", ResourceType = typeof(LocalizedText))]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceName = "FieldRequired", ErrorMessageResourceType = typeof(LocalizedText))]
         [DataType(DataType.Password)]
         [Display(Name = "Password", ResourceType = typeof(LocalizedText))]
         public string Password { get; set; }
