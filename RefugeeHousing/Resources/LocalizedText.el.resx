@@ -327,4 +327,19 @@
   <data name="VerifyPhoneNumber" xml:space="preserve">
     <value>Επαλήθευση του αριθμού τηλεφώνου</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>ΗΛΕΚΤΡΟΝΙΚΗ ΔΙΕΥΘΥΝΣΗ</value>
+  </data>
+  <data name="LoginUsingLocalAccount" xml:space="preserve">
+    <value>Χρησιμοποιήστε έναν τοπικό λογαριασμό για να συνδεθείτε.</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Σύνθημα</value>
+  </data>
+  <data name="RegisterAsNewUser" xml:space="preserve">
+    <value>Εγγραφείτε ως νέος χρήστης</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Θυμήσου με?</value>
+  </data>
 </root>
