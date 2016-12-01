@@ -356,4 +356,7 @@ This person has expressed their willingness to sign medium-to-long-term leases o
   <data name="FieldRequired" xml:space="preserve">
     <value>The {0} field is required.</value>
   </data>
+  <data name="InvalidLoginAttempt" xml:space="preserve">
+    <value>Invalid login attempt.</value>
+  </data>
 </root>

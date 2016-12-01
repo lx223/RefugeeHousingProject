@@ -90,7 +90,7 @@ namespace RefugeeHousing.Controllers
                 // ReSharper disable once RedundantCaseLabel
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                    ModelState.AddModelError("", Resources.LocalizedText.InvalidLoginAttempt);
                     return View(model);
             }
         }
