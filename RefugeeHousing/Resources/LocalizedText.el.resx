@@ -267,4 +267,16 @@
   <data name="DeleteListingConfirmation" xml:space="preserve">
     <value>Είστε σίγουροι ότι θέλετε να διαγράψετε την καταχώρισή</value>
   </data>
+  <data name="DeleteListingFailedUnauthorized" xml:space="preserve">
+    <value>Διαγραφή λίστα απέτυχε. Δεν επιτρέπεται να διαγράψετε αυτή την καταχώριση. Αριθμός Αγγελίας</value>
+  </data>
+  <data name="EditListing" xml:space="preserve">
+    <value>Βελτίωση εγγραφής</value>
+  </data>
+  <data name="Locality" xml:space="preserve">
+    <value>Τοποθεσία</value>
+  </data>
+  <data name="UpdateListing" xml:space="preserve">
+    <value>Ενημέρωση Καταχώρησης</value>
+  </data>
 </root>

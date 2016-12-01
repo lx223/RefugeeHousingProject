@@ -1,13 +1,10 @@
-﻿using System;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using RefugeeHousing.Models;
 using RefugeeHousing.Services;
 using RefugeeHousing.ViewModels;
-using Resources;
 
 namespace RefugeeHousing.Controllers
 {
@@ -54,7 +51,36 @@ namespace RefugeeHousing.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            return View();
+            var currentUserId = User.Identity.GetUserId();
+            var listing = propertyListingService.GetListing(id);
+            if (listing.OwnerId != currentUserId)
+            {
+                Response.StatusCode = (int) HttpStatusCode.Forbidden;
+                return new EmptyResult();
+            }
+            using (var db = new ApplicationDbContext())
+            {
+                ViewBag.User = userIdentityService.GetUser(db, currentUserId);
+            }
+
+            var listingViewModel = propertyListingService.GetListingViewModel(id);
+            return View(listingViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(int id, ListingViewModel listingViewModel)
+        {
+            var currentUserId = User.Identity.GetUserId();
+            var listing = propertyListingService.GetListing(id);
+            if (listing.OwnerId != currentUserId)
+            {
+                Response.StatusCode = (int)HttpStatusCode.Forbidden;
+                return new EmptyResult();
+            }
+            propertyListingService.UpdateListing(id, listingViewModel, currentUserId);
+
+            return RedirectToAction("Index");
+
         }
 
         [HttpPost]

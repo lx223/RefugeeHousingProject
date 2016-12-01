@@ -169,6 +169,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Deleting listing failed. You are not authorized to delete this listing. Listing ID.
+        /// </summary>
+        public static string DeleteListingFailedUnauthorized {
+            get {
+                return ResourceManager.GetString("DeleteListingFailedUnauthorized", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Details.
         /// </summary>
         public static string Details {
@@ -183,6 +192,15 @@ namespace Resources {
         public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit listing.
+        /// </summary>
+        public static string EditListing {
+            get {
+                return ResourceManager.GetString("EditListing", resourceCulture);
             }
         }
         
@@ -281,6 +299,15 @@ namespace Resources {
         public static string LanguagesSpokenPlaceholder {
             get {
                 return ResourceManager.GetString("LanguagesSpokenPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Locality.
+        /// </summary>
+        public static string Locality {
+            get {
+                return ResourceManager.GetString("Locality", resourceCulture);
             }
         }
         
@@ -461,6 +488,15 @@ namespace Resources {
         public static string SubmitEnquiry {
             get {
                 return ResourceManager.GetString("SubmitEnquiry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update listing.
+        /// </summary>
+        public static string UpdateListing {
+            get {
+                return ResourceManager.GetString("UpdateListing", resourceCulture);
             }
         }
         
