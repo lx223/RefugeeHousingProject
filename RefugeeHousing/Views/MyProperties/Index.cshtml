@@ -1,10 +1,12 @@
 ﻿@using System.Web.Mvc.Html
 @using RefugeeHousing.Models
+@using RefugeeHousing.Translations
 @using Resources
 @model List<RefugeeHousing.ViewModels.ListingDetailsViewModel>
 
 @{
     ViewBag.Title = Resources.LocalizedText.MyProperties;
+    var user = (ApplicationUser)ViewBag.User;
 }
 
 <h2 class="display-1">@LocalizedText.MyProperties</h2>
@@ -26,7 +28,6 @@
     </thead>
     @foreach (var listing in Model)
     {
-        var user = (ApplicationUser) ViewBag.User;
         <tr>
             <td>@listing.Id</td>
             <td>@listing.NumberOfBedrooms</td>
@@ -48,5 +49,13 @@
         </tr>
     }
 </table>
-
-<script type="text/javascript" src="~/Scripts/myProperties.js"></script>
+@{
+    if (user.PreferredLanguage == Language.Greek)
+    {
+        <script type="text/javascript" src="~/Scripts/myPropertiesGreek.js"></script>
+    }
+    else
+    {
+        <script type="text/javascript" src="~/Scripts/myPropertiesEnglish.js"></script>
+    }
+}

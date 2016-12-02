@@ -389,7 +389,8 @@
     <Content Include="Scripts\listingsTable.js" />
     <Content Include="Scripts\listingsTableFiltering.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\MyProperties.js" />
+    <Content Include="Scripts\myPropertiesEnglish.js" />
+    <Content Include="Scripts\myPropertiesGreek.js" />
     <Content Include="Scripts\placeIdValidator.js" />
     <Content Include="Scripts\register.js" />
     <Content Include="Scripts\require.js" />

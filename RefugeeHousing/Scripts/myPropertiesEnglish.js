@@ -1,3 +1,3 @@
 ﻿require(["listingsTable"], function (listingsTable) {
-    listingsTable.init();
+    listingsTable.init('en');
 });
