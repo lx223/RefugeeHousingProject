@@ -510,11 +510,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please input a more specific address..
+        /// </summary>
+        public static string NeedMoreSpecificAddress {
+            get {
+                return ResourceManager.GetString("NeedMoreSpecificAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
         public static string No {
             get {
                 return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No details available for input:.
+        /// </summary>
+        public static string NoDetailsAvailableForInput {
+            get {
+                return ResourceManager.GetString("NoDetailsAvailableForInput", resourceCulture);
             }
         }
         
@@ -722,6 +740,15 @@ namespace Resources {
         public static string UpdateListing {
             get {
                 return ResourceManager.GetString("UpdateListing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please use Location autocomplete to input a valid address..
+        /// </summary>
+        public static string UseLocationAutocompleteForInput {
+            get {
+                return ResourceManager.GetString("UseLocationAutocompleteForInput", resourceCulture);
             }
         }
         

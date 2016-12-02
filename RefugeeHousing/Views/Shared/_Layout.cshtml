@@ -11,23 +11,31 @@
     @Styles.Render("~/Content/css")
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.css">
   <script src="/Scripts/require.js"></script>
-  <script type="text/javascript">
-    require.config({
-      baseUrl: "/scripts",
-      paths: {
-          'jquery': "jquery-1.10.2.min",
-          'juqery.validate': "jquery.validate",
-          'jquery.validate.unobtrusive': "jquery.validate.unobtrusive",
-        'datatables.net': "https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min",
-        'datatables': 'https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min',
-        'googlemaps': 'https://maps.googleapis.com/maps/api/js?libraries=places&key=' + '@(System.Web.Configuration.WebConfigurationManager.AppSettings["GoogleApiKey"])'
-      },
-        shim: {
-            'jquery.validate': ['jquery'],
-            'jquery.validate.unobtrusive': ['jquery', 'jquery.validate']
-        }
-    });
-  </script>
+    <script type="text/javascript">
+        define('translationConfig', [], function() {
+            return {
+                noDetailsAvailableForInput: '@Resources.LocalizedText.NoDetailsAvailableForInput',
+                needMoreSpecificAddress: '@Resources.LocalizedText.NeedMoreSpecificAddress',
+                useLocationAutocompleteForInput: '@Resources.LocalizedText.UseLocationAutocompleteForInput'
+            };;
+        });
+
+        require.config({
+            baseUrl: "/scripts",
+            paths: {
+                'jquery': "jquery-1.10.2.min",
+                'juqery.validate': "jquery.validate",
+                'jquery.validate.unobtrusive': "jquery.validate.unobtrusive",
+                'datatables.net': "https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min",
+                'datatables': 'https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min',
+                'googlemaps': 'https://maps.googleapis.com/maps/api/js?libraries=places&key=' + '@(System.Web.Configuration.WebConfigurationManager.AppSettings["GoogleApiKey"])'
+            },
+            shim: {
+                'jquery.validate': ['jquery'],
+                'jquery.validate.unobtrusive': ['jquery', 'jquery.validate']
+            }
+        });
+    </script>
     @Scripts.Render("~/bundles/modernizr")
 
 </head>

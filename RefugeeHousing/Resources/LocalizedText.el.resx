@@ -360,4 +360,13 @@
   <data name="InvalidLoginAttempt" xml:space="preserve">
     <value>Μη έγκυρη προσπάθεια σύνδεσης.</value>
   </data>
+  <data name="NeedMoreSpecificAddress" xml:space="preserve">
+    <value>Εισάγετε μια πιο συγκεκριμένη διεύθυνση.</value>
+  </data>
+  <data name="NoDetailsAvailableForInput" xml:space="preserve">
+    <value>Δεν υπάρχουν διαθέσιμα για είσοδο λεπτομέρειες:</value>
+  </data>
+  <data name="UseLocationAutocompleteForInput" xml:space="preserve">
+    <value>Παρακαλούμε χρησιμοποιήστε Τοποθεσία αυτόματης συμπλήρωσης για να εισάγετε μια έγκυρη διεύθυνση.</value>
+  </data>
 </root>

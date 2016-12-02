@@ -359,4 +359,13 @@ This person has expressed their willingness to sign medium-to-long-term leases o
   <data name="InvalidLoginAttempt" xml:space="preserve">
     <value>Invalid login attempt.</value>
   </data>
+  <data name="NeedMoreSpecificAddress" xml:space="preserve">
+    <value>Please input a more specific address.</value>
+  </data>
+  <data name="NoDetailsAvailableForInput" xml:space="preserve">
+    <value>No details available for input:</value>
+  </data>
+  <data name="UseLocationAutocompleteForInput" xml:space="preserve">
+    <value>Please use Location autocomplete to input a valid address.</value>
+  </data>
 </root>

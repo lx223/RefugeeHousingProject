@@ -1,4 +1,4 @@
-﻿define(["googlemaps", "jquery"], function(googleMaps, $) {
+﻿define(["googlemaps", "jquery", "translationConfig"], function (googleMaps, $, translationConfig) {
     var autocomplete;
 
     var placeChangedEvent = "place_changed"; // Event fired by Google API when the place changed
@@ -28,11 +28,11 @@
         var place = autocomplete.getPlace();
 
         if (!place.geometry) {
-            showErrorMessage("No details available for input: '" + place.name + "'");
+            showErrorMessage(translationConfig.noDetailsAvailableForInput + " '" + place.name + "'");
         } else {
             var locality = getAdministrativeAreaLevel5Address(place);
             if (locality == null) {
-                showErrorMessage("Please input a more specific address.");
+                showErrorMessage(translationConfig.needMoreSpecificAddress);
             } else {
                 hideErrorMessage();
                 document.getElementById("place_id").value = place.place_id;

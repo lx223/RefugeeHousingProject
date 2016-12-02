@@ -1,4 +1,4 @@
-﻿define(["jquery"], function ($) {
+﻿define(["jquery", "translationConfig"], function ($, translationConfig) {
 
   function showErrorMessage(message) {
     $("#location-form-group").addClass("has-error");
@@ -15,7 +15,7 @@
       $("#add-property-form").submit(function (event) {
         var placeId = $("#place_id").val();
         if (placeId === "") {
-          showErrorMessage("Please use Location autocomplete to input a valid address");
+          showErrorMessage(translationConfig.useLocationAutocompleteForInput);
           event.preventDefault();
         } else {
           hideErrorMessage();
