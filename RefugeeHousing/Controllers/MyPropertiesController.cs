@@ -1,13 +1,11 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using NLog;
 using RefugeeHousing.Models;
 using RefugeeHousing.Services;
 using RefugeeHousing.ViewModels;
-using Resources;
 
 namespace RefugeeHousing.Controllers
 {
@@ -16,6 +14,7 @@ namespace RefugeeHousing.Controllers
     {
         private readonly IPropertyListingService propertyListingService;
         private readonly IUserIdentityService userIdentityService;
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         public MyPropertiesController(IPropertyListingService propertyListingService, IUserIdentityService userIdentityService)
         {
@@ -66,6 +65,9 @@ namespace RefugeeHousing.Controllers
             if (listing.OwnerId != currentUserId)
             {
                 Response.StatusCode = (int) HttpStatusCode.Forbidden;
+                Logger.Warn($"The user tried to delete a property which is not owned by the user. " +
+                            $"This should not happen often. ActionResult: Delete[HttpPost]. UserId: {currentUserId}." +
+                            $"ListingId: {listing.Id}.");
                 return new EmptyResult();
             }
 
