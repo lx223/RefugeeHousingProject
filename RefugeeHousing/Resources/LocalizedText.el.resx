@@ -369,4 +369,7 @@
   <data name="UseLocationAutocompleteForInput" xml:space="preserve">
     <value>Παρακαλούμε χρησιμοποιήστε Τοποθεσία αυτόματης συμπλήρωσης για να εισάγετε μια έγκυρη διεύθυνση.</value>
   </data>
+  <data name="FilterBy" xml:space="preserve">
+    <value>Φιλτράρισμα με βάση</value>
+  </data>
 </root>

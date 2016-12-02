@@ -368,4 +368,7 @@ This person has expressed their willingness to sign medium-to-long-term leases o
   <data name="UseLocationAutocompleteForInput" xml:space="preserve">
     <value>Please use Location autocomplete to input a valid address.</value>
   </data>
+  <data name="FilterBy" xml:space="preserve">
+    <value>Filter by</value>
+  </data>
 </root>

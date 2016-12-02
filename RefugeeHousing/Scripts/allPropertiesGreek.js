@@ -1,3 +1,3 @@
 ﻿require(["listingsTableFiltering"], function (listingsTableFiltering) {
-    listingsTableFiltering.init();
+    listingsTableFiltering.init('el');
 });
