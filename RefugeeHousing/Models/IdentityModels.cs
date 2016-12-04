@@ -1,4 +1,7 @@
-﻿using System.Data.Entity;
+﻿using System.Data.Common;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -30,17 +33,26 @@ namespace RefugeeHousing.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
     {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+        private ApplicationDbContext(DbConnection connection) : base(connection, contextOwnsConnection: true)
         {
         }
 
         public static ApplicationDbContext Create()
         {
-            return new ApplicationDbContext();
+            DbConnection connection = new SqlConnection("Data Source=localhost;Initial Catalog=RefugeeHousing;Integrated Security=True;MultipleActiveResultSets=True;");
+
+            return new ApplicationDbContext(connection);
         }
 
         public virtual IDbSet<Listing> Listings { get; set; }
         public virtual IDbSet<Location> Locations { get; set; }
+    }
+
+    public class DbContextFactory : IDbContextFactory<ApplicationDbContext>
+    {
+        public ApplicationDbContext Create()
+        {
+            return ApplicationDbContext.Create();
+        }
     }
 }

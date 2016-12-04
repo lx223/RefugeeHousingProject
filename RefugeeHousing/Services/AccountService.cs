@@ -14,7 +14,7 @@ namespace RefugeeHousing.Services
     {
         public void SetCookieToUserPreferredLanguage(string userEmail)
         {
-            using (var db = new ApplicationDbContext())
+            using (var db = ApplicationDbContext.Create())
             {
                 var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
                 var user = manager.FindByEmail(userEmail);

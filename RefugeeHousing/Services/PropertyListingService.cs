@@ -29,7 +29,7 @@ namespace RefugeeHousing.Services
 
         public void AddListingToDatabase(ListingViewModel listingViewModel, string currentUserId)
         {
-            using (var db = new ApplicationDbContext())
+            using (var db = ApplicationDbContext.Create())
             {
                 var locationId = listingViewModel.PlaceId;
                 var location = locationRepository.GetOrCreateLocation(db, locationId);
@@ -45,7 +45,7 @@ namespace RefugeeHousing.Services
 
         public ListingDetailsViewModel GetListing(int id)
         {
-            using (var db = new ApplicationDbContext())
+            using (var db = ApplicationDbContext.Create())
             {
                 var requestedListing = db.Listings.Find(id);
                 if (requestedListing == null)
@@ -72,7 +72,7 @@ namespace RefugeeHousing.Services
 
         public ListingViewModel GetListingViewModel(int id)
         {
-            using (var db = new ApplicationDbContext())
+            using (var db = ApplicationDbContext.Create())
             {
                 var listing = db.Listings.Find(id);
                 if (listing == null)
@@ -98,7 +98,7 @@ namespace RefugeeHousing.Services
 
         public IEnumerable<ListingDetailsViewModel> GetListings()
         {
-            using (var db = new ApplicationDbContext())
+            using (var db = ApplicationDbContext.Create())
             {
                 var listings = db.Listings.ToList();
                 return ConvertListingToListingDetailsViewModel(listings, db);
@@ -107,7 +107,7 @@ namespace RefugeeHousing.Services
    
         public IEnumerable<ListingDetailsViewModel> GetListings(string ownerId)
         {
-            using (var db = new ApplicationDbContext())
+            using (var db = ApplicationDbContext.Create())
             {
                 var listings = db.Listings.Where(l => l.OwnerId == ownerId).ToList();
                 return ConvertListingToListingDetailsViewModel(listings, db);
@@ -116,7 +116,7 @@ namespace RefugeeHousing.Services
 
         public void UpdateListing(int listingId, ListingViewModel listingViewModel, string currentUserId)
         {
-            using (var db = new ApplicationDbContext())
+            using (var db = ApplicationDbContext.Create())
             {
                 var locationId = listingViewModel.PlaceId;
                 var location = locationRepository.GetOrCreateLocation(db, locationId);
@@ -145,7 +145,7 @@ namespace RefugeeHousing.Services
 
         public void DeleteListing(int id)
         {
-            using (var db = new ApplicationDbContext())
+            using (var db = ApplicationDbContext.Create())
             {
                 var listing = db.Listings.Find(id);
                 db.Listings.Remove(listing);

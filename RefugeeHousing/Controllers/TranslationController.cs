@@ -35,8 +35,8 @@ namespace RefugeeHousing.Controllers
 
         private void SavePreferenceToDatabase(Language language)
         {
-            var userStore = new UserStore<ApplicationUser>(new ApplicationDbContext());
-            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            var userStore = new UserStore<ApplicationUser>(ApplicationDbContext.Create());
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(ApplicationDbContext.Create()));
             var user = userManager.FindById(User.Identity.GetUserId());
             user.PreferredLanguage = language;
             userManager.Update(user);

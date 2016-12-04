@@ -25,7 +25,7 @@ namespace RefugeeHousing.Controllers
         public ActionResult Index()
         {
             var currentUserId = User.Identity.GetUserId();
-            using (var db = new ApplicationDbContext())
+            using (var db = ApplicationDbContext.Create())
             {
                 ViewBag.User = userIdentityService.GetUser(db, currentUserId);
             }
@@ -42,7 +42,7 @@ namespace RefugeeHousing.Controllers
             }
 
             var currentUserId = User.Identity.GetUserId();
-            using (var db = new ApplicationDbContext())
+            using (var db = ApplicationDbContext.Create())
             {
                 ViewBag.User = userIdentityService.GetUser(db, currentUserId);
             }
