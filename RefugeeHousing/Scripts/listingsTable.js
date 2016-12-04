@@ -1,15 +1,15 @@
-﻿define(["jquery", "datatables"], function ($, dataTables) {
+﻿define(["jquery", "datatables"], function ($) {
     return {
         init: function (language) {
-            if (language == 'el') {
-                var table = $('#listings-table').DataTable({
+            if (language === 'el') {
+                $('#listings-table').DataTable({
                         language: {
                             url: '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Greek.json'
                         }
                     }
                 );
             } else {
-                var table = $('#listings-table').DataTable();
+                $('#listings-table').DataTable();
             }
         }
     }

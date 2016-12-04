@@ -38,16 +38,18 @@
     }
   );
 
-    function initListingsTableFiltering(language) {
-        if (language == 'el') {
-            var table = $('#listings-table').DataTable({
+  function initListingsTableFiltering(language) {
+        var table;
+
+        if (language === 'el') {
+            table = $('#listings-table').DataTable({
                 language: {
                     url: '//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Greek.json'
                 }
             }
             );
         } else {
-            var table = $('#listings-table').DataTable();
+            table = $('#listings-table').DataTable();
         }
 
         $('#filter-min-bedrooms-text, #filter-max-price-text, #filter-furnished-text').change(function () {

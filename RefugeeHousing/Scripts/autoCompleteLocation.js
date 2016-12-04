@@ -17,7 +17,7 @@
         var addressComponents = place["address_components"];
         for (var i = 0; i < addressComponents.length; i++) {
             var types = addressComponents[i]["types"];
-            if (types.indexOf("administrative_area_level_5") != -1) {
+            if (types.indexOf("administrative_area_level_5") !== -1) {
                 return addressComponents[i]["long_name"];
             }
         }
