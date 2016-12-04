@@ -1,6 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
-using System.Web.Configuration;
 using RestSharp;
 
 namespace RefugeeHousing.ApiAccess
@@ -15,6 +15,9 @@ namespace RefugeeHousing.ApiAccess
         private const string GoogleApiBaseUrl = "https://maps.googleapis.com/maps/api/place/details/json";
         private const string LanguageGreek = "el";
         private const string AddressTypes = "administrative_area_level_5";
+
+        private const string ApiKeyEnvironmentVariable = "REFUGEE_HOUSING_GOOGLE_API_KEY";
+
         public enum Languages
         {
             English,
@@ -23,9 +26,17 @@ namespace RefugeeHousing.ApiAccess
 
         public string FindLocalityNameByLocationId(string locationId, Languages language)
         {
+            var apiKey = Environment.GetEnvironmentVariable(ApiKeyEnvironmentVariable);
+
+            if (apiKey == null)
+            {
+                throw new InvalidOperationException(
+                    $"Could not find the '{ApiKeyEnvironmentVariable}' environment variable, so cannot look up location in the Google Maps API");
+            }
+
             var client = new RestClient(GoogleApiBaseUrl);
             var request = new RestRequest(Method.GET);
-            request.AddParameter("key", WebConfigurationManager.AppSettings["GoogleApiKey"]);
+            request.AddParameter("key", apiKey);
             request.AddParameter("placeid", locationId);
 
             if (language == Languages.Greek)
