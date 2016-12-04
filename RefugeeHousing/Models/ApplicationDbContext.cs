@@ -4,7 +4,6 @@ using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
-using System.Web.Configuration;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace RefugeeHousing.Models
