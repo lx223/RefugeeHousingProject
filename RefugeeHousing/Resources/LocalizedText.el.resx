@@ -378,4 +378,10 @@
   <data name="CookieConsentOk" xml:space="preserve">
     <value>Εντάξει</value>
   </data>
+  <data name="FrenchLanguage" xml:space="preserve">
+    <value>γαλλική γλώσσα</value>
+  </data>
+  <data name="GermanLanguage" xml:space="preserve">
+    <value>Γερμανός</value>
+  </data>
 </root>

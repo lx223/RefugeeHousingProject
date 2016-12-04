@@ -113,17 +113,28 @@ namespace RefugeeHousing.Tests.Services
             email.Contents[0].Value.Should().Contain(organizationWebsite);
         }
 
-        [TestCase(true, false, Language.English, "Languages spoken by name of property owner: English")]
-        [TestCase(false, true, Language.English, "Languages spoken by name of property owner: Greek")]
-        [TestCase(true, true, Language.English, "Languages spoken by name of property owner: English, Greek")]
-        [TestCase(true, false, Language.Greek, "Γλώσσες που ομιλούνται από name of property owner: Αγγλικά")]
-        [TestCase(false, true, Language.Greek, "Γλώσσες που ομιλούνται από name of property owner: Eλληνικά")]
-        [TestCase(true, true, Language.Greek, "Γλώσσες που ομιλούνται από name of property owner: Αγγλικά, Eλληνικά")]
+        [TestCase(true, false, false, false, Language.English, "Languages spoken by name of property owner: English")]
+        [TestCase(false, true, false, false, Language.English, "Languages spoken by name of property owner: Greek")]
+        [TestCase(false, false, true, false, Language.English, "Languages spoken by name of property owner: French")]
+        [TestCase(false, false, false, true, Language.English, "Languages spoken by name of property owner: German")]
+        [TestCase(true, true, true, true, Language.English, "Languages spoken by name of property owner: English, Greek, French, German")]
+        [TestCase(true, false, false, false, Language.Greek, "Γλώσσες που ομιλούνται από name of property owner: Αγγλικά")]
+        [TestCase(false, true, false, false, Language.Greek, "Γλώσσες που ομιλούνται από name of property owner: Eλληνικά")]
+        [TestCase(false, false, true, false, Language.Greek, "Γλώσσες που ομιλούνται από name of property owner: γαλλική γλώσσα")]
+        [TestCase(false, false, false, true, Language.Greek, "Γλώσσες που ομιλούνται από name of property owner: Γερμανός")]
+        [TestCase(true, true, true, true, Language.Greek, "Γλώσσες που ομιλούνται από name of property owner: Αγγλικά, Eλληνικά, γαλλική γλώσσα, Γερμανός")]
         public void EmailIncludesLanguagesSpokenByNgoWorkerTranslatedIntoPropertyOwnersLanguage(
-            bool english, bool greek, Language preferredLanguageOfOwner, string expectedLanguageText)
+            bool english, bool greek, bool french, bool german, Language preferredLanguageOfOwner, string expectedLanguageText)
         {
             // Arrange
-            var enquiry = new PropertyEnquiry { EnquirerName = "name of property owner", EnquirerSpeaksEnglish = english, EnquirerSpeaksGreek = greek};
+            var enquiry = new PropertyEnquiry
+            {
+                EnquirerName = "name of property owner",
+                EnquirerSpeaksEnglish = english,
+                EnquirerSpeaksGreek = greek,
+                EnquirerSpeaksFrench = french,
+                EnquirerSpeaksGerman = german
+            };
 
             // Act
             var email = emailBuilder.Build(enquiry, new ApplicationUser {PreferredLanguage = preferredLanguageOfOwner});

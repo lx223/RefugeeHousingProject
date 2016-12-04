@@ -9,5 +9,7 @@
         public string OrganizationWebsite { get; set; }
         public bool EnquirerSpeaksEnglish { get; set; }
         public bool EnquirerSpeaksGreek { get; set; }
+        public bool EnquirerSpeaksFrench { get; set; }
+        public bool EnquirerSpeaksGerman { get; set; }
     }
 }

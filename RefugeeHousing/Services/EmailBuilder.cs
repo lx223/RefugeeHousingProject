@@ -57,6 +57,14 @@ namespace RefugeeHousing.Services
             {
                 languages.Add(LocalizedText.ResourceManager.GetString("GreekLanguage", cultureInfo));
             }
+            if (enquiry.EnquirerSpeaksFrench)
+            {
+                languages.Add(LocalizedText.ResourceManager.GetString("FrenchLanguage", cultureInfo));
+            }
+            if (enquiry.EnquirerSpeaksGerman)
+            {
+                languages.Add(LocalizedText.ResourceManager.GetString("GermanLanguage", cultureInfo));
+            }
 
             return string.Join(", ", languages);
         }

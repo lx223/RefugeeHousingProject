@@ -384,11 +384,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to French.
+        /// </summary>
+        public static string FrenchLanguage {
+            get {
+                return ResourceManager.GetString("FrenchLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Furnished.
         /// </summary>
         public static string Furnished {
             get {
                 return ResourceManager.GetString("Furnished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to German.
+        /// </summary>
+        public static string GermanLanguage {
+            get {
+                return ResourceManager.GetString("GermanLanguage", resourceCulture);
             }
         }
         
