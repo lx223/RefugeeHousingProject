@@ -94,7 +94,7 @@ namespace RefugeeHousing.Controllers
             if (listing.OwnerId != currentUserId)
             {
                 Response.StatusCode = (int) HttpStatusCode.Forbidden;
-                Logger.Warn($"The user tried to delete a property which is not owned by the user. " +
+                Logger.Warn("The user tried to delete a property which is not owned by the user. " +
                             $"This should not happen often. ActionResult: Delete[HttpPost]. UserId: {currentUserId}." +
                             $"ListingId: {listing.Id}.");
                 return new EmptyResult();
