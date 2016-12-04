@@ -1,7 +1,10 @@
+using System;
+using System.Configuration;
 using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
+using System.Web.Configuration;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace RefugeeHousing.Models
@@ -15,13 +18,26 @@ namespace RefugeeHousing.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
     {
+        private const string DbConnectionStringEnvironmentVariable = "REFUGEE_HOUSING_DB_CONNECTION_STRING";
+
         private ApplicationDbContext(DbConnection connection) : base(connection, contextOwnsConnection: true)
         {
         }
 
         public static ApplicationDbContext Create()
         {
-            DbConnection connection = new SqlConnection("Data Source=localhost;Initial Catalog=RefugeeHousing;Integrated Security=True;MultipleActiveResultSets=True;");
+            // Storing the connection string in an environment variable allows us to protect the connection strings
+            // on Test and Production
+            var connectionString = Environment.GetEnvironmentVariable(DbConnectionStringEnvironmentVariable);
+
+            if (connectionString == null)
+            {
+                // It's inconvenient to set up extra environment variables in dev, and we use integrated security,
+                // so there's nothing to protect - so we just store the connection string in app config
+                connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
+            }
+
+            DbConnection connection = new SqlConnection(connectionString);
 
             return new ApplicationDbContext(connection);
         }
