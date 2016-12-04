@@ -1,4 +1,4 @@
-﻿define(["jquery", "datatables"], function($, datatables) {
+﻿define(["jquery", "datatables"], function($) {
   $.fn.dataTable.ext.search.push(
     // ReSharper disable once UnusedParameter
     function(settings, data, dataIndex) {
