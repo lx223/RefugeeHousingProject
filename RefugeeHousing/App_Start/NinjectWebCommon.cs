@@ -66,7 +66,7 @@ namespace RefugeeHousing.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IApplicationDbContext>().To<ApplicationDbContext>().InTransientScope();
+            kernel.Bind<IApplicationDbContext>().ToMethod(context => ApplicationDbContext.Create());
             kernel.Bind<ITranslationService>().To<TranslationService>();
             kernel.Bind<IAccountService>().To<AccountService>();
             kernel.Bind<IPropertyListingService>().To<PropertyListingService>().InSingletonScope();
