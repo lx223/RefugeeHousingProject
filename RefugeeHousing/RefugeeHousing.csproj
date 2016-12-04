@@ -272,6 +272,7 @@
     <Compile Include="Migrations\201611301344004_ChangePriceToInteger.Designer.cs">
       <DependentUpon>201611301344004_ChangePriceToInteger.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Services\LocationRepository.cs" />
     <Compile Include="Services\EmailBuilder.cs" />
