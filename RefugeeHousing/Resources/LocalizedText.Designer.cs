@@ -187,6 +187,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This website uses cookies to ensure you get the best experience on our website.
+        /// </summary>
+        public static string CookieConsentBanner {
+            get {
+                return ResourceManager.GetString("CookieConsentBanner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        public static string CookieConsentOk {
+            get {
+                return ResourceManager.GetString("CookieConsentOk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create a new account..
         /// </summary>
         public static string CreateAccount {
@@ -335,15 +353,6 @@ namespace Resources {
         public static string FieldRequired {
             get {
                 return ResourceManager.GetString("FieldRequired", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Filter by.
-        /// </summary>
-        public static string FilterBy {
-            get {
-                return ResourceManager.GetString("FilterBy", resourceCulture);
             }
         }
         

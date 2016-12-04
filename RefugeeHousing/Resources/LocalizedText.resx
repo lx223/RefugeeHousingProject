@@ -368,7 +368,10 @@ This person has expressed their willingness to sign medium-to-long-term leases o
   <data name="UseLocationAutocompleteForInput" xml:space="preserve">
     <value>Please use Location autocomplete to input a valid address.</value>
   </data>
-  <data name="FilterBy" xml:space="preserve">
-    <value>Filter by</value>
+  <data name="CookieConsentBanner" xml:space="preserve">
+    <value>This website uses cookies to ensure you get the best experience on our website</value>
+  </data>
+  <data name="CookieConsentOk" xml:space="preserve">
+    <value>OK</value>
   </data>
 </root>

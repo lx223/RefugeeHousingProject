@@ -372,4 +372,10 @@
   <data name="FilterBy" xml:space="preserve">
     <value>Φιλτράρισμα με βάση</value>
   </data>
+  <data name="CookieConsentBanner" xml:space="preserve">
+    <value>Αυτή η ιστοσελίδα χρησιμοποιεί cookies για να διασφαλίσετε ότι θα έχετε την καλύτερη εμπειρία στην ιστοσελίδα μας</value>
+  </data>
+  <data name="CookieConsentOk" xml:space="preserve">
+    <value>Εντάξει</value>
+  </data>
 </root>
