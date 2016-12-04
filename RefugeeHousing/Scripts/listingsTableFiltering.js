@@ -62,9 +62,7 @@
     }
 
     return {
-        init: function () {
-            initListingsTableFiltering();
-        }
+        init: initListingsTableFiltering
     }
 
 });
