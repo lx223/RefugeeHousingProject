@@ -1,5 +1,7 @@
 # RefugeeHousingProject
 
+A site which connects Greek homeowners who have appartments to rent with NGOs which are helping refugees to find places to live.
+
 ## Development Guide
 
 ### Prerequisites
