@@ -2,7 +2,13 @@
 
 A site which connects Greek homeowners who have appartments to rent with NGOs which are helping refugees to find places to live.
 
+## Work in progress
+
+The site is still being built. It is currently functional, but the copy and translations are a rough draft and we don't yet have a domain name.
+
 ## Development Guide
+
+Contributions welcome. Take a look at the (help wanted)[https://github.com/Softwire/RefugeeHousingProject/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22] label in the issues list.
 
 ### Prerequisites
 
