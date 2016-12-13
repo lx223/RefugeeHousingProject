@@ -8,7 +8,7 @@ The site is still being built. It is currently functional, but the copy and tran
 
 ## Development Guide
 
-Contributions welcome. Take a look at the (help wanted)[https://github.com/Softwire/RefugeeHousingProject/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22] label in the issues list.
+Contributions welcome. Take a look at the [help wanted](https://github.com/Softwire/RefugeeHousingProject/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) label in the issues list.
 
 ### Prerequisites
 
