@@ -32,9 +32,13 @@
             },
             shim: {
                 'jquery.validate': ['jquery'],
-                'jquery.validate.unobtrusive': ['jquery', 'jquery.validate']
+                'jquery.validate.unobtrusive': ['jquery', 'jquery.validate'],
+                'bootstrap' : ['jquery']
             }
         });
+
+        // Add shared libraries to every page
+        require(['bootstrap', 'respond'], function() { });
     </script>
     @Scripts.Render("~/bundles/modernizr")
 
