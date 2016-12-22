@@ -384,4 +384,7 @@
   <data name="GermanLanguage" xml:space="preserve">
     <value>Γερμανός</value>
   </data>
+  <data name="ResetPasswordLinkText" xml:space="preserve">
+    <value>Παρακαλείστε να επαναφέρετε τον κωδικό πρόσβασής σας κάνοντας κλικ &lt;a href='{0}'&gt; εδώ &lt;/a&gt;</value>
+  </data>
 </root>

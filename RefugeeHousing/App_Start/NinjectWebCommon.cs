@@ -75,6 +75,9 @@ namespace RefugeeHousing.App_Start
             kernel.Bind<IPropertyEmailService>().To<PropertyEmailService>().InSingletonScope();
             kernel.Bind<IEmailBuilder>().To<EmailBuilder>().InSingletonScope();
             kernel.Bind<IUserIdentityService>().To<UserIdentityService>().InSingletonScope();
+            kernel.Bind<IEmailClient>().To<EmailClient>().InSingletonScope();
+            kernel.Bind<IEmailService>().To<EmailService>().InSingletonScope();
+
             // These services rely on DbContext, and therefore cannot be singletons
             kernel.Bind<IPropertyContactService>().To<PropertyContactService>();
         }        

@@ -762,6 +762,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please reset your password by clicking &lt;a href=&apos;{0}&apos;&gt;here&lt;/a&gt;.
+        /// </summary>
+        public static string ResetPasswordLinkText {
+            get {
+                return ResourceManager.GetString("ResetPasswordLinkText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Send.
         /// </summary>
         public static string Send {

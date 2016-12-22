@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Data.Entity.Utilities;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -17,17 +18,14 @@ namespace RefugeeHousing.Controllers
         private ApplicationSignInManager signInManager;
         private ApplicationUserManager userManager;
         private readonly IAccountService accountService;
-        
-        public AccountController(IAccountService accountService)
-        {
-            this.accountService = accountService;
-        }
+        private readonly IEmailService emailService;
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, IAccountService accountService)
+        public AccountController(
+            IAccountService accountService,
+            IEmailService emailService)
         {
-            UserManager = userManager;
-            SignInManager = signInManager;
             this.accountService = accountService;
+            this.emailService = emailService;
         }
 
         public ApplicationSignInManager SignInManager
@@ -217,10 +215,13 @@ namespace RefugeeHousing.Controllers
 
                 // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                 // Send an email with this link
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                var code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, Request?.Url?.Scheme ?? "");
+
+                var userEmail = await UserManager.GetEmailAsync(user.Id).WithCurrentCulture();
+                await emailService.SendPasswordReset(userEmail, callbackUrl);
+                
+                return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // If we got this far, something failed, redisplay form

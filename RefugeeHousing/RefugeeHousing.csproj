@@ -236,6 +236,7 @@
     <Compile Include="ApiAccess\PlaceLookUpService.cs" />
     <Compile Include="Controllers\TranslationController.cs" />
     <Compile Include="Filters\ExceptionHandlingAttribute.cs" />
+    <Compile Include="Helpers\EmailContentType.cs" />
     <Compile Include="Migrations\201611111655115_Merge.cs" />
     <Compile Include="Migrations\201611111655115_Merge.Designer.cs">
       <DependentUpon>201611111655115_Merge.cs</DependentUpon>
@@ -274,6 +275,8 @@
     </Compile>
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Services\EmailClient.cs" />
+    <Compile Include="Services\EmailService.cs" />
     <Compile Include="Services\LocationRepository.cs" />
     <Compile Include="Services\EmailBuilder.cs" />
     <Compile Include="Services\PropertyContactService.cs" />
