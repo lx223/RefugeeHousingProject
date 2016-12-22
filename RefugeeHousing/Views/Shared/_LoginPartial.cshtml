@@ -1,22 +1,20 @@
 ﻿@using Resources
-@if (Request.IsAuthenticated)
-{
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-nav" }))
-    {
-        @Html.AntiForgeryToken()
-
-        <ul class="nav navbar-nav">
-            <li>
-                @Html.ActionLink(LocalizedText.Account, "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-            </li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">@LocalizedText.LogOff</a></li>
-        </ul>
-    }
-}
-else
-{
+@if (Request.IsAuthenticated) {
     <ul class="nav navbar-nav">
-        <li>@Html.ActionLink(LocalizedText.Register, "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink(LocalizedText.LogIn, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li>
+            @Html.ActionLink(LocalizedText.Account, "Index", "Manage", null, new { title = "Manage" })
+        </li>
+        <li>
+            <a href="javascript:document.getElementById('logoutForm').submit()">@LocalizedText.LogOff</a>
+        </li>
+    </ul>
+
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-nav" })) {
+        @Html.AntiForgeryToken()
+    }
+} else {
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink(LocalizedText.Register, "Register", "Account", null, new { id = "registerLink" })</li>
+        <li>@Html.ActionLink(LocalizedText.LogIn, "Login", "Account", null, new { id = "loginLink" })</li>
     </ul>
 }
