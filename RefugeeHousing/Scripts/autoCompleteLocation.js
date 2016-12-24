@@ -45,9 +45,42 @@
         var options = {
             componentRestrictions: { "country": "gr" }
         }
+        const locationInputElement = document.getElementById("location");
+        swapKeyDownEnterForDownArrow(locationInputElement);
+
         // ReSharper disable once UseOfImplicitGlobalInFunctionScope
-        autocomplete = new google.maps.places.Autocomplete(document.getElementById("location"), options);
+        autocomplete = new google.maps.places.Autocomplete(locationInputElement, options);
         autocomplete.addListener(placeChangedEvent, placeChanged);
+    }
+
+    function swapKeyDownEnterForDownArrow(input) {
+      const addEventListenerMethod = (input.addEventListener) ? input.addEventListener : input.attachEvent;
+
+      input.addEventListener = addEventListenerWithEnterKeyDownSwapped;
+      input.attachEvent = addEventListenerWithEnterKeyDownSwapped;
+
+      function addEventListenerWithEnterKeyDownSwapped(type, listener) {
+        if (type === "keydown") {
+          var originalListener = listener;
+
+          listener = function(event) {
+            const suggestionSelected = $(".pac-item-selected").length > 0;
+            const simulatedDownArrowKeyDown = $.Event("keydown", {
+              keyCode: 40,
+              which: 40
+            });
+
+            if (event.which === 13 && !suggestionSelected) {
+              originalListener.apply(input, [simulatedDownArrowKeyDown]);
+              event.preventDefault();
+            }
+
+            originalListener.apply(input, [event]);
+          };
+        }
+
+        addEventListenerMethod.apply(input, [type, listener]);
+      }
     }
 
     return {
