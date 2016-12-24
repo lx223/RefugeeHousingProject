@@ -383,4 +383,7 @@ This person has expressed their willingness to sign medium-to-long-term leases o
   <data name="CookieConsentOk" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="RegisterNewListingSuccessful" xml:space="preserve">
+    <value>Registering new listing succeeded</value>
+  </data>
 </root>

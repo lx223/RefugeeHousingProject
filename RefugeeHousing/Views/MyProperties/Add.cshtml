@@ -1,21 +1,34 @@
-﻿@model RefugeeHousing.ViewModels.ListingViewModel
+﻿@using Resources
+@model RefugeeHousing.ViewModels.ListingViewModel
 
 @{
-    ViewBag.Title = Resources.LocalizedText.AddNewListing;
+    ViewBag.Title = LocalizedText.AddNewListing;
 }
 
-<h2>@Resources.LocalizedText.AddNewListing</h2>
+<h2>@LocalizedText.AddNewListing</h2>
 
-@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "add-property-form" }))
-{
+<div class="alert alert-success text-center" role="alert" style="display: none;">@LocalizedText.RegisterNewListingSuccessful</div>
+
+@using (Ajax.BeginForm(new AjaxOptions { OnSuccess = "onSuccess" })) {
     @Html.Partial("_ListingFormPartial", Model)
 
     <div class="form-check">
         <label>
             <input type="checkbox" name="rent_to_refugees" required/>
-            @Resources.LocalizedText.WillRentToRefugees
+            @LocalizedText.WillRentToRefugees
         </label>
     </div>
 
-    <input type="submit" class="btn btn-primary" value="@Resources.LocalizedText.RegisterNewListing"/>
+    <input type="submit" class="btn btn-primary" value="@LocalizedText.RegisterNewListing"/>
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        require(['jquery.unobtrusive-ajax'], function() { });
+
+        function onSuccess() {
+            $('.alert-success').fadeIn().delay(2000).fadeOut();
+        }
+    </script>
 }

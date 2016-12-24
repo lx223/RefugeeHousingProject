@@ -384,4 +384,7 @@
   <data name="GermanLanguage" xml:space="preserve">
     <value>Γερμανός</value>
   </data>
+  <data name="RegisterNewListingSuccessful" xml:space="preserve">
+    <value>Καταχώρηση νέα λίστα πέτυχε</value>
+  </data>
 </root>

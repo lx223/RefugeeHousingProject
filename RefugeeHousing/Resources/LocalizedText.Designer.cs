@@ -735,6 +735,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Registering new listing succeeded.
+        /// </summary>
+        public static string RegisterNewListingSuccessful {
+            get {
+                return ResourceManager.GetString("RegisterNewListingSuccessful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remember me?.
         /// </summary>
         public static string RememberMe {

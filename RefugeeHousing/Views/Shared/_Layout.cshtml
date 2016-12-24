@@ -10,7 +10,7 @@
     <title>@ViewBag.Title - Refugee Housing Project</title>
     @Styles.Render("~/Content/css")
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.css">
-  <script src="/Scripts/require.js"></script>
+    <script src="/Scripts/require.js"></script>
     <script type="text/javascript">
         define('translationConfig', [], function() {
             return {
@@ -24,6 +24,8 @@
             baseUrl: "/Scripts",
             paths: {
                 'jquery': "jquery-1.10.2.min",
+                'jquery.unobtrusive-ajax': "jquery.unobtrusive-ajax.min",
+                'jquery.blockUI': "jquery.blockUI",
                 'jquery.validate': "jquery.validate",
                 'jquery.validate.unobtrusive': "jquery.validate.unobtrusive",
                 'datatables.net': "https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min",
@@ -31,6 +33,8 @@
                 'googlemaps': 'https://maps.googleapis.com/maps/api/js?libraries=places&key=' + '@(System.Web.Configuration.WebConfigurationManager.AppSettings["GoogleApiKey"])'
             },
             shim: {
+                'jquery.blockUI': ['jquery'],
+                'jquery.unobtrusive-ajax': ['jquery'],
                 'jquery.validate': ['jquery'],
                 'jquery.validate.unobtrusive': ['jquery', 'jquery.validate'],
                 'bootstrap' : ['jquery']
@@ -38,7 +42,22 @@
         });
 
         // Add shared libraries to every page
-        require(['bootstrap', 'respond'], function() { });
+        require(['bootstrap', 'respond', 'jquery.blockUI'],
+            function() {
+                // Configure ajax to block on start and unblock on complete for all pages
+                $(document).ajaxStart(function() {
+                    $.blockUI({
+                        message: '<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>',
+                        css: {
+                            border: 'none',
+                            backgroundColor: 'transparent',
+                            color: "white"
+                        }
+                    });
+                }).ajaxComplete(function() {
+                    $.unblockUI();
+                });
+            });
     </script>
     @Scripts.Render("~/bundles/modernizr")
 
